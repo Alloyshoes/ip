@@ -33,3 +33,10 @@ Ensure that Java 25 is used when running the application or build tasks. On macO
 Use lightweight tags unless the user requests an annotated tag.
 When proposing or creating a commit message, include enough detail to explain the rationale for the change.
 Do not commit or push unless explicitly asked.
+
+## Testing
+
+After any change to the program's source (e.g. `Eve.java`, `Task.java`, or new classes):
+
+1. Update `test/ui-test-plan.md` if the change added, removed, or altered the behavior of a command -- verify any new or changed expected output by running the program manually before writing it down.
+2. Invoke the `test-ui` skill (`.claude/skills/test-ui/`) to compile the program and run the full test plan against it. Report the printed session record and result; if a test case fails, do not proceed (e.g. to committing) until it is resolved.
