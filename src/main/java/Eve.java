@@ -19,114 +19,120 @@ public class Eve {
         System.out.println(line);
 
         Scanner scanner = new Scanner(System.in);
+        outerLoop:
         while (true) {
             String input = scanner.nextLine();
+            int spaceIndex = input.indexOf(' ');
+            String commandWord = spaceIndex == -1 ? input : input.substring(0, spaceIndex);
+            String arguments = spaceIndex == -1 ? "" : input.substring(spaceIndex + 1).trim();
+
             try {
-                if (input.equals("bye")) {
-                    System.out.println("Bye. Hope to see you again soon!");
-                    System.out.println(line);
-                    break;
-                }
-                else if (input.equals("list")) {
-                    System.out.println(line);
-                    System.out.println("Here are the tasks in your list:");
-                    for (int i = 0; i < taskCount; i++) {
-                        System.out.println((i + 1) + "." + tasks[i]);
+                Command command = Command.fromWord(commandWord);
+                switch (command) {
+                    case BYE:
+                        System.out.println("Bye. Hope to see you again soon!");
+                        System.out.println(line);
+                        break outerLoop;
+                    case LIST:
+                        System.out.println(line);
+                        System.out.println("Here are the tasks in your list:");
+                        for (int i = 0; i < taskCount; i++) {
+                            System.out.println((i + 1) + "." + tasks[i]);
+                        }
+                        System.out.println(line);
+                        break;
+                    case MARK: {
+                        int index = parseTaskNumber(arguments, taskCount) - 1;
+                        tasks[index].markAsDone();
+                        System.out.println(line);
+                        System.out.println("Nice! I've marked this task as done:");
+                        System.out.println("  " + tasks[index]);
+                        System.out.println(line);
+                        break;
                     }
-                    System.out.println(line);
-                }
-                else if (input.equals("mark") || input.startsWith("mark ")) {
-                    int index = parseTaskNumber(input.substring(4).trim(), taskCount) - 1;
-                    tasks[index].markAsDone();
-                    System.out.println(line);
-                    System.out.println("Nice! I've marked this task as done:");
-                    System.out.println("  " + tasks[index]);
-                    System.out.println(line);
-                }
-                else if (input.equals("unmark") || input.startsWith("unmark ")) {
-                    int index = parseTaskNumber(input.substring(6).trim(), taskCount) - 1;
-                    tasks[index].markAsNotDone();
-                    System.out.println(line);
-                    System.out.println("OK, I've marked this task as not done yet:");
-                    System.out.println("  " + tasks[index]);
-                    System.out.println(line);
-                }
-                else if (input.equals("todo") || input.startsWith("todo ")) {
-                    String description = input.substring(4).trim();
-                    if (description.isEmpty()) {
-                        throw new EveException("OOPS!!! The description of a todo cannot be empty.");
+                    case UNMARK: {
+                        int index = parseTaskNumber(arguments, taskCount) - 1;
+                        tasks[index].markAsNotDone();
+                        System.out.println(line);
+                        System.out.println("OK, I've marked this task as not done yet:");
+                        System.out.println("  " + tasks[index]);
+                        System.out.println(line);
+                        break;
                     }
-                    tasks[taskCount] = new ToDo(description);
-                    taskCount++;
-                    System.out.println(line);
-                    System.out.println("Got it. I've added this task:");
-                    System.out.println("  " + tasks[taskCount - 1]);
-                    System.out.println("Now you have " + taskCount + " tasks in the list.");
-                    System.out.println(line);
-                }
-                else if (input.equals("deadline") || input.startsWith("deadline ")) {
-                    String rest = input.substring(8);
-                    int byIndex = rest.indexOf(" /by ");
-                    if (byIndex == -1) {
-                        throw new EveException("OOPS!!! A deadline needs a description and a "
-                                + "'/by' date, e.g. deadline return book /by Sunday.");
+                    case TODO:
+                        if (arguments.isEmpty()) {
+                            throw new EveException("OOPS!!! The description of a todo cannot be empty.");
+                        }
+                        tasks[taskCount] = new ToDo(arguments);
+                        taskCount++;
+                        System.out.println(line);
+                        System.out.println("Got it. I've added this task:");
+                        System.out.println("  " + tasks[taskCount - 1]);
+                        System.out.println("Now you have " + taskCount + " tasks in the list.");
+                        System.out.println(line);
+                        break;
+                    case DEADLINE: {
+                        int byIndex = arguments.indexOf(" /by ");
+                        if (byIndex == -1) {
+                            throw new EveException("OOPS!!! A deadline needs a description and a "
+                                    + "'/by' date, e.g. deadline return book /by Sunday.");
+                        }
+                        String description = arguments.substring(0, byIndex).trim();
+                        String by = arguments.substring(byIndex + " /by ".length()).trim();
+                        if (description.isEmpty()) {
+                            throw new EveException("OOPS!!! The description of a deadline cannot be empty.");
+                        }
+                        if (by.isEmpty()) {
+                            throw new EveException("OOPS!!! The '/by' date of a deadline cannot be empty.");
+                        }
+                        tasks[taskCount] = new Deadline(description, by);
+                        taskCount++;
+                        System.out.println(line);
+                        System.out.println("Got it. I've added this task:");
+                        System.out.println("  " + tasks[taskCount - 1]);
+                        System.out.println("Now you have " + taskCount + " tasks in the list.");
+                        System.out.println(line);
+                        break;
                     }
-                    String description = rest.substring(0, byIndex).trim();
-                    String by = rest.substring(byIndex + " /by ".length()).trim();
-                    if (description.isEmpty()) {
-                        throw new EveException("OOPS!!! The description of a deadline cannot be empty.");
+                    case EVENT: {
+                        int fromIndex = arguments.indexOf(" /from ");
+                        int toIndex = arguments.indexOf(" /to ");
+                        if (fromIndex == -1 || toIndex == -1 || toIndex < fromIndex) {
+                            throw new EveException("OOPS!!! An event needs a description, a '/from' "
+                                    + "time, and a '/to' time, e.g. event project meeting /from Mon "
+                                    + "2pm /to 4pm.");
+                        }
+                        String description = arguments.substring(0, fromIndex).trim();
+                        String from = arguments.substring(fromIndex + " /from ".length(), toIndex).trim();
+                        String to = arguments.substring(toIndex + " /to ".length()).trim();
+                        if (description.isEmpty() || from.isEmpty() || to.isEmpty()) {
+                            throw new EveException("OOPS!!! An event's description, '/from' time, "
+                                    + "and '/to' time must all be filled in.");
+                        }
+                        tasks[taskCount] = new Event(description, from, to);
+                        taskCount++;
+                        System.out.println(line);
+                        System.out.println("Got it. I've added this task:");
+                        System.out.println("  " + tasks[taskCount - 1]);
+                        System.out.println("Now you have " + taskCount + " tasks in the list.");
+                        System.out.println(line);
+                        break;
                     }
-                    if (by.isEmpty()) {
-                        throw new EveException("OOPS!!! The '/by' date of a deadline cannot be empty.");
+                    case DELETE: {
+                        int index = parseTaskNumber(arguments, taskCount) - 1;
+                        Task removed = tasks[index];
+                        for (int i = index; i < taskCount - 1; i++) {
+                            tasks[i] = tasks[i + 1];
+                        }
+                        tasks[taskCount - 1] = null;
+                        taskCount--;
+                        System.out.println(line);
+                        System.out.println("Noted. I've removed this task:");
+                        System.out.println("  " + removed);
+                        System.out.println("Now you have " + taskCount + " tasks in the list.");
+                        System.out.println(line);
+                        break;
                     }
-                    tasks[taskCount] = new Deadline(description, by);
-                    taskCount++;
-                    System.out.println(line);
-                    System.out.println("Got it. I've added this task:");
-                    System.out.println("  " + tasks[taskCount - 1]);
-                    System.out.println("Now you have " + taskCount + " tasks in the list.");
-                    System.out.println(line);
-                }
-                else if (input.equals("event") || input.startsWith("event ")) {
-                    String rest = input.substring(5);
-                    int fromIndex = rest.indexOf(" /from ");
-                    int toIndex = rest.indexOf(" /to ");
-                    if (fromIndex == -1 || toIndex == -1 || toIndex < fromIndex) {
-                        throw new EveException("OOPS!!! An event needs a description, a '/from' "
-                                + "time, and a '/to' time, e.g. event project meeting /from Mon "
-                                + "2pm /to 4pm.");
-                    }
-                    String description = rest.substring(0, fromIndex).trim();
-                    String from = rest.substring(fromIndex + " /from ".length(), toIndex).trim();
-                    String to = rest.substring(toIndex + " /to ".length()).trim();
-                    if (description.isEmpty() || from.isEmpty() || to.isEmpty()) {
-                        throw new EveException("OOPS!!! An event's description, '/from' time, "
-                                + "and '/to' time must all be filled in.");
-                    }
-                    tasks[taskCount] = new Event(description, from, to);
-                    taskCount++;
-                    System.out.println(line);
-                    System.out.println("Got it. I've added this task:");
-                    System.out.println("  " + tasks[taskCount - 1]);
-                    System.out.println("Now you have " + taskCount + " tasks in the list.");
-                    System.out.println(line);
-                }
-                else if (input.equals("delete") || input.startsWith("delete ")) {
-                    int index = parseTaskNumber(input.substring(6).trim(), taskCount) - 1;
-                    Task removed = tasks[index];
-                    for (int i = index; i < taskCount - 1; i++) {
-                        tasks[i] = tasks[i + 1];
-                    }
-                    tasks[taskCount - 1] = null;
-                    taskCount--;
-                    System.out.println(line);
-                    System.out.println("Noted. I've removed this task:");
-                    System.out.println("  " + removed);
-                    System.out.println("Now you have " + taskCount + " tasks in the list.");
-                    System.out.println(line);
-                }
-                else {
-                    throw new EveException("OOPS!!! I'm sorry, but I don't know what that means :-(");
                 }
             } catch (EveException e) {
                 System.out.println(line);
