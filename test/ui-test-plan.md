@@ -432,3 +432,123 @@ ____________________________________________________________
 Bye. Hope to see you again soon!
 ____________________________________________________________
 ```
+
+## Test 11: Delete a task
+
+**Aim:** `delete <n>` removes the n-th task, confirms it with the removed
+task's own display text and the updated count, and the remaining tasks
+shift down and renumber correctly in `list`. Matches the Level-6
+requirement's example transcript.
+
+**Input:**
+```text
+todo read book
+deadline return book /by June 6th
+event project meeting /from Aug 6th 2pm /to 4pm
+mark 1
+mark 2
+delete 2
+list
+bye
+```
+
+**Expected output:**
+```text
+____________________________________________________________
+ _____  __   __  _____ 
+|  ___| \ \ / / |  ___|
+| |__    \ V /  | |__  
+|  __|    \ /   |  __| 
+|_____|    V    |_____|
+Hello! I'm Eve.
+What can I do for you?
+____________________________________________________________
+____________________________________________________________
+Got it. I've added this task:
+  [T][ ] read book
+Now you have 1 tasks in the list.
+____________________________________________________________
+____________________________________________________________
+Got it. I've added this task:
+  [D][ ] return book (by: June 6th)
+Now you have 2 tasks in the list.
+____________________________________________________________
+____________________________________________________________
+Got it. I've added this task:
+  [E][ ] project meeting (from: Aug 6th 2pm to: 4pm)
+Now you have 3 tasks in the list.
+____________________________________________________________
+____________________________________________________________
+Nice! I've marked this task as done:
+  [T][X] read book
+____________________________________________________________
+____________________________________________________________
+Nice! I've marked this task as done:
+  [D][X] return book (by: June 6th)
+____________________________________________________________
+____________________________________________________________
+Noted. I've removed this task:
+  [D][X] return book (by: June 6th)
+Now you have 2 tasks in the list.
+____________________________________________________________
+____________________________________________________________
+Here are the tasks in your list:
+1.[T][X] read book
+2.[E][ ] project meeting (from: Aug 6th 2pm to: 4pm)
+____________________________________________________________
+Bye. Hope to see you again soon!
+____________________________________________________________
+```
+
+## Test 12: Delete errors reuse task-number validation
+
+**Aim:** `delete` with a missing, non-numeric, or out-of-range task number
+produces the same specific errors as `mark`/`unmark` (they share the
+`parseTaskNumber` helper), and the task list is left untouched.
+
+**Input:**
+```text
+todo x
+delete
+delete abc
+delete 0
+delete 99
+list
+bye
+```
+
+**Expected output:**
+```text
+____________________________________________________________
+ _____  __   __  _____ 
+|  ___| \ \ / / |  ___|
+| |__    \ V /  | |__  
+|  __|    \ /   |  __| 
+|_____|    V    |_____|
+Hello! I'm Eve.
+What can I do for you?
+____________________________________________________________
+____________________________________________________________
+Got it. I've added this task:
+  [T][ ] x
+Now you have 1 tasks in the list.
+____________________________________________________________
+____________________________________________________________
+OOPS!!! Please tell me which task number, e.g. mark 2.
+____________________________________________________________
+____________________________________________________________
+OOPS!!! 'abc' is not a valid task number.
+____________________________________________________________
+____________________________________________________________
+OOPS!!! There is no task number 0 in your list.
+____________________________________________________________
+____________________________________________________________
+OOPS!!! There is no task number 99 in your list.
+____________________________________________________________
+____________________________________________________________
+Here are the tasks in your list:
+1.[T][ ] x
+____________________________________________________________
+Bye. Hope to see you again soon!
+____________________________________________________________
+```

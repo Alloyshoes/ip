@@ -111,6 +111,20 @@ public class Eve {
                     System.out.println("Now you have " + taskCount + " tasks in the list.");
                     System.out.println(line);
                 }
+                else if (input.equals("delete") || input.startsWith("delete ")) {
+                    int index = parseTaskNumber(input.substring(6).trim(), taskCount) - 1;
+                    Task removed = tasks[index];
+                    for (int i = index; i < taskCount - 1; i++) {
+                        tasks[i] = tasks[i + 1];
+                    }
+                    tasks[taskCount - 1] = null;
+                    taskCount--;
+                    System.out.println(line);
+                    System.out.println("Noted. I've removed this task:");
+                    System.out.println("  " + removed);
+                    System.out.println("Now you have " + taskCount + " tasks in the list.");
+                    System.out.println(line);
+                }
                 else {
                     throw new EveException("OOPS!!! I'm sorry, but I don't know what that means :-(");
                 }
