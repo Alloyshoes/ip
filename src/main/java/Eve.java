@@ -9,6 +9,9 @@ public class Eve {
                 + "|_____|    V    |_____|";
         String line = "____________________________________________________________";
 
+        String[] tasks = new String[100];
+        int taskCount = 0;
+
         System.out.println(line);
         System.out.println(banner);
         System.out.println("Hello! I'm Eve.");
@@ -23,9 +26,18 @@ public class Eve {
                 System.out.println(line);
                 break;
             }
-            else {
+            else if (input.equals("list")) {
                 System.out.println(line);
-                System.out.println(input);
+                for (int i = 0; i < taskCount; i++) {
+                    System.out.println((i + 1) + ". " + tasks[i]);
+                }
+                System.out.println(line);
+            }
+            else {
+                tasks[taskCount] = input;
+                taskCount++;
+                System.out.println(line);
+                System.out.println("added: " + input);
                 System.out.println(line);
             }
         }
