@@ -173,3 +173,172 @@ ____________________________________________________________
 Bye. Hope to see you again soon!
 ____________________________________________________________
 ```
+
+## Test 5: Add a ToDo
+
+**Aim:** `todo <description>` adds a `ToDo`, confirmed with the `[T]` type
+icon, a not-done `[ ]` status icon, and the running task count.
+
+**Input:**
+```text
+todo borrow book
+bye
+```
+
+**Expected output:**
+```text
+____________________________________________________________
+ _____  __   __  _____ 
+|  ___| \ \ / / |  ___|
+| |__    \ V /  | |__  
+|  __|    \ /   |  __| 
+|_____|    V    |_____|
+Hello! I'm Eve.
+What can I do for you?
+____________________________________________________________
+____________________________________________________________
+Got it. I've added this task:
+  [T][ ] borrow book
+Now you have 1 tasks in the list.
+____________________________________________________________
+Bye. Hope to see you again soon!
+____________________________________________________________
+```
+
+## Test 6: Add a Deadline
+
+**Aim:** `deadline <description> /by <by>` adds a `Deadline`, confirmed with
+the `[D]` type icon and a `(by: ...)` suffix; the date/time is stored as a
+plain string, unparsed.
+
+**Input:**
+```text
+deadline return book /by Sunday
+bye
+```
+
+**Expected output:**
+```text
+____________________________________________________________
+ _____  __   __  _____ 
+|  ___| \ \ / / |  ___|
+| |__    \ V /  | |__  
+|  __|    \ /   |  __| 
+|_____|    V    |_____|
+Hello! I'm Eve.
+What can I do for you?
+____________________________________________________________
+____________________________________________________________
+Got it. I've added this task:
+  [D][ ] return book (by: Sunday)
+Now you have 1 tasks in the list.
+____________________________________________________________
+Bye. Hope to see you again soon!
+____________________________________________________________
+```
+
+## Test 7: Add an Event
+
+**Aim:** `event <description> /from <from> /to <to>` adds an `Event`,
+confirmed with the `[E]` type icon and a `(from: ... to: ...)` suffix.
+
+**Input:**
+```text
+event project meeting /from Mon 2pm /to 4pm
+bye
+```
+
+**Expected output:**
+```text
+____________________________________________________________
+ _____  __   __  _____ 
+|  ___| \ \ / / |  ___|
+| |__    \ V /  | |__  
+|  __|    \ /   |  __| 
+|_____|    V    |_____|
+Hello! I'm Eve.
+What can I do for you?
+____________________________________________________________
+____________________________________________________________
+Got it. I've added this task:
+  [E][ ] project meeting (from: Mon 2pm to: 4pm)
+Now you have 1 tasks in the list.
+____________________________________________________________
+Bye. Hope to see you again soon!
+____________________________________________________________
+```
+
+## Test 8: Mixed task types with mark
+
+**Aim:** ToDo, Deadline, and Event tasks can be added, marked done, and
+listed together, each keeping its own type icon and detail suffix (matches
+the Level-4 requirement's example transcript).
+
+**Input:**
+```text
+todo read book
+deadline return book /by June 6th
+event project meeting /from Aug 6th 2pm /to 4pm
+todo join sports club
+mark 1
+mark 4
+todo borrow book
+list
+bye
+```
+
+**Expected output:**
+```text
+____________________________________________________________
+ _____  __   __  _____ 
+|  ___| \ \ / / |  ___|
+| |__    \ V /  | |__  
+|  __|    \ /   |  __| 
+|_____|    V    |_____|
+Hello! I'm Eve.
+What can I do for you?
+____________________________________________________________
+____________________________________________________________
+Got it. I've added this task:
+  [T][ ] read book
+Now you have 1 tasks in the list.
+____________________________________________________________
+____________________________________________________________
+Got it. I've added this task:
+  [D][ ] return book (by: June 6th)
+Now you have 2 tasks in the list.
+____________________________________________________________
+____________________________________________________________
+Got it. I've added this task:
+  [E][ ] project meeting (from: Aug 6th 2pm to: 4pm)
+Now you have 3 tasks in the list.
+____________________________________________________________
+____________________________________________________________
+Got it. I've added this task:
+  [T][ ] join sports club
+Now you have 4 tasks in the list.
+____________________________________________________________
+____________________________________________________________
+Nice! I've marked this task as done:
+  [T][X] read book
+____________________________________________________________
+____________________________________________________________
+Nice! I've marked this task as done:
+  [T][X] join sports club
+____________________________________________________________
+____________________________________________________________
+Got it. I've added this task:
+  [T][ ] borrow book
+Now you have 5 tasks in the list.
+____________________________________________________________
+____________________________________________________________
+Here are the tasks in your list:
+1.[T][X] read book
+2.[D][ ] return book (by: June 6th)
+3.[E][ ] project meeting (from: Aug 6th 2pm to: 4pm)
+4.[T][X] join sports club
+5.[T][ ] borrow book
+____________________________________________________________
+Bye. Hope to see you again soon!
+____________________________________________________________
+```
