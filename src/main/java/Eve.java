@@ -10,6 +10,7 @@ public class Eve {
         String line = "____________________________________________________________";
 
         String[] tasks = new String[100];
+        boolean[] isDone = new boolean[100];
         int taskCount = 0;
 
         System.out.println(line);
@@ -29,8 +30,17 @@ public class Eve {
             else if (input.equals("list")) {
                 System.out.println(line);
                 for (int i = 0; i < taskCount; i++) {
-                    System.out.println((i + 1) + ". " + tasks[i]);
+                    String statusIcon = isDone[i] ? "X" : " ";
+                    System.out.println((i + 1) + ".[" + statusIcon + "] " + tasks[i]);
                 }
+                System.out.println(line);
+            }
+            else if (input.startsWith("mark ")) {
+                int index = Integer.parseInt(input.substring(5)) - 1;
+                isDone[index] = true;
+                System.out.println(line);
+                System.out.println("Nice! I've marked this task as done:");
+                System.out.println("  [X] " + tasks[index]);
                 System.out.println(line);
             }
             else {
