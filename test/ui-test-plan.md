@@ -38,14 +38,14 @@ ____________________________________________________________
 
 ## Test 2: Add tasks and list them
 
-**Aim:** Plain text input is stored as a new task and confirmed with
-`added: ...`; `list` shows every stored task, numbered from 1, each with a
-not-done `[ ]` status icon.
+**Aim:** `todo <description>` adds a new task and confirms it with
+`Got it. I've added this task: ...`; `list` shows every stored task,
+numbered from 1, each with a not-done `[ ]` status icon.
 
 **Input:**
 ```text
-read book
-return book
+todo read book
+todo return book
 list
 bye
 ```
@@ -62,15 +62,19 @@ Hello! I'm Eve.
 What can I do for you?
 ____________________________________________________________
 ____________________________________________________________
-added: read book
+Got it. I've added this task:
+  [T][ ] read book
+Now you have 1 tasks in the list.
 ____________________________________________________________
 ____________________________________________________________
-added: return book
+Got it. I've added this task:
+  [T][ ] return book
+Now you have 2 tasks in the list.
 ____________________________________________________________
 ____________________________________________________________
 Here are the tasks in your list:
-1.[ ] read book
-2.[ ] return book
+1.[T][ ] read book
+2.[T][ ] return book
 ____________________________________________________________
 Bye. Hope to see you again soon!
 ____________________________________________________________
@@ -83,8 +87,8 @@ the change is reflected the next time `list` is run.
 
 **Input:**
 ```text
-read book
-return book
+todo read book
+todo return book
 mark 2
 list
 bye
@@ -102,19 +106,23 @@ Hello! I'm Eve.
 What can I do for you?
 ____________________________________________________________
 ____________________________________________________________
-added: read book
+Got it. I've added this task:
+  [T][ ] read book
+Now you have 1 tasks in the list.
 ____________________________________________________________
 ____________________________________________________________
-added: return book
+Got it. I've added this task:
+  [T][ ] return book
+Now you have 2 tasks in the list.
 ____________________________________________________________
 ____________________________________________________________
 Nice! I've marked this task as done:
-  [X] return book
+  [T][X] return book
 ____________________________________________________________
 ____________________________________________________________
 Here are the tasks in your list:
-1.[ ] read book
-2.[X] return book
+1.[T][ ] read book
+2.[T][X] return book
 ____________________________________________________________
 Bye. Hope to see you again soon!
 ____________________________________________________________
@@ -127,8 +135,8 @@ confirms it.
 
 **Input:**
 ```text
-read book
-return book
+todo read book
+todo return book
 mark 1
 mark 2
 unmark 2
@@ -148,27 +156,31 @@ Hello! I'm Eve.
 What can I do for you?
 ____________________________________________________________
 ____________________________________________________________
-added: read book
+Got it. I've added this task:
+  [T][ ] read book
+Now you have 1 tasks in the list.
 ____________________________________________________________
 ____________________________________________________________
-added: return book
+Got it. I've added this task:
+  [T][ ] return book
+Now you have 2 tasks in the list.
 ____________________________________________________________
 ____________________________________________________________
 Nice! I've marked this task as done:
-  [X] read book
+  [T][X] read book
 ____________________________________________________________
 ____________________________________________________________
 Nice! I've marked this task as done:
-  [X] return book
+  [T][X] return book
 ____________________________________________________________
 ____________________________________________________________
 OK, I've marked this task as not done yet:
-  [ ] return book
+  [T][ ] return book
 ____________________________________________________________
 ____________________________________________________________
 Here are the tasks in your list:
-1.[X] read book
-2.[ ] return book
+1.[T][X] read book
+2.[T][ ] return book
 ____________________________________________________________
 Bye. Hope to see you again soon!
 ____________________________________________________________
@@ -338,6 +350,84 @@ Here are the tasks in your list:
 3.[E][ ] project meeting (from: Aug 6th 2pm to: 4pm)
 4.[T][X] join sports club
 5.[T][ ] borrow book
+____________________________________________________________
+Bye. Hope to see you again soon!
+____________________________________________________________
+```
+
+## Test 9: Empty description and unknown command
+
+**Aim:** `todo` with no description, and any input that doesn't match a
+known command (e.g. `blah`), each produce a specific `OOPS!!!` error
+instead of crashing or silently doing something wrong. Matches the
+Level-5 requirement's own example transcript.
+
+**Input:**
+```text
+todo
+blah
+bye
+```
+
+**Expected output:**
+```text
+____________________________________________________________
+ _____  __   __  _____ 
+|  ___| \ \ / / |  ___|
+| |__    \ V /  | |__  
+|  __|    \ /   |  __| 
+|_____|    V    |_____|
+Hello! I'm Eve.
+What can I do for you?
+____________________________________________________________
+____________________________________________________________
+OOPS!!! The description of a todo cannot be empty.
+____________________________________________________________
+____________________________________________________________
+OOPS!!! I'm sorry, but I don't know what that means :-(
+____________________________________________________________
+Bye. Hope to see you again soon!
+____________________________________________________________
+```
+
+## Test 10: Malformed deadline/event and bad task numbers
+
+**Aim:** A `deadline` missing `/by`, an `event` missing `/to`, `mark`/`unmark`
+with an out-of-range or non-numeric task number all produce specific
+error messages, and the program keeps running afterward instead of
+crashing.
+
+**Input:**
+```text
+deadline return book
+event project meeting /from Mon 2pm
+mark 5
+unmark abc
+bye
+```
+
+**Expected output:**
+```text
+____________________________________________________________
+ _____  __   __  _____ 
+|  ___| \ \ / / |  ___|
+| |__    \ V /  | |__  
+|  __|    \ /   |  __| 
+|_____|    V    |_____|
+Hello! I'm Eve.
+What can I do for you?
+____________________________________________________________
+____________________________________________________________
+OOPS!!! A deadline needs a description and a '/by' date, e.g. deadline return book /by Sunday.
+____________________________________________________________
+____________________________________________________________
+OOPS!!! An event needs a description, a '/from' time, and a '/to' time, e.g. event project meeting /from Mon 2pm /to 4pm.
+____________________________________________________________
+____________________________________________________________
+OOPS!!! There is no task number 5 in your list.
+____________________________________________________________
+____________________________________________________________
+OOPS!!! 'abc' is not a valid task number.
 ____________________________________________________________
 Bye. Hope to see you again soon!
 ____________________________________________________________
