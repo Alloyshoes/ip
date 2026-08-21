@@ -29,8 +29,19 @@ ____________________________________________________________
 | |__    \ V /  | |__  
 |  __|    \ /   |  __| 
 |_____|    V    |_____|
+
 Hello! I'm Eve.
 What can I do for you?
+
+Here's what I can do:
+  todo <description>                           Add a to-do task.
+  deadline <description> /by <date/time>       Add a task with a deadline.
+  event <description> /from <start> /to <end>  Add an event.
+  list                                         Show all tasks.
+  mark <task number>                           Mark a task as done.
+  unmark <task number>                         Mark a task as not done.
+  delete <task number>                         Remove a task.
+  bye                                          Exit the program.
 ____________________________________________________________
 Bye. Hope to see you again soon!
 ____________________________________________________________
@@ -58,8 +69,19 @@ ____________________________________________________________
 | |__    \ V /  | |__  
 |  __|    \ /   |  __| 
 |_____|    V    |_____|
+
 Hello! I'm Eve.
 What can I do for you?
+
+Here's what I can do:
+  todo <description>                           Add a to-do task.
+  deadline <description> /by <date/time>       Add a task with a deadline.
+  event <description> /from <start> /to <end>  Add an event.
+  list                                         Show all tasks.
+  mark <task number>                           Mark a task as done.
+  unmark <task number>                         Mark a task as not done.
+  delete <task number>                         Remove a task.
+  bye                                          Exit the program.
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:
@@ -102,8 +124,19 @@ ____________________________________________________________
 | |__    \ V /  | |__  
 |  __|    \ /   |  __| 
 |_____|    V    |_____|
+
 Hello! I'm Eve.
 What can I do for you?
+
+Here's what I can do:
+  todo <description>                           Add a to-do task.
+  deadline <description> /by <date/time>       Add a task with a deadline.
+  event <description> /from <start> /to <end>  Add an event.
+  list                                         Show all tasks.
+  mark <task number>                           Mark a task as done.
+  unmark <task number>                         Mark a task as not done.
+  delete <task number>                         Remove a task.
+  bye                                          Exit the program.
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:
@@ -152,8 +185,19 @@ ____________________________________________________________
 | |__    \ V /  | |__  
 |  __|    \ /   |  __| 
 |_____|    V    |_____|
+
 Hello! I'm Eve.
 What can I do for you?
+
+Here's what I can do:
+  todo <description>                           Add a to-do task.
+  deadline <description> /by <date/time>       Add a task with a deadline.
+  event <description> /from <start> /to <end>  Add an event.
+  list                                         Show all tasks.
+  mark <task number>                           Mark a task as done.
+  unmark <task number>                         Mark a task as not done.
+  delete <task number>                         Remove a task.
+  bye                                          Exit the program.
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:
@@ -205,8 +249,19 @@ ____________________________________________________________
 | |__    \ V /  | |__  
 |  __|    \ /   |  __| 
 |_____|    V    |_____|
+
 Hello! I'm Eve.
 What can I do for you?
+
+Here's what I can do:
+  todo <description>                           Add a to-do task.
+  deadline <description> /by <date/time>       Add a task with a deadline.
+  event <description> /from <start> /to <end>  Add an event.
+  list                                         Show all tasks.
+  mark <task number>                           Mark a task as done.
+  unmark <task number>                         Mark a task as not done.
+  delete <task number>                         Remove a task.
+  bye                                          Exit the program.
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:
@@ -237,8 +292,19 @@ ____________________________________________________________
 | |__    \ V /  | |__  
 |  __|    \ /   |  __| 
 |_____|    V    |_____|
+
 Hello! I'm Eve.
 What can I do for you?
+
+Here's what I can do:
+  todo <description>                           Add a to-do task.
+  deadline <description> /by <date/time>       Add a task with a deadline.
+  event <description> /from <start> /to <end>  Add an event.
+  list                                         Show all tasks.
+  mark <task number>                           Mark a task as done.
+  unmark <task number>                         Mark a task as not done.
+  delete <task number>                         Remove a task.
+  bye                                          Exit the program.
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:
@@ -268,8 +334,19 @@ ____________________________________________________________
 | |__    \ V /  | |__  
 |  __|    \ /   |  __| 
 |_____|    V    |_____|
+
 Hello! I'm Eve.
 What can I do for you?
+
+Here's what I can do:
+  todo <description>                           Add a to-do task.
+  deadline <description> /by <date/time>       Add a task with a deadline.
+  event <description> /from <start> /to <end>  Add an event.
+  list                                         Show all tasks.
+  mark <task number>                           Mark a task as done.
+  unmark <task number>                         Mark a task as not done.
+  delete <task number>                         Remove a task.
+  bye                                          Exit the program.
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:
@@ -307,8 +384,19 @@ ____________________________________________________________
 | |__    \ V /  | |__  
 |  __|    \ /   |  __| 
 |_____|    V    |_____|
+
 Hello! I'm Eve.
 What can I do for you?
+
+Here's what I can do:
+  todo <description>                           Add a to-do task.
+  deadline <description> /by <date/time>       Add a task with a deadline.
+  event <description> /from <start> /to <end>  Add an event.
+  list                                         Show all tasks.
+  mark <task number>                           Mark a task as done.
+  unmark <task number>                         Mark a task as not done.
+  delete <task number>                         Remove a task.
+  bye                                          Exit the program.
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:
@@ -377,8 +465,19 @@ ____________________________________________________________
 | |__    \ V /  | |__  
 |  __|    \ /   |  __| 
 |_____|    V    |_____|
+
 Hello! I'm Eve.
 What can I do for you?
+
+Here's what I can do:
+  todo <description>                           Add a to-do task.
+  deadline <description> /by <date/time>       Add a task with a deadline.
+  event <description> /from <start> /to <end>  Add an event.
+  list                                         Show all tasks.
+  mark <task number>                           Mark a task as done.
+  unmark <task number>                         Mark a task as not done.
+  delete <task number>                         Remove a task.
+  bye                                          Exit the program.
 ____________________________________________________________
 ____________________________________________________________
 OOPS!!! The description of a todo cannot be empty.
@@ -414,8 +513,19 @@ ____________________________________________________________
 | |__    \ V /  | |__  
 |  __|    \ /   |  __| 
 |_____|    V    |_____|
+
 Hello! I'm Eve.
 What can I do for you?
+
+Here's what I can do:
+  todo <description>                           Add a to-do task.
+  deadline <description> /by <date/time>       Add a task with a deadline.
+  event <description> /from <start> /to <end>  Add an event.
+  list                                         Show all tasks.
+  mark <task number>                           Mark a task as done.
+  unmark <task number>                         Mark a task as not done.
+  delete <task number>                         Remove a task.
+  bye                                          Exit the program.
 ____________________________________________________________
 ____________________________________________________________
 OOPS!!! A deadline needs a description and a '/by' date, e.g. deadline return book /by Sunday.
@@ -460,8 +570,19 @@ ____________________________________________________________
 | |__    \ V /  | |__  
 |  __|    \ /   |  __| 
 |_____|    V    |_____|
+
 Hello! I'm Eve.
 What can I do for you?
+
+Here's what I can do:
+  todo <description>                           Add a to-do task.
+  deadline <description> /by <date/time>       Add a task with a deadline.
+  event <description> /from <start> /to <end>  Add an event.
+  list                                         Show all tasks.
+  mark <task number>                           Mark a task as done.
+  unmark <task number>                         Mark a task as not done.
+  delete <task number>                         Remove a task.
+  bye                                          Exit the program.
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:
@@ -525,8 +646,19 @@ ____________________________________________________________
 | |__    \ V /  | |__  
 |  __|    \ /   |  __| 
 |_____|    V    |_____|
+
 Hello! I'm Eve.
 What can I do for you?
+
+Here's what I can do:
+  todo <description>                           Add a to-do task.
+  deadline <description> /by <date/time>       Add a task with a deadline.
+  event <description> /from <start> /to <end>  Add an event.
+  list                                         Show all tasks.
+  mark <task number>                           Mark a task as done.
+  unmark <task number>                         Mark a task as not done.
+  delete <task number>                         Remove a task.
+  bye                                          Exit the program.
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:

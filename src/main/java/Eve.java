@@ -12,10 +12,21 @@ public class Eve {
         Task[] tasks = new Task[100];
         int taskCount = 0;
 
+        int usageWidth = 0;
+        for (Command command : Command.values()) {
+            usageWidth = Math.max(usageWidth, command.getUsage().length());
+        }
+
         System.out.println(line);
         System.out.println(banner);
+        System.out.println();
         System.out.println("Hello! I'm Eve.");
         System.out.println("What can I do for you?");
+        System.out.println();
+        System.out.println("Here's what I can do:");
+        for (Command command : Command.values()) {
+            System.out.printf("  %-" + usageWidth + "s  %s%n", command.getUsage(), command.getDescription());
+        }
         System.out.println(line);
 
         Scanner scanner = new Scanner(System.in);
