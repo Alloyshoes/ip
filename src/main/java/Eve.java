@@ -1,6 +1,17 @@
 import java.util.Scanner;
 
+/**
+ * Eve is a command-line task-tracking chatbot. It reads commands from
+ * standard input in a loop, tracking to-do/deadline/event tasks in memory
+ * (not persisted to disk), until the user types "bye".
+ */
 public class Eve {
+    /**
+     * Runs the chatbot: prints the greeting, then repeatedly reads and
+     * handles one command per line until "bye" is entered.
+     *
+     * @param args unused.
+     */
     public static void main(String[] args) {
         String banner = " _____  __   __  _____ \n"
                 + "|  ___| \\ \\ / / |  ___|\n"
@@ -154,6 +165,14 @@ public class Eve {
         scanner.close();
     }
 
+    /**
+     * Parses and validates a 1-based task number typed by the user.
+     *
+     * @param text the argument text after the command word, e.g. "2".
+     * @param taskCount how many tasks currently exist, for range checking.
+     * @return the parsed task number (1-based).
+     * @throws EveException if the text is missing, not a number, or out of range.
+     */
     private static int parseTaskNumber(String text, int taskCount) throws EveException {
         if (text.isEmpty()) {
             throw new EveException("OOPS!!! Please tell me which task number, e.g. mark 2.");

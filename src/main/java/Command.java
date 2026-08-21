@@ -1,3 +1,7 @@
+/**
+ * The chatbot's recognized command words, each with its usage syntax and a
+ * short description shown in the startup greeting.
+ */
 public enum Command {
     TODO("todo <description>", "Add a to-do task."),
     DEADLINE("deadline <description> /by <date/time>", "Add a task with a deadline."),
@@ -16,14 +20,23 @@ public enum Command {
         this.description = description;
     }
 
+    /** Returns this command's usage syntax, e.g. {@code "mark <task number>"}. */
     public String getUsage() {
         return usage;
     }
 
+    /** Returns a short, human-readable description of what this command does. */
     public String getDescription() {
         return description;
     }
 
+    /**
+     * Looks up the command matching the given word (case-insensitive).
+     *
+     * @param word the first word of a line of user input.
+     * @return the matching command.
+     * @throws EveException if the word doesn't match any known command.
+     */
     public static Command fromWord(String word) throws EveException {
         try {
             return Command.valueOf(word.toUpperCase());
