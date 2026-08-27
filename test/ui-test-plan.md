@@ -7,6 +7,15 @@ comparing the program's full stdout against **Expected output** exactly.
 Every case's input must end with `bye` so the program exits cleanly instead
 of hitting end-of-input while still waiting for a command.
 
+The `data/` folder the program persists its task list under (see
+`Storage.java`) is reset before each test case's first run, so every case
+still starts from an empty task list regardless of what an earlier case
+saved. A case may optionally include a second input/expected-output pair
+(run as a separate process invocation, without resetting `data/` in
+between) to verify behavior across two runs, and/or a "Data file before
+run" block to seed the data file with specific content before the first
+run -- see `.claude/skills/test-ui/SKILL.md` for the exact format.
+
 When behavior changes (a new command, a changed message, a new class),
 update or add test cases here so this file always reflects the program's
 actual current behavior.
@@ -680,6 +689,151 @@ ____________________________________________________________
 ____________________________________________________________
 Here are the tasks in your list:
 1.[T][ ] x
+____________________________________________________________
+Bye. Hope to see you again soon!
+____________________________________________________________
+```
+
+## Test 13: Tasks persist across separate runs
+
+**Aim:** Tasks added and marked in one run of the program are saved to
+disk, and a completely separate run of the program (started fresh, no
+in-memory state carried over) loads them back via `list`.
+
+**Input:**
+```text
+todo read book
+deadline return book /by June 6th
+mark 1
+bye
+```
+
+**Expected output:**
+```text
+____________________________________________________________
+ _____  __   __  _____ 
+|  ___| \ \ / / |  ___|
+| |__    \ V /  | |__  
+|  __|    \ /   |  __| 
+|_____|    V    |_____|
+
+Hello! I'm Eve.
+What can I do for you?
+
+Here's what I can do:
+  todo <description>                           Add a to-do task.
+  deadline <description> /by <date/time>       Add a task with a deadline.
+  event <description> /from <start> /to <end>  Add an event.
+  list                                         Show all tasks.
+  mark <task number>                           Mark a task as done.
+  unmark <task number>                         Mark a task as not done.
+  delete <task number>                         Remove a task.
+  bye                                          Exit the program.
+____________________________________________________________
+____________________________________________________________
+Got it. I've added this task:
+  [T][ ] read book
+Now you have 1 tasks in the list.
+____________________________________________________________
+____________________________________________________________
+Got it. I've added this task:
+  [D][ ] return book (by: June 6th)
+Now you have 2 tasks in the list.
+____________________________________________________________
+____________________________________________________________
+Nice! I've marked this task as done:
+  [T][X] read book
+____________________________________________________________
+Bye. Hope to see you again soon!
+____________________________________________________________
+```
+
+**Second input:**
+```text
+list
+bye
+```
+
+**Second expected output:**
+```text
+____________________________________________________________
+ _____  __   __  _____ 
+|  ___| \ \ / / |  ___|
+| |__    \ V /  | |__  
+|  __|    \ /   |  __| 
+|_____|    V    |_____|
+
+Hello! I'm Eve.
+What can I do for you?
+
+Here's what I can do:
+  todo <description>                           Add a to-do task.
+  deadline <description> /by <date/time>       Add a task with a deadline.
+  event <description> /from <start> /to <end>  Add an event.
+  list                                         Show all tasks.
+  mark <task number>                           Mark a task as done.
+  unmark <task number>                         Mark a task as not done.
+  delete <task number>                         Remove a task.
+  bye                                          Exit the program.
+____________________________________________________________
+____________________________________________________________
+Here are the tasks in your list:
+1.[T][X] read book
+2.[D][ ] return book (by: June 6th)
+____________________________________________________________
+Bye. Hope to see you again soon!
+____________________________________________________________
+```
+
+## Test 14: Corrupted data file lines are skipped, not crashed on
+
+**Aim:** A pre-existing data file containing a line that doesn't parse
+at all, and a line with an invalid status field, are each skipped with a
+warning printed to the console; well-formed lines in the same file still
+load correctly (stretch goal from the Level 7 requirement).
+
+**Data file before run:**
+```text
+T | 1 | read book
+NOT A VALID LINE
+T | X | bad status
+D | 0 | return book | June 6th
+```
+
+**Input:**
+```text
+list
+bye
+```
+
+**Expected output:**
+```text
+Warning: skipping corrupted line in data file: NOT A VALID LINE
+Warning: skipping corrupted line in data file: T | X | bad status
+____________________________________________________________
+ _____  __   __  _____ 
+|  ___| \ \ / / |  ___|
+| |__    \ V /  | |__  
+|  __|    \ /   |  __| 
+|_____|    V    |_____|
+
+Hello! I'm Eve.
+What can I do for you?
+
+Here's what I can do:
+  todo <description>                           Add a to-do task.
+  deadline <description> /by <date/time>       Add a task with a deadline.
+  event <description> /from <start> /to <end>  Add an event.
+  list                                         Show all tasks.
+  mark <task number>                           Mark a task as done.
+  unmark <task number>                         Mark a task as not done.
+  delete <task number>                         Remove a task.
+  bye                                          Exit the program.
+____________________________________________________________
+____________________________________________________________
+Here are the tasks in your list:
+1.[T][X] read book
+2.[D][ ] return book (by: June 6th)
 ____________________________________________________________
 Bye. Hope to see you again soon!
 ____________________________________________________________
