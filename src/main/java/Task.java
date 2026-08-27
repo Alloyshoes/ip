@@ -43,4 +43,13 @@ public class Task {
     public String toString() {
         return "[" + getStatusIcon() + "] " + description;
     }
+
+    /**
+     * Returns this task's on-disk representation. Subclasses override this to
+     * add their own type letter and any extra fields.
+     */
+    public String toSaveFormat() {
+        return (isDone ? "1" : "0") + " | " + description;
+    }
+
 }
