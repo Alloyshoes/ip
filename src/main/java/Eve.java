@@ -2,8 +2,9 @@ import java.util.Scanner;
 
 /**
  * Eve is a command-line task-tracking chatbot. It reads commands from
- * standard input in a loop, tracking to-do/deadline/event tasks in memory
- * (not persisted to disk), until the user types "bye".
+ * standard input in a loop, tracking to-do/deadline/event tasks, until the
+ * user types "bye". Tasks are loaded from disk at startup and saved back
+ * automatically whenever the list changes (see {@link Storage}).
  */
 public class Eve {
     /**
@@ -22,6 +23,10 @@ public class Eve {
 
         Task[] tasks = new Task[100];
         int taskCount = 0;
+        for (Task task : Storage.load()) {
+            tasks[taskCount] = task;
+            taskCount++;
+        }
 
         int usageWidth = 0;
         for (Command command : Command.values()) {
@@ -66,6 +71,7 @@ public class Eve {
                     case MARK: {
                         int index = parseTaskNumber(arguments, taskCount) - 1;
                         tasks[index].markAsDone();
+                        Storage.save(tasks, taskCount);
                         System.out.println(line);
                         System.out.println("Nice! I've marked this task as done:");
                         System.out.println("  " + tasks[index]);
@@ -75,6 +81,7 @@ public class Eve {
                     case UNMARK: {
                         int index = parseTaskNumber(arguments, taskCount) - 1;
                         tasks[index].markAsNotDone();
+                        Storage.save(tasks, taskCount);
                         System.out.println(line);
                         System.out.println("OK, I've marked this task as not done yet:");
                         System.out.println("  " + tasks[index]);
@@ -87,6 +94,7 @@ public class Eve {
                         }
                         tasks[taskCount] = new ToDo(arguments);
                         taskCount++;
+                        Storage.save(tasks, taskCount);
                         System.out.println(line);
                         System.out.println("Got it. I've added this task:");
                         System.out.println("  " + tasks[taskCount - 1]);
@@ -109,6 +117,7 @@ public class Eve {
                         }
                         tasks[taskCount] = new Deadline(description, by);
                         taskCount++;
+                        Storage.save(tasks, taskCount);
                         System.out.println(line);
                         System.out.println("Got it. I've added this task:");
                         System.out.println("  " + tasks[taskCount - 1]);
@@ -133,6 +142,7 @@ public class Eve {
                         }
                         tasks[taskCount] = new Event(description, from, to);
                         taskCount++;
+                        Storage.save(tasks, taskCount);
                         System.out.println(line);
                         System.out.println("Got it. I've added this task:");
                         System.out.println("  " + tasks[taskCount - 1]);
@@ -148,6 +158,7 @@ public class Eve {
                         }
                         tasks[taskCount - 1] = null;
                         taskCount--;
+                        Storage.save(tasks, taskCount);
                         System.out.println(line);
                         System.out.println("Noted. I've removed this task:");
                         System.out.println("  " + removed);
