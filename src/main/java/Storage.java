@@ -2,6 +2,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,10 +55,10 @@ public class Storage {
                     task = new ToDo(description);
                     break;
                 case "D":
-                    task = new Deadline(description, parts[3]);
+                    task = new Deadline(description, LocalDate.parse(parts[3]));
                     break;
                 case "E":
-                    task = new Event(description, parts[3], parts[4]);
+                    task = new Event(description, LocalDate.parse(parts[3]), LocalDate.parse(parts[4]));
                     break;
                 default:
                     System.out.println("Warning: skipping corrupted line in data file: " + line);

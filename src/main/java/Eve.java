@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 /**
@@ -105,15 +107,22 @@ public class Eve {
                         int byIndex = arguments.indexOf(" /by ");
                         if (byIndex == -1) {
                             throw new EveException("OOPS!!! A deadline needs a description and a "
-                                    + "'/by' date, e.g. deadline return book /by Sunday.");
+                                    + "'/by' date, e.g. deadline return book /by 2019-12-02.");
                         }
                         String description = arguments.substring(0, byIndex).trim();
-                        String by = arguments.substring(byIndex + " /by ".length()).trim();
+                        String byText = arguments.substring(byIndex + " /by ".length()).trim();
                         if (description.isEmpty()) {
                             throw new EveException("OOPS!!! The description of a deadline cannot be empty.");
                         }
-                        if (by.isEmpty()) {
+                        if (byText.isEmpty()) {
                             throw new EveException("OOPS!!! The '/by' date of a deadline cannot be empty.");
+                        }
+                        LocalDate by;
+                        try {
+                            by = LocalDate.parse(byText);
+                        } catch (DateTimeParseException e) {
+                            throw new EveException("OOPS!!! Please give the '/by' date as "
+                                    + "yyyy-mm-dd, e.g. 2019-12-02.");
                         }
                         tasks[taskCount] = new Deadline(description, by);
                         taskCount++;
@@ -130,15 +139,29 @@ public class Eve {
                         int toIndex = arguments.indexOf(" /to ");
                         if (fromIndex == -1 || toIndex == -1 || toIndex < fromIndex) {
                             throw new EveException("OOPS!!! An event needs a description, a '/from' "
-                                    + "time, and a '/to' time, e.g. event project meeting /from Mon "
-                                    + "2pm /to 4pm.");
+                                    + "date, and a '/to' date, e.g. event project meeting /from "
+                                    + "2019-10-04 /to 2019-10-11.");
                         }
                         String description = arguments.substring(0, fromIndex).trim();
-                        String from = arguments.substring(fromIndex + " /from ".length(), toIndex).trim();
-                        String to = arguments.substring(toIndex + " /to ".length()).trim();
-                        if (description.isEmpty() || from.isEmpty() || to.isEmpty()) {
-                            throw new EveException("OOPS!!! An event's description, '/from' time, "
-                                    + "and '/to' time must all be filled in.");
+                        String fromText = arguments.substring(fromIndex + " /from ".length(), toIndex).trim();
+                        String toText = arguments.substring(toIndex + " /to ".length()).trim();
+                        if (description.isEmpty() || fromText.isEmpty() || toText.isEmpty()) {
+                            throw new EveException("OOPS!!! An event's description, '/from' date, "
+                                    + "and '/to' date must all be filled in.");
+                        }
+                        LocalDate from;
+                        try {
+                            from = LocalDate.parse(fromText);
+                        } catch (DateTimeParseException e) {
+                            throw new EveException("OOPS!!! Please give the '/from' date as "
+                                    + "yyyy-mm-dd, e.g. 2019-10-04.");
+                        }
+                        LocalDate to;
+                        try {
+                            to = LocalDate.parse(toText);
+                        } catch (DateTimeParseException e) {
+                            throw new EveException("OOPS!!! Please give the '/to' date as "
+                                    + "yyyy-mm-dd, e.g. 2019-10-11.");
                         }
                         tasks[taskCount] = new Event(description, from, to);
                         taskCount++;
