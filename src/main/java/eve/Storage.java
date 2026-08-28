@@ -58,6 +58,14 @@ public class Storage {
         return tasks;
     }
 
+    /**
+     * Parses one line of the save file into a task. A line that doesn't
+     * match the expected format is reported with a warning and skipped
+     * (returning null) rather than crashing the program.
+     *
+     * @param line one line read from the save file.
+     * @return the parsed task, or null if the line is corrupted.
+     */
     private static Task parseLine(String line) {
         try {
             String[] parts = line.split(" \\| ");
