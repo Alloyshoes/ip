@@ -1,0 +1,58 @@
+package eve.task;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.time.LocalDate;
+
+import org.junit.jupiter.api.Test;
+
+public class EventTest {
+    private static final LocalDate FROM = LocalDate.of(2019, 10, 4);
+    private static final LocalDate TO = LocalDate.of(2019, 10, 11);
+
+    @Test
+    public void occursOn_dateBeforeStart_false() {
+        Event event = new Event("trip", FROM, TO);
+
+        assertFalse(event.occursOn(FROM.minusDays(1)));
+    }
+
+    @Test
+    public void occursOn_startDate_true() {
+        Event event = new Event("trip", FROM, TO);
+
+        assertTrue(event.occursOn(FROM));
+    }
+
+    @Test
+    public void occursOn_dateBetweenStartAndEnd_true() {
+        Event event = new Event("trip", FROM, TO);
+
+        assertTrue(event.occursOn(FROM.plusDays(3)));
+    }
+
+    @Test
+    public void occursOn_endDate_true() {
+        Event event = new Event("trip", FROM, TO);
+
+        assertTrue(event.occursOn(TO));
+    }
+
+    @Test
+    public void occursOn_dateAfterEnd_false() {
+        Event event = new Event("trip", FROM, TO);
+
+        assertFalse(event.occursOn(TO.plusDays(1)));
+    }
+
+    @Test
+    public void occursOn_singleDayEvent_trueOnlyOnThatDate() {
+        LocalDate day = LocalDate.of(2019, 12, 2);
+        Event event = new Event("meeting", day, day);
+
+        assertTrue(event.occursOn(day));
+        assertFalse(event.occursOn(day.minusDays(1)));
+        assertFalse(event.occursOn(day.plusDays(1)));
+    }
+}
