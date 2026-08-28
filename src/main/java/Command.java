@@ -6,6 +6,7 @@ public enum Command {
     TODO("todo <description>", "Add a to-do task."),
     DEADLINE("deadline <description> /by <yyyy-mm-dd>", "Add a task with a deadline."),
     EVENT("event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>", "Add an event."),
+    ON("on <yyyy-mm-dd>", "Show tasks occurring on a date."),
     LIST("list", "Show all tasks."),
     MARK("mark <task number>", "Mark a task as done."),
     UNMARK("unmark <task number>", "Mark a task as not done."),

@@ -46,6 +46,7 @@ Here's what I can do:
   todo <description>                                       Add a to-do task.
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -86,6 +87,7 @@ Here's what I can do:
   todo <description>                                       Add a to-do task.
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -141,6 +143,7 @@ Here's what I can do:
   todo <description>                                       Add a to-do task.
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -202,6 +205,7 @@ Here's what I can do:
   todo <description>                                       Add a to-do task.
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -266,6 +270,7 @@ Here's what I can do:
   todo <description>                                       Add a to-do task.
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -309,6 +314,7 @@ Here's what I can do:
   todo <description>                                       Add a to-do task.
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -353,6 +359,7 @@ Here's what I can do:
   todo <description>                                       Add a to-do task.
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -403,6 +410,7 @@ Here's what I can do:
   todo <description>                                       Add a to-do task.
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -484,6 +492,7 @@ Here's what I can do:
   todo <description>                                       Add a to-do task.
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -532,6 +541,7 @@ Here's what I can do:
   todo <description>                                       Add a to-do task.
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -589,6 +599,7 @@ Here's what I can do:
   todo <description>                                       Add a to-do task.
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -665,6 +676,7 @@ Here's what I can do:
   todo <description>                                       Add a to-do task.
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -726,6 +738,7 @@ Here's what I can do:
   todo <description>                                       Add a to-do task.
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -772,6 +785,7 @@ Here's what I can do:
   todo <description>                                       Add a to-do task.
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -832,6 +846,7 @@ Here's what I can do:
   todo <description>                                       Add a to-do task.
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -879,6 +894,7 @@ Here's what I can do:
   todo <description>                                       Add a to-do task.
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -893,6 +909,125 @@ OOPS!!! Please give the '/to' date as yyyy-mm-dd, e.g. 2019-10-11.
 ____________________________________________________________
 ____________________________________________________________
 Here are the tasks in your list:
+____________________________________________________________
+Bye. Hope to see you again soon!
+____________________________________________________________
+```
+
+## Test 16: `on` shows tasks occurring on a date
+
+**Aim:** `on <yyyy-mm-dd>` lists only the deadlines/events that occur on
+that date -- a `Deadline` matches its exact `/by` date, an `Event` matches
+any date within its `/from`-`/to` range inclusive (both endpoints and the
+middle), and a `ToDo` never matches since it has no date. A date with no
+matches gets a friendly "no tasks" message instead of an empty list
+(stretch goal from the Level 8 requirement).
+
+**Input:**
+```text
+todo just a todo
+deadline return book /by 2019-12-02
+event trip /from 2019-10-04 /to 2019-10-11
+on 2019-10-07
+on 2019-10-04
+on 2019-01-01
+bye
+```
+
+**Expected output:**
+```text
+____________________________________________________________
+ _____  __   __  _____ 
+|  ___| \ \ / / |  ___|
+| |__    \ V /  | |__  
+|  __|    \ /   |  __| 
+|_____|    V    |_____|
+
+Hello! I'm Eve.
+What can I do for you?
+
+Here's what I can do:
+  todo <description>                                       Add a to-do task.
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
+  list                                                     Show all tasks.
+  mark <task number>                                       Mark a task as done.
+  unmark <task number>                                     Mark a task as not done.
+  delete <task number>                                     Remove a task.
+  bye                                                      Exit the program.
+____________________________________________________________
+____________________________________________________________
+Got it. I've added this task:
+  [T][ ] just a todo
+Now you have 1 tasks in the list.
+____________________________________________________________
+____________________________________________________________
+Got it. I've added this task:
+  [D][ ] return book (by: Dec 2 2019)
+Now you have 2 tasks in the list.
+____________________________________________________________
+____________________________________________________________
+Got it. I've added this task:
+  [E][ ] trip (from: Oct 4 2019 to: Oct 11 2019)
+Now you have 3 tasks in the list.
+____________________________________________________________
+____________________________________________________________
+Here are the tasks on Oct 7 2019:
+1.[E][ ] trip (from: Oct 4 2019 to: Oct 11 2019)
+____________________________________________________________
+____________________________________________________________
+Here are the tasks on Oct 4 2019:
+1.[E][ ] trip (from: Oct 4 2019 to: Oct 11 2019)
+____________________________________________________________
+____________________________________________________________
+You have no tasks on Jan 1 2019.
+____________________________________________________________
+Bye. Hope to see you again soon!
+____________________________________________________________
+```
+
+## Test 17: `on` errors on a missing or invalid date
+
+**Aim:** `on` with no date, or a date that isn't valid `yyyy-mm-dd`,
+produces a specific error message instead of crashing or silently doing
+nothing.
+
+**Input:**
+```text
+on
+on notadate
+bye
+```
+
+**Expected output:**
+```text
+____________________________________________________________
+ _____  __   __  _____ 
+|  ___| \ \ / / |  ___|
+| |__    \ V /  | |__  
+|  __|    \ /   |  __| 
+|_____|    V    |_____|
+
+Hello! I'm Eve.
+What can I do for you?
+
+Here's what I can do:
+  todo <description>                                       Add a to-do task.
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
+  list                                                     Show all tasks.
+  mark <task number>                                       Mark a task as done.
+  unmark <task number>                                     Mark a task as not done.
+  delete <task number>                                     Remove a task.
+  bye                                                      Exit the program.
+____________________________________________________________
+____________________________________________________________
+OOPS!!! Please tell me which date, e.g. on 2019-12-02.
+____________________________________________________________
+____________________________________________________________
+OOPS!!! Please give the date as yyyy-mm-dd, e.g. on 2019-12-02.
 ____________________________________________________________
 Bye. Hope to see you again soon!
 ____________________________________________________________
