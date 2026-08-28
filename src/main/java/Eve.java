@@ -18,7 +18,14 @@ public class Eve {
      */
     public static void main(String[] args) {
         Ui ui = new Ui();
-        TaskList tasks = new TaskList(Storage.load());
+        Storage storage = new Storage("data/eve.txt");
+        TaskList tasks;
+        try {
+            tasks = new TaskList(storage.load());
+        } catch (EveException e) {
+            ui.showLoadingError(e.getMessage());
+            tasks = new TaskList();
+        }
 
         ui.showWelcome();
 
@@ -41,14 +48,14 @@ public class Eve {
                     case MARK: {
                         int index = parseTaskNumber(arguments, tasks.size()) - 1;
                         tasks.get(index).markAsDone();
-                        Storage.save(tasks.asList());
+                        storage.save(tasks.asList());
                         ui.showTaskMarked(tasks.get(index));
                         break;
                     }
                     case UNMARK: {
                         int index = parseTaskNumber(arguments, tasks.size()) - 1;
                         tasks.get(index).markAsNotDone();
-                        Storage.save(tasks.asList());
+                        storage.save(tasks.asList());
                         ui.showTaskUnmarked(tasks.get(index));
                         break;
                     }
@@ -58,7 +65,7 @@ public class Eve {
                         }
                         Task task = new ToDo(arguments);
                         tasks.add(task);
-                        Storage.save(tasks.asList());
+                        storage.save(tasks.asList());
                         ui.showTaskAdded(task, tasks.size());
                         break;
                     }
@@ -85,7 +92,7 @@ public class Eve {
                         }
                         Task task = new Deadline(description, by);
                         tasks.add(task);
-                        Storage.save(tasks.asList());
+                        storage.save(tasks.asList());
                         ui.showTaskAdded(task, tasks.size());
                         break;
                     }
@@ -120,7 +127,7 @@ public class Eve {
                         }
                         Task task = new Event(description, from, to);
                         tasks.add(task);
-                        Storage.save(tasks.asList());
+                        storage.save(tasks.asList());
                         ui.showTaskAdded(task, tasks.size());
                         break;
                     }
@@ -142,7 +149,7 @@ public class Eve {
                     case DELETE: {
                         int index = parseTaskNumber(arguments, tasks.size()) - 1;
                         Task removed = tasks.delete(index);
-                        Storage.save(tasks.asList());
+                        storage.save(tasks.asList());
                         ui.showTaskDeleted(removed, tasks.size());
                         break;
                     }

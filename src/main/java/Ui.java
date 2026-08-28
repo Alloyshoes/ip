@@ -138,4 +138,16 @@ public class Ui {
         System.out.println(message);
         System.out.println(LINE);
     }
+
+    /**
+     * Prints a warning that the saved task list could not be loaded, and
+     * that the chatbot is starting with an empty list instead.
+     *
+     * @param message detail of what went wrong, e.g. an I/O error message.
+     */
+    public void showLoadingError(String message) {
+        System.out.println(LINE);
+        System.out.println(message + " Starting with an empty list.");
+        System.out.println(LINE);
+    }
 }
