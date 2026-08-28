@@ -1,3 +1,10 @@
+package eve.command;
+
+import eve.Storage;
+import eve.Ui;
+import eve.task.Task;
+import eve.task.TaskList;
+
 /** Adds a task to the list, persists the change, and reports the addition. */
 public class AddCommand extends Command {
     private final Task task;

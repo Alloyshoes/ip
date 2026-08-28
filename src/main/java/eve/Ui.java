@@ -1,6 +1,11 @@
+package eve;
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
+
+import eve.command.CommandWord;
+import eve.task.Task;
 
 /**
  * Deals with all interactions with the user: reading command lines from

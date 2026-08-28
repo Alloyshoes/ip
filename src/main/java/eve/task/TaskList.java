@@ -1,7 +1,11 @@
+package eve.task;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import eve.EveException;
 
 /**
  * Holds the current list of tasks and the operations that act on it

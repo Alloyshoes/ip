@@ -1,3 +1,10 @@
+package eve.command;
+
+import eve.EveException;
+import eve.Storage;
+import eve.Ui;
+import eve.task.TaskList;
+
 /** Marks a task as done, persists the change, and reports it. */
 public class MarkCommand extends Command {
     private final int taskNumber;
