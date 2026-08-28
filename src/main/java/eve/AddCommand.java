@@ -1,3 +1,5 @@
+package eve;
+
 /** Adds a task to the list, persists the change, and reports the addition. */
 public class AddCommand extends Command {
     private final Task task;

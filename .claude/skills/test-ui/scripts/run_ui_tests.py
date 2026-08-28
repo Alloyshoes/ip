@@ -30,7 +30,7 @@ from pathlib import Path
 # Adjust here if the project's entry class, source layout, or test plan
 # location ever change.
 SRC_DIR = "src/main/java"
-MAIN_CLASS = "Eve"
+MAIN_CLASS = "eve.Eve"
 CLASSES_DIR = "_temp/test-ui-classes"
 PLAN_FILE = "test/ui-test-plan.md"
 
@@ -100,7 +100,7 @@ def parse_plan(text: str) -> list[TestCase]:
 
 
 def compile_program(repo: Path) -> None:
-    sources = sorted((repo / SRC_DIR).glob("*.java"))
+    sources = sorted((repo / SRC_DIR).glob("**/*.java"))
     if not sources:
         raise RuntimeError(f"no .java files found under {SRC_DIR}")
     classes_dir = repo / CLASSES_DIR

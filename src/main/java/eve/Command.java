@@ -1,3 +1,5 @@
+package eve;
+
 /**
  * A user command that can be executed against the current task list. Each
  * concrete subclass knows how to carry out one specific command (adding a

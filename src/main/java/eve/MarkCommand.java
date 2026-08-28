@@ -1,3 +1,5 @@
+package eve;
+
 /** Marks a task as done, persists the change, and reports it. */
 public class MarkCommand extends Command {
     private final int taskNumber;

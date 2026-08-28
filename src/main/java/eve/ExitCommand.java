@@ -1,3 +1,5 @@
+package eve;
+
 /** Says goodbye and signals the main loop to stop. */
 public class ExitCommand extends Command {
     @Override

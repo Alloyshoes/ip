@@ -1,3 +1,5 @@
+package eve;
+
 /** Removes a task from the list, persists the change, and reports it. */
 public class DeleteCommand extends Command {
     private final int taskNumber;

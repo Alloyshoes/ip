@@ -1,3 +1,5 @@
+package eve;
+
 /** A chatbot-specific error, e.g. an invalid command or malformed arguments. */
 public class EveException extends Exception {
     /**

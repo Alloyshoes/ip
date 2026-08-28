@@ -1,3 +1,5 @@
+package eve;
+
 /**
  * Eve is a command-line task-tracking chatbot. It reads commands from
  * standard input in a loop, tracking to-do/deadline/event tasks, until the

@@ -1,3 +1,5 @@
+package eve;
+
 /**
  * The chatbot's recognized command words, each with its usage syntax and a
  * short description shown in the startup greeting. This is purely a lookup
