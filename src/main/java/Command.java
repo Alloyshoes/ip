@@ -1,48 +1,22 @@
 /**
- * The chatbot's recognized command words, each with its usage syntax and a
- * short description shown in the startup greeting.
+ * A user command that can be executed against the current task list. Each
+ * concrete subclass knows how to carry out one specific command (adding a
+ * task, listing them, exiting, etc.); {@link Parser#parse} decides which
+ * one to build from a line of user input.
  */
-public enum Command {
-    TODO("todo <description>", "Add a to-do task."),
-    DEADLINE("deadline <description> /by <yyyy-mm-dd>", "Add a task with a deadline."),
-    EVENT("event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>", "Add an event."),
-    ON("on <yyyy-mm-dd>", "Show tasks occurring on a date."),
-    LIST("list", "Show all tasks."),
-    MARK("mark <task number>", "Mark a task as done."),
-    UNMARK("unmark <task number>", "Mark a task as not done."),
-    DELETE("delete <task number>", "Remove a task."),
-    BYE("bye", "Exit the program.");
-
-    private final String usage;
-    private final String description;
-
-    Command(String usage, String description) {
-        this.usage = usage;
-        this.description = description;
-    }
-
-    /** Returns this command's usage syntax, e.g. {@code "mark <task number>"}. */
-    public String getUsage() {
-        return usage;
-    }
-
-    /** Returns a short, human-readable description of what this command does. */
-    public String getDescription() {
-        return description;
-    }
-
+public abstract class Command {
     /**
-     * Looks up the command matching the given word (case-insensitive).
+     * Carries out this command: updates {@code tasks} if needed, persists
+     * the change via {@code storage} if needed, and reports the result
+     * through {@code ui}.
      *
-     * @param word the first word of a line of user input.
-     * @return the matching command.
-     * @throws EveException if the word doesn't match any known command.
+     * @throws EveException if the command can't be completed, e.g. an
+     *      out-of-range task number.
      */
-    public static Command fromWord(String word) throws EveException {
-        try {
-            return Command.valueOf(word.toUpperCase());
-        } catch (IllegalArgumentException e) {
-            throw new EveException("OOPS!!! I'm sorry, but I don't know what that means :-(");
-        }
+    public abstract void execute(TaskList tasks, Ui ui, Storage storage) throws EveException;
+
+    /** Returns whether this command should end the program's main loop. */
+    public boolean isExit() {
+        return false;
     }
 }

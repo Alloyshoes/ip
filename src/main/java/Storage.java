@@ -7,35 +7,46 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Reads and writes the task list to a fixed location on disk so tasks
- * persist between runs of the program.
+ * Reads and writes the task list to a fixed file on disk so tasks persist
+ * between runs of the program. Each instance is tied to one file path,
+ * given to the constructor.
  */
 public class Storage {
-    private static final Path FILE_PATH = Paths.get("data", "eve.txt");
+    private final Path filePath;
 
     /**
-     * Loads tasks from disk. If the data file or its folder doesn't exist
-     * yet (e.g. first run), returns an empty list instead of failing.
-     * Lines that don't match the expected format are skipped with a
-     * warning rather than crashing the program.
+     * Creates a storage bound to the given file.
+     *
+     * @param filePath path to the file tasks are loaded from and saved to,
+     *      e.g. {@code "data/eve.txt"}.
+     */
+    public Storage(String filePath) {
+        this.filePath = Paths.get(filePath);
+    }
+
+    /**
+     * Loads tasks from disk. If the file doesn't exist yet (e.g. first
+     * run), returns an empty list instead of failing. Lines that don't
+     * match the expected format are skipped with a warning rather than
+     * crashing the program.
      *
      * @return the tasks read from disk, in file order.
+     * @throws EveException if the file exists but could not be read.
      */
-    public static List<Task> load() {
+    public List<Task> load() throws EveException {
         List<Task> tasks = new ArrayList<>();
-        if (!Files.exists(FILE_PATH)) {
+        if (!Files.exists(filePath)) {
             return tasks;
         }
         try {
-            for (String line : Files.readAllLines(FILE_PATH)) {
+            for (String line : Files.readAllLines(filePath)) {
                 Task task = parseLine(line);
                 if (task != null) {
                     tasks.add(task);
                 }
             }
         } catch (IOException e) {
-            System.out.println("Warning: could not read saved tasks (" + e.getMessage()
-                    + "). Starting with an empty list.");
+            throw new EveException("Warning: could not read saved tasks (" + e.getMessage() + ").");
         }
         return tasks;
     }
@@ -75,19 +86,18 @@ public class Storage {
     }
 
     /**
-     * Saves the given tasks to disk, creating the data folder if needed.
+     * Saves the given tasks to disk, creating the parent folder if needed.
      *
      * @param tasks the tasks currently in the list.
-     * @param taskCount how many of the array's slots are in use.
      */
-    public static void save(Task[] tasks, int taskCount) {
+    public void save(List<Task> tasks) {
         try {
-            Files.createDirectories(FILE_PATH.getParent());
+            Files.createDirectories(filePath.getParent());
             List<String> lines = new ArrayList<>();
-            for (int i = 0; i < taskCount; i++) {
-                lines.add(tasks[i].toSaveFormat());
+            for (Task task : tasks) {
+                lines.add(task.toSaveFormat());
             }
-            Files.write(FILE_PATH, lines);
+            Files.write(filePath, lines);
         } catch (IOException e) {
             System.out.println("Warning: could not save tasks (" + e.getMessage() + ").");
         }
