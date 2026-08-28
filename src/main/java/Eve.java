@@ -1,12 +1,14 @@
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Eve is a command-line task-tracking chatbot. It reads commands from
  * standard input in a loop, tracking to-do/deadline/event tasks, until the
  * user types "bye". Tasks are loaded from disk at startup and saved back
- * automatically whenever the list changes (see {@link Storage}).
+ * automatically whenever the list changes (see {@link Storage}). All user
+ * input/output goes through {@link Ui}.
  */
 public class Eve {
     /**
@@ -16,12 +18,7 @@ public class Eve {
      * @param args unused.
      */
     public static void main(String[] args) {
-        String banner = " _____  __   __  _____ \n"
-                + "|  ___| \\ \\ / / |  ___|\n"
-                + "| |__    \\ V /  | |__  \n"
-                + "|  __|    \\ /   |  __| \n"
-                + "|_____|    V    |_____|";
-        String line = "____________________________________________________________";
+        Ui ui = new Ui();
 
         Task[] tasks = new Task[100];
         int taskCount = 0;
@@ -30,27 +27,11 @@ public class Eve {
             taskCount++;
         }
 
-        int usageWidth = 0;
-        for (Command command : Command.values()) {
-            usageWidth = Math.max(usageWidth, command.getUsage().length());
-        }
+        ui.showWelcome();
 
-        System.out.println(line);
-        System.out.println(banner);
-        System.out.println();
-        System.out.println("Hello! I'm Eve.");
-        System.out.println("What can I do for you?");
-        System.out.println();
-        System.out.println("Here's what I can do:");
-        for (Command command : Command.values()) {
-            System.out.printf("  %-" + usageWidth + "s  %s%n", command.getUsage(), command.getDescription());
-        }
-        System.out.println(line);
-
-        Scanner scanner = new Scanner(System.in);
         outerLoop:
         while (true) {
-            String input = scanner.nextLine();
+            String input = ui.readCommand();
             int spaceIndex = input.indexOf(' ');
             String commandWord = spaceIndex == -1 ? input : input.substring(0, spaceIndex);
             String arguments = spaceIndex == -1 ? "" : input.substring(spaceIndex + 1).trim();
@@ -59,35 +40,23 @@ public class Eve {
                 Command command = Command.fromWord(commandWord);
                 switch (command) {
                     case BYE:
-                        System.out.println("Bye. Hope to see you again soon!");
-                        System.out.println(line);
+                        ui.showGoodbye();
                         break outerLoop;
                     case LIST:
-                        System.out.println(line);
-                        System.out.println("Here are the tasks in your list:");
-                        for (int i = 0; i < taskCount; i++) {
-                            System.out.println((i + 1) + "." + tasks[i]);
-                        }
-                        System.out.println(line);
+                        ui.showTaskList(tasks, taskCount);
                         break;
                     case MARK: {
                         int index = parseTaskNumber(arguments, taskCount) - 1;
                         tasks[index].markAsDone();
                         Storage.save(tasks, taskCount);
-                        System.out.println(line);
-                        System.out.println("Nice! I've marked this task as done:");
-                        System.out.println("  " + tasks[index]);
-                        System.out.println(line);
+                        ui.showTaskMarked(tasks[index]);
                         break;
                     }
                     case UNMARK: {
                         int index = parseTaskNumber(arguments, taskCount) - 1;
                         tasks[index].markAsNotDone();
                         Storage.save(tasks, taskCount);
-                        System.out.println(line);
-                        System.out.println("OK, I've marked this task as not done yet:");
-                        System.out.println("  " + tasks[index]);
-                        System.out.println(line);
+                        ui.showTaskUnmarked(tasks[index]);
                         break;
                     }
                     case TODO:
@@ -97,11 +66,7 @@ public class Eve {
                         tasks[taskCount] = new ToDo(arguments);
                         taskCount++;
                         Storage.save(tasks, taskCount);
-                        System.out.println(line);
-                        System.out.println("Got it. I've added this task:");
-                        System.out.println("  " + tasks[taskCount - 1]);
-                        System.out.println("Now you have " + taskCount + " tasks in the list.");
-                        System.out.println(line);
+                        ui.showTaskAdded(tasks[taskCount - 1], taskCount);
                         break;
                     case DEADLINE: {
                         int byIndex = arguments.indexOf(" /by ");
@@ -127,11 +92,7 @@ public class Eve {
                         tasks[taskCount] = new Deadline(description, by);
                         taskCount++;
                         Storage.save(tasks, taskCount);
-                        System.out.println(line);
-                        System.out.println("Got it. I've added this task:");
-                        System.out.println("  " + tasks[taskCount - 1]);
-                        System.out.println("Now you have " + taskCount + " tasks in the list.");
-                        System.out.println(line);
+                        ui.showTaskAdded(tasks[taskCount - 1], taskCount);
                         break;
                     }
                     case EVENT: {
@@ -166,11 +127,7 @@ public class Eve {
                         tasks[taskCount] = new Event(description, from, to);
                         taskCount++;
                         Storage.save(tasks, taskCount);
-                        System.out.println(line);
-                        System.out.println("Got it. I've added this task:");
-                        System.out.println("  " + tasks[taskCount - 1]);
-                        System.out.println("Now you have " + taskCount + " tasks in the list.");
-                        System.out.println(line);
+                        ui.showTaskAdded(tasks[taskCount - 1], taskCount);
                         break;
                     }
                     case ON: {
@@ -184,26 +141,13 @@ public class Eve {
                             throw new EveException("OOPS!!! Please give the date as yyyy-mm-dd, "
                                     + "e.g. on 2019-12-02.");
                         }
-                        System.out.println(line);
-                        int matchCount = 0;
+                        List<Task> matches = new ArrayList<>();
                         for (int i = 0; i < taskCount; i++) {
                             if (tasks[i].occursOn(date)) {
-                                matchCount++;
+                                matches.add(tasks[i]);
                             }
                         }
-                        if (matchCount == 0) {
-                            System.out.println("You have no tasks on " + date.format(Task.DISPLAY_FORMAT) + ".");
-                        } else {
-                            System.out.println("Here are the tasks on " + date.format(Task.DISPLAY_FORMAT) + ":");
-                            int matchNumber = 0;
-                            for (int i = 0; i < taskCount; i++) {
-                                if (tasks[i].occursOn(date)) {
-                                    matchNumber++;
-                                    System.out.println(matchNumber + "." + tasks[i]);
-                                }
-                            }
-                        }
-                        System.out.println(line);
+                        ui.showTasksOnDate(date, matches);
                         break;
                     }
                     case DELETE: {
@@ -215,21 +159,14 @@ public class Eve {
                         tasks[taskCount - 1] = null;
                         taskCount--;
                         Storage.save(tasks, taskCount);
-                        System.out.println(line);
-                        System.out.println("Noted. I've removed this task:");
-                        System.out.println("  " + removed);
-                        System.out.println("Now you have " + taskCount + " tasks in the list.");
-                        System.out.println(line);
+                        ui.showTaskDeleted(removed, taskCount);
                         break;
                     }
                 }
             } catch (EveException e) {
-                System.out.println(line);
-                System.out.println(e.getMessage());
-                System.out.println(line);
+                ui.showError(e.getMessage());
             }
         }
-        scanner.close();
     }
 
     /**
