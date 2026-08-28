@@ -173,6 +173,39 @@ public class Eve {
                         System.out.println(line);
                         break;
                     }
+                    case ON: {
+                        if (arguments.isEmpty()) {
+                            throw new EveException("OOPS!!! Please tell me which date, e.g. on 2019-12-02.");
+                        }
+                        LocalDate date;
+                        try {
+                            date = LocalDate.parse(arguments);
+                        } catch (DateTimeParseException e) {
+                            throw new EveException("OOPS!!! Please give the date as yyyy-mm-dd, "
+                                    + "e.g. on 2019-12-02.");
+                        }
+                        System.out.println(line);
+                        int matchCount = 0;
+                        for (int i = 0; i < taskCount; i++) {
+                            if (tasks[i].occursOn(date)) {
+                                matchCount++;
+                            }
+                        }
+                        if (matchCount == 0) {
+                            System.out.println("You have no tasks on " + date.format(Task.DISPLAY_FORMAT) + ".");
+                        } else {
+                            System.out.println("Here are the tasks on " + date.format(Task.DISPLAY_FORMAT) + ":");
+                            int matchNumber = 0;
+                            for (int i = 0; i < taskCount; i++) {
+                                if (tasks[i].occursOn(date)) {
+                                    matchNumber++;
+                                    System.out.println(matchNumber + "." + tasks[i]);
+                                }
+                            }
+                        }
+                        System.out.println(line);
+                        break;
+                    }
                     case DELETE: {
                         int index = parseTaskNumber(arguments, taskCount) - 1;
                         Task removed = tasks[index];

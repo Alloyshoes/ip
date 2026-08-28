@@ -1,12 +1,7 @@
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Locale;
 
 /** A task that needs to be done before a specific date. */
 public class Deadline extends Task {
-    private static final DateTimeFormatter DISPLAY_FORMAT =
-            DateTimeFormatter.ofPattern("MMM d yyyy", Locale.ENGLISH);
-
     protected LocalDate by;
 
     /**
@@ -29,5 +24,10 @@ public class Deadline extends Task {
     @Override
     public String toSaveFormat() {
         return "D | " + super.toSaveFormat() + " | " + by;
+    }
+
+    @Override
+    public boolean occursOn(LocalDate date) {
+        return by.equals(date);
     }
 }

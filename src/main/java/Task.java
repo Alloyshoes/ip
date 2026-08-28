@@ -1,8 +1,16 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+
 /**
  * A task with a description and a done/not-done status.
  * Base class for the specific task types ({@link ToDo}, {@link Deadline}, {@link Event}).
  */
 public class Task {
+    /** Shared format for displaying dates, e.g. "Dec 2 2019". */
+    public static final DateTimeFormatter DISPLAY_FORMAT =
+            DateTimeFormatter.ofPattern("MMM d yyyy", Locale.ENGLISH);
+
     protected String description;
     protected boolean isDone;
 
@@ -52,4 +60,14 @@ public class Task {
         return (isDone ? "1" : "0") + " | " + description;
     }
 
+    /**
+     * Returns whether this task occurs on the given date. Plain tasks (to-dos)
+     * have no date, so this is false unless a subclass overrides it.
+     *
+     * @param date the date to check against.
+     * @return true if this task occurs on that date.
+     */
+    public boolean occursOn(LocalDate date) {
+        return false;
+    }
 }

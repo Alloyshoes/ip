@@ -1,12 +1,7 @@
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Locale;
 
 /** A task that starts on a specific date and ends on a specific date. */
 public class Event extends Task {
-    private static final DateTimeFormatter DISPLAY_FORMAT =
-            DateTimeFormatter.ofPattern("MMM d yyyy", Locale.ENGLISH);
-
     protected LocalDate from;
     protected LocalDate to;
 
@@ -33,5 +28,10 @@ public class Event extends Task {
     @Override
     public String toSaveFormat() {
         return "E | " + super.toSaveFormat() + " | " + from + " | " + to;
+    }
+
+    @Override
+    public boolean occursOn(LocalDate date) {
+        return !date.isBefore(from) && !date.isAfter(to);
     }
 }
