@@ -1,6 +1,5 @@
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,13 +18,7 @@ public class Eve {
      */
     public static void main(String[] args) {
         Ui ui = new Ui();
-
-        Task[] tasks = new Task[100];
-        int taskCount = 0;
-        for (Task task : Storage.load()) {
-            tasks[taskCount] = task;
-            taskCount++;
-        }
+        TaskList tasks = new TaskList(Storage.load());
 
         ui.showWelcome();
 
@@ -43,31 +36,32 @@ public class Eve {
                         ui.showGoodbye();
                         break outerLoop;
                     case LIST:
-                        ui.showTaskList(tasks, taskCount);
+                        ui.showTaskList(tasks.asList());
                         break;
                     case MARK: {
-                        int index = parseTaskNumber(arguments, taskCount) - 1;
-                        tasks[index].markAsDone();
-                        Storage.save(tasks, taskCount);
-                        ui.showTaskMarked(tasks[index]);
+                        int index = parseTaskNumber(arguments, tasks.size()) - 1;
+                        tasks.get(index).markAsDone();
+                        Storage.save(tasks.asList());
+                        ui.showTaskMarked(tasks.get(index));
                         break;
                     }
                     case UNMARK: {
-                        int index = parseTaskNumber(arguments, taskCount) - 1;
-                        tasks[index].markAsNotDone();
-                        Storage.save(tasks, taskCount);
-                        ui.showTaskUnmarked(tasks[index]);
+                        int index = parseTaskNumber(arguments, tasks.size()) - 1;
+                        tasks.get(index).markAsNotDone();
+                        Storage.save(tasks.asList());
+                        ui.showTaskUnmarked(tasks.get(index));
                         break;
                     }
-                    case TODO:
+                    case TODO: {
                         if (arguments.isEmpty()) {
                             throw new EveException("OOPS!!! The description of a todo cannot be empty.");
                         }
-                        tasks[taskCount] = new ToDo(arguments);
-                        taskCount++;
-                        Storage.save(tasks, taskCount);
-                        ui.showTaskAdded(tasks[taskCount - 1], taskCount);
+                        Task task = new ToDo(arguments);
+                        tasks.add(task);
+                        Storage.save(tasks.asList());
+                        ui.showTaskAdded(task, tasks.size());
                         break;
+                    }
                     case DEADLINE: {
                         int byIndex = arguments.indexOf(" /by ");
                         if (byIndex == -1) {
@@ -89,10 +83,10 @@ public class Eve {
                             throw new EveException("OOPS!!! Please give the '/by' date as "
                                     + "yyyy-mm-dd, e.g. 2019-12-02.");
                         }
-                        tasks[taskCount] = new Deadline(description, by);
-                        taskCount++;
-                        Storage.save(tasks, taskCount);
-                        ui.showTaskAdded(tasks[taskCount - 1], taskCount);
+                        Task task = new Deadline(description, by);
+                        tasks.add(task);
+                        Storage.save(tasks.asList());
+                        ui.showTaskAdded(task, tasks.size());
                         break;
                     }
                     case EVENT: {
@@ -124,10 +118,10 @@ public class Eve {
                             throw new EveException("OOPS!!! Please give the '/to' date as "
                                     + "yyyy-mm-dd, e.g. 2019-10-11.");
                         }
-                        tasks[taskCount] = new Event(description, from, to);
-                        taskCount++;
-                        Storage.save(tasks, taskCount);
-                        ui.showTaskAdded(tasks[taskCount - 1], taskCount);
+                        Task task = new Event(description, from, to);
+                        tasks.add(task);
+                        Storage.save(tasks.asList());
+                        ui.showTaskAdded(task, tasks.size());
                         break;
                     }
                     case ON: {
@@ -141,25 +135,15 @@ public class Eve {
                             throw new EveException("OOPS!!! Please give the date as yyyy-mm-dd, "
                                     + "e.g. on 2019-12-02.");
                         }
-                        List<Task> matches = new ArrayList<>();
-                        for (int i = 0; i < taskCount; i++) {
-                            if (tasks[i].occursOn(date)) {
-                                matches.add(tasks[i]);
-                            }
-                        }
+                        List<Task> matches = tasks.occurringOn(date);
                         ui.showTasksOnDate(date, matches);
                         break;
                     }
                     case DELETE: {
-                        int index = parseTaskNumber(arguments, taskCount) - 1;
-                        Task removed = tasks[index];
-                        for (int i = index; i < taskCount - 1; i++) {
-                            tasks[i] = tasks[i + 1];
-                        }
-                        tasks[taskCount - 1] = null;
-                        taskCount--;
-                        Storage.save(tasks, taskCount);
-                        ui.showTaskDeleted(removed, taskCount);
+                        int index = parseTaskNumber(arguments, tasks.size()) - 1;
+                        Task removed = tasks.delete(index);
+                        Storage.save(tasks.asList());
+                        ui.showTaskDeleted(removed, tasks.size());
                         break;
                     }
                 }

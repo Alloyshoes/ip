@@ -57,14 +57,13 @@ public class Ui {
     /**
      * Prints every task in the list, numbered from 1.
      *
-     * @param tasks the task array (only the first {@code taskCount} slots are used).
-     * @param taskCount how many of the array's slots are in use.
+     * @param tasks the tasks to print, in order.
      */
-    public void showTaskList(Task[] tasks, int taskCount) {
+    public void showTaskList(List<Task> tasks) {
         System.out.println(LINE);
         System.out.println("Here are the tasks in your list:");
-        for (int i = 0; i < taskCount; i++) {
-            System.out.println((i + 1) + "." + tasks[i]);
+        for (int i = 0; i < tasks.size(); i++) {
+            System.out.println((i + 1) + "." + tasks.get(i));
         }
         System.out.println(LINE);
     }

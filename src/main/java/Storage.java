@@ -78,14 +78,13 @@ public class Storage {
      * Saves the given tasks to disk, creating the data folder if needed.
      *
      * @param tasks the tasks currently in the list.
-     * @param taskCount how many of the array's slots are in use.
      */
-    public static void save(Task[] tasks, int taskCount) {
+    public static void save(List<Task> tasks) {
         try {
             Files.createDirectories(FILE_PATH.getParent());
             List<String> lines = new ArrayList<>();
-            for (int i = 0; i < taskCount; i++) {
-                lines.add(tasks[i].toSaveFormat());
+            for (Task task : tasks) {
+                lines.add(task.toSaveFormat());
             }
             Files.write(FILE_PATH, lines);
         } catch (IOException e) {
