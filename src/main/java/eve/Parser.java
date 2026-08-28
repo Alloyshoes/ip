@@ -8,6 +8,7 @@ import eve.command.Command;
 import eve.command.CommandWord;
 import eve.command.DeleteCommand;
 import eve.command.ExitCommand;
+import eve.command.FindCommand;
 import eve.command.ListCommand;
 import eve.command.MarkCommand;
 import eve.command.OnCommand;
@@ -56,6 +57,8 @@ public class Parser {
                 return new AddCommand(parseEvent(arguments));
             case ON:
                 return new OnCommand(parseOnDate(arguments));
+            case FIND:
+                return new FindCommand(parseFindKeyword(arguments));
             default:
                 // Unreachable: CommandWord.fromWord only ever returns one of the cases above.
                 throw new EveException("OOPS!!! I'm sorry, but I don't know what that means :-(");
@@ -187,5 +190,18 @@ public class Parser {
             throw new EveException("OOPS!!! Please give the date as yyyy-mm-dd, "
                     + "e.g. on 2019-12-02.");
         }
+    }
+
+    /**
+     * Parses the arguments of a {@code find} command.
+     *
+     * @param arguments the text after "find".
+     * @throws EveException if the keyword is empty.
+     */
+    private static String parseFindKeyword(String arguments) throws EveException {
+        if (arguments.isEmpty()) {
+            throw new EveException("OOPS!!! Please tell me what to search for, e.g. find book.");
+        }
+        return arguments;
     }
 }

@@ -91,6 +91,22 @@ public class TaskList {
         return matches;
     }
 
+    /**
+     * Returns every task whose description contains the given keyword (see
+     * {@link Task#matches}), in list order.
+     *
+     * @param keyword the text to search for.
+     */
+    public List<Task> matching(String keyword) {
+        List<Task> matches = new ArrayList<>();
+        for (Task task : tasks) {
+            if (task.matches(keyword)) {
+                matches.add(task);
+            }
+        }
+        return matches;
+    }
+
     /** Returns a read-only view of every task in the list, in order. */
     public List<Task> asList() {
         return Collections.unmodifiableList(tasks);
