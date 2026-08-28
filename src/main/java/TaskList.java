@@ -57,6 +57,21 @@ public class TaskList {
     }
 
     /**
+     * Validates a 1-based task number typed by the user against the
+     * current list size, and converts it to a 0-based index.
+     *
+     * @param taskNumber the 1-based task number to validate.
+     * @return the corresponding 0-based index.
+     * @throws EveException if the number is out of range.
+     */
+    public int toIndex(int taskNumber) throws EveException {
+        if (taskNumber < 1 || taskNumber > tasks.size()) {
+            throw new EveException("OOPS!!! There is no task number " + taskNumber + " in your list.");
+        }
+        return taskNumber - 1;
+    }
+
+    /**
      * Returns every task that occurs on the given date (see
      * {@link Task#occursOn}), in list order.
      *

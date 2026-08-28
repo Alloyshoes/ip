@@ -22,8 +22,8 @@ public class Ui {
     /** Prints the banner, greeting, and a list of every available command. */
     public void showWelcome() {
         int usageWidth = 0;
-        for (Command command : Command.values()) {
-            usageWidth = Math.max(usageWidth, command.getUsage().length());
+        for (CommandWord commandWord : CommandWord.values()) {
+            usageWidth = Math.max(usageWidth, commandWord.getUsage().length());
         }
 
         System.out.println(LINE);
@@ -33,8 +33,8 @@ public class Ui {
         System.out.println("What can I do for you?");
         System.out.println();
         System.out.println("Here's what I can do:");
-        for (Command command : Command.values()) {
-            System.out.printf("  %-" + usageWidth + "s  %s%n", command.getUsage(), command.getDescription());
+        for (CommandWord commandWord : CommandWord.values()) {
+            System.out.printf("  %-" + usageWidth + "s  %s%n", commandWord.getUsage(), commandWord.getDescription());
         }
         System.out.println(LINE);
     }

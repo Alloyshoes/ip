@@ -2,11 +2,10 @@ import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 
 /**
- * Deals with making sense of a user command: splitting a line of input into
- * a command word and its arguments, and turning each command's arguments
- * into validated, ready-to-use values (a constructed {@link Task}, a
- * {@link LocalDate}, a task number) or an {@link EveException} explaining
- * what was wrong with them.
+ * Deals with making sense of a user command: splits a line of input into a
+ * command word and its arguments, and turns them into the matching
+ * {@link Command} to execute -- or an {@link EveException} explaining what
+ * was wrong with them.
  */
 public class Parser {
     private Parser() {
@@ -14,45 +13,64 @@ public class Parser {
     }
 
     /**
-     * Returns the first word of a line of input, e.g. {@code "todo"} from
-     * {@code "todo read book"}.
+     * Parses one line of user input into the {@link Command} it requests.
+     *
+     * @param fullCommand the full line of input, e.g. "todo read book".
+     * @throws EveException if the command word is unknown or its arguments are invalid.
      */
-    public static String getCommandWord(String input) {
+    public static Command parse(String fullCommand) throws EveException {
+        String word = getCommandWord(fullCommand);
+        String arguments = getArguments(fullCommand);
+        CommandWord commandWord = CommandWord.fromWord(word);
+        switch (commandWord) {
+            case BYE:
+                return new ExitCommand();
+            case LIST:
+                return new ListCommand();
+            case MARK:
+                return new MarkCommand(parseTaskNumber(arguments));
+            case UNMARK:
+                return new UnmarkCommand(parseTaskNumber(arguments));
+            case DELETE:
+                return new DeleteCommand(parseTaskNumber(arguments));
+            case TODO:
+                return new AddCommand(parseTodo(arguments));
+            case DEADLINE:
+                return new AddCommand(parseDeadline(arguments));
+            case EVENT:
+                return new AddCommand(parseEvent(arguments));
+            case ON:
+                return new OnCommand(parseOnDate(arguments));
+            default:
+                // Unreachable: CommandWord.fromWord only ever returns one of the cases above.
+                throw new EveException("OOPS!!! I'm sorry, but I don't know what that means :-(");
+        }
+    }
+
+    private static String getCommandWord(String input) {
         int spaceIndex = input.indexOf(' ');
         return spaceIndex == -1 ? input : input.substring(0, spaceIndex);
     }
 
-    /**
-     * Returns everything after the first word of a line of input, trimmed,
-     * or an empty string if there's only one word.
-     */
-    public static String getArguments(String input) {
+    private static String getArguments(String input) {
         int spaceIndex = input.indexOf(' ');
         return spaceIndex == -1 ? "" : input.substring(spaceIndex + 1).trim();
     }
 
     /**
-     * Parses and validates a 1-based task number typed by the user.
-     *
-     * @param text the argument text after the command word, e.g. "2".
-     * @param taskCount how many tasks currently exist, for range checking.
-     * @return the parsed task number (1-based).
-     * @throws EveException if the text is missing, not a number, or out of range.
+     * Parses the format of a task number typed by the user (missing or
+     * non-numeric). Whether the number is in range depends on the current
+     * list size, so that's checked later by {@link TaskList#toIndex}.
      */
-    public static int parseTaskNumber(String text, int taskCount) throws EveException {
+    private static int parseTaskNumber(String text) throws EveException {
         if (text.isEmpty()) {
             throw new EveException("OOPS!!! Please tell me which task number, e.g. mark 2.");
         }
-        int number;
         try {
-            number = Integer.parseInt(text);
+            return Integer.parseInt(text);
         } catch (NumberFormatException e) {
             throw new EveException("OOPS!!! '" + text + "' is not a valid task number.");
         }
-        if (number < 1 || number > taskCount) {
-            throw new EveException("OOPS!!! There is no task number " + number + " in your list.");
-        }
-        return number;
     }
 
     /**
@@ -61,7 +79,7 @@ public class Parser {
      * @param arguments the text after "todo".
      * @throws EveException if the description is empty.
      */
-    public static ToDo parseTodo(String arguments) throws EveException {
+    private static ToDo parseTodo(String arguments) throws EveException {
         if (arguments.isEmpty()) {
             throw new EveException("OOPS!!! The description of a todo cannot be empty.");
         }
@@ -75,7 +93,7 @@ public class Parser {
      * @param arguments the text after "deadline".
      * @throws EveException if the description or '/by' date is missing, empty, or malformed.
      */
-    public static Deadline parseDeadline(String arguments) throws EveException {
+    private static Deadline parseDeadline(String arguments) throws EveException {
         int byIndex = arguments.indexOf(" /by ");
         if (byIndex == -1) {
             throw new EveException("OOPS!!! A deadline needs a description and a "
@@ -106,7 +124,7 @@ public class Parser {
      * @param arguments the text after "event".
      * @throws EveException if the description or either date is missing, empty, or malformed.
      */
-    public static Event parseEvent(String arguments) throws EveException {
+    private static Event parseEvent(String arguments) throws EveException {
         int fromIndex = arguments.indexOf(" /from ");
         int toIndex = arguments.indexOf(" /to ");
         if (fromIndex == -1 || toIndex == -1 || toIndex < fromIndex) {
@@ -144,7 +162,7 @@ public class Parser {
      * @param arguments the text after "on".
      * @throws EveException if the date is missing or malformed.
      */
-    public static LocalDate parseOnDate(String arguments) throws EveException {
+    private static LocalDate parseOnDate(String arguments) throws EveException {
         if (arguments.isEmpty()) {
             throw new EveException("OOPS!!! Please tell me which date, e.g. on 2019-12-02.");
         }
