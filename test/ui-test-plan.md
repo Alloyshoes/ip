@@ -47,6 +47,7 @@ Here's what I can do:
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
+  find <keyword>                                           Find tasks whose description contains a keyword.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -88,6 +89,7 @@ Here's what I can do:
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
+  find <keyword>                                           Find tasks whose description contains a keyword.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -144,6 +146,7 @@ Here's what I can do:
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
+  find <keyword>                                           Find tasks whose description contains a keyword.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -206,6 +209,7 @@ Here's what I can do:
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
+  find <keyword>                                           Find tasks whose description contains a keyword.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -271,6 +275,7 @@ Here's what I can do:
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
+  find <keyword>                                           Find tasks whose description contains a keyword.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -315,6 +320,7 @@ Here's what I can do:
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
+  find <keyword>                                           Find tasks whose description contains a keyword.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -360,6 +366,7 @@ Here's what I can do:
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
+  find <keyword>                                           Find tasks whose description contains a keyword.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -411,6 +418,7 @@ Here's what I can do:
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
+  find <keyword>                                           Find tasks whose description contains a keyword.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -493,6 +501,7 @@ Here's what I can do:
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
+  find <keyword>                                           Find tasks whose description contains a keyword.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -542,6 +551,7 @@ Here's what I can do:
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
+  find <keyword>                                           Find tasks whose description contains a keyword.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -600,6 +610,7 @@ Here's what I can do:
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
+  find <keyword>                                           Find tasks whose description contains a keyword.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -677,6 +688,7 @@ Here's what I can do:
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
+  find <keyword>                                           Find tasks whose description contains a keyword.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -739,6 +751,7 @@ Here's what I can do:
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
+  find <keyword>                                           Find tasks whose description contains a keyword.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -786,6 +799,7 @@ Here's what I can do:
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
+  find <keyword>                                           Find tasks whose description contains a keyword.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -847,6 +861,7 @@ Here's what I can do:
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
+  find <keyword>                                           Find tasks whose description contains a keyword.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -895,6 +910,7 @@ Here's what I can do:
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
+  find <keyword>                                           Find tasks whose description contains a keyword.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -951,6 +967,7 @@ Here's what I can do:
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
+  find <keyword>                                           Find tasks whose description contains a keyword.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -1017,6 +1034,7 @@ Here's what I can do:
   deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
+  find <keyword>                                           Find tasks whose description contains a keyword.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -1028,6 +1046,132 @@ OOPS!!! Please tell me which date, e.g. on 2019-12-02.
 ____________________________________________________________
 ____________________________________________________________
 OOPS!!! Please give the date as yyyy-mm-dd, e.g. on 2019-12-02.
+____________________________________________________________
+Bye. Hope to see you again soon!
+____________________________________________________________
+```
+
+## Test 18: `find` shows tasks whose description contains a keyword
+
+**Aim:** `find <keyword>` lists only the tasks whose description contains
+that keyword (case-insensitive), across all task types, keeping each
+task's own status icon, type icon, and detail suffix. A keyword with no
+matches gets a friendly "no matching tasks" message instead of an empty
+list. Matches the Level-9 requirement's own example transcript.
+
+**Input:**
+```text
+todo read book
+deadline return book /by 2019-06-06
+todo join sports club
+mark 1
+mark 2
+find book
+find sports
+find nonexistent
+bye
+```
+
+**Expected output:**
+```text
+____________________________________________________________
+ _____  __   __  _____ 
+|  ___| \ \ / / |  ___|
+| |__    \ V /  | |__  
+|  __|    \ /   |  __| 
+|_____|    V    |_____|
+
+Hello! I'm Eve.
+What can I do for you?
+
+Here's what I can do:
+  todo <description>                                       Add a to-do task.
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
+  find <keyword>                                           Find tasks whose description contains a keyword.
+  list                                                     Show all tasks.
+  mark <task number>                                       Mark a task as done.
+  unmark <task number>                                     Mark a task as not done.
+  delete <task number>                                     Remove a task.
+  bye                                                      Exit the program.
+____________________________________________________________
+____________________________________________________________
+Got it. I've added this task:
+  [T][ ] read book
+Now you have 1 tasks in the list.
+____________________________________________________________
+____________________________________________________________
+Got it. I've added this task:
+  [D][ ] return book (by: Jun 6 2019)
+Now you have 2 tasks in the list.
+____________________________________________________________
+____________________________________________________________
+Got it. I've added this task:
+  [T][ ] join sports club
+Now you have 3 tasks in the list.
+____________________________________________________________
+____________________________________________________________
+Nice! I've marked this task as done:
+  [T][X] read book
+____________________________________________________________
+____________________________________________________________
+Nice! I've marked this task as done:
+  [D][X] return book (by: Jun 6 2019)
+____________________________________________________________
+____________________________________________________________
+Here are the matching tasks in your list:
+1.[T][X] read book
+2.[D][X] return book (by: Jun 6 2019)
+____________________________________________________________
+____________________________________________________________
+Here are the matching tasks in your list:
+1.[T][ ] join sports club
+____________________________________________________________
+____________________________________________________________
+No matching tasks found in your list.
+____________________________________________________________
+Bye. Hope to see you again soon!
+____________________________________________________________
+```
+
+## Test 19: `find` errors on a missing keyword
+
+**Aim:** `find` with no keyword produces a specific error message instead
+of crashing or silently doing nothing.
+
+**Input:**
+```text
+find
+bye
+```
+
+**Expected output:**
+```text
+____________________________________________________________
+ _____  __   __  _____ 
+|  ___| \ \ / / |  ___|
+| |__    \ V /  | |__  
+|  __|    \ /   |  __| 
+|_____|    V    |_____|
+
+Hello! I'm Eve.
+What can I do for you?
+
+Here's what I can do:
+  todo <description>                                       Add a to-do task.
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
+  find <keyword>                                           Find tasks whose description contains a keyword.
+  list                                                     Show all tasks.
+  mark <task number>                                       Mark a task as done.
+  unmark <task number>                                     Mark a task as not done.
+  delete <task number>                                     Remove a task.
+  bye                                                      Exit the program.
+____________________________________________________________
+____________________________________________________________
+OOPS!!! Please tell me what to search for, e.g. find book.
 ____________________________________________________________
 Bye. Hope to see you again soon!
 ____________________________________________________________

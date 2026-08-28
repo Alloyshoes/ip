@@ -74,6 +74,25 @@ public class Ui {
     }
 
     /**
+     * Prints the tasks whose description matched a search keyword, or a
+     * "no matches" message if none did.
+     *
+     * @param matches the matching tasks, in list order.
+     */
+    public void showMatchingTasks(List<Task> matches) {
+        System.out.println(LINE);
+        if (matches.isEmpty()) {
+            System.out.println("No matching tasks found in your list.");
+        } else {
+            System.out.println("Here are the matching tasks in your list:");
+            for (int i = 0; i < matches.size(); i++) {
+                System.out.println((i + 1) + "." + matches.get(i));
+            }
+        }
+        System.out.println(LINE);
+    }
+
+    /**
      * Prints the tasks that occur on a given date, or a "no tasks" message
      * if none do.
      *
