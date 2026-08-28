@@ -1,4 +1,9 @@
-package eve;
+package eve.command;
+
+import eve.EveException;
+import eve.Storage;
+import eve.Ui;
+import eve.task.TaskList;
 
 /** Marks a task as not done, persists the change, and reports it. */
 public class UnmarkCommand extends Command {

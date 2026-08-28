@@ -1,4 +1,10 @@
-package eve;
+package eve.command;
+
+import eve.EveException;
+import eve.Storage;
+import eve.Ui;
+import eve.task.Task;
+import eve.task.TaskList;
 
 /** Removes a task from the list, persists the change, and reports it. */
 public class DeleteCommand extends Command {

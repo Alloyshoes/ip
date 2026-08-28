@@ -1,4 +1,6 @@
-package eve;
+package eve.command;
+
+import eve.EveException;
 
 /**
  * The chatbot's recognized command words, each with its usage syntax and a

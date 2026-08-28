@@ -1,4 +1,9 @@
-package eve;
+package eve.command;
+
+import eve.EveException;
+import eve.Storage;
+import eve.Ui;
+import eve.task.TaskList;
 
 /**
  * A user command that can be executed against the current task list. Each
