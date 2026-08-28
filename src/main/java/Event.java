@@ -1,25 +1,33 @@
-/** A task that starts at a specific date/time and ends at a specific date/time. */
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+
+/** A task that starts on a specific date and ends on a specific date. */
 public class Event extends Task {
-    protected String from;
-    protected String to;
+    private static final DateTimeFormatter DISPLAY_FORMAT =
+            DateTimeFormatter.ofPattern("MMM d yyyy", Locale.ENGLISH);
+
+    protected LocalDate from;
+    protected LocalDate to;
 
     /**
      * Creates an event task.
      *
      * @param description what the task is.
-     * @param from when it starts, kept as free-form text (not parsed as a date/time).
-     * @param to when it ends, kept as free-form text (not parsed as a date/time).
+     * @param from the date it starts.
+     * @param to the date it ends.
      */
-    public Event(String description, String from, String to) {
+    public Event(String description, LocalDate from, LocalDate to) {
         super(description);
         this.from = from;
         this.to = to;
     }
 
-    /** Returns this task's display text, prefixed with "[E]" and suffixed with its start/end. */
+    /** Returns this task's display text, prefixed with "[E]" and suffixed with its start/end dates. */
     @Override
     public String toString() {
-        return "[E]" + super.toString() + " (from: " + from + " to: " + to + ")";
+        return "[E]" + super.toString() + " (from: " + from.format(DISPLAY_FORMAT)
+                + " to: " + to.format(DISPLAY_FORMAT) + ")";
     }
 
     @Override

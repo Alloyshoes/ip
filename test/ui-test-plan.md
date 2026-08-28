@@ -43,14 +43,14 @@ Hello! I'm Eve.
 What can I do for you?
 
 Here's what I can do:
-  todo <description>                           Add a to-do task.
-  deadline <description> /by <date/time>       Add a task with a deadline.
-  event <description> /from <start> /to <end>  Add an event.
-  list                                         Show all tasks.
-  mark <task number>                           Mark a task as done.
-  unmark <task number>                         Mark a task as not done.
-  delete <task number>                         Remove a task.
-  bye                                          Exit the program.
+  todo <description>                                       Add a to-do task.
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  list                                                     Show all tasks.
+  mark <task number>                                       Mark a task as done.
+  unmark <task number>                                     Mark a task as not done.
+  delete <task number>                                     Remove a task.
+  bye                                                      Exit the program.
 ____________________________________________________________
 Bye. Hope to see you again soon!
 ____________________________________________________________
@@ -83,14 +83,14 @@ Hello! I'm Eve.
 What can I do for you?
 
 Here's what I can do:
-  todo <description>                           Add a to-do task.
-  deadline <description> /by <date/time>       Add a task with a deadline.
-  event <description> /from <start> /to <end>  Add an event.
-  list                                         Show all tasks.
-  mark <task number>                           Mark a task as done.
-  unmark <task number>                         Mark a task as not done.
-  delete <task number>                         Remove a task.
-  bye                                          Exit the program.
+  todo <description>                                       Add a to-do task.
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  list                                                     Show all tasks.
+  mark <task number>                                       Mark a task as done.
+  unmark <task number>                                     Mark a task as not done.
+  delete <task number>                                     Remove a task.
+  bye                                                      Exit the program.
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:
@@ -138,14 +138,14 @@ Hello! I'm Eve.
 What can I do for you?
 
 Here's what I can do:
-  todo <description>                           Add a to-do task.
-  deadline <description> /by <date/time>       Add a task with a deadline.
-  event <description> /from <start> /to <end>  Add an event.
-  list                                         Show all tasks.
-  mark <task number>                           Mark a task as done.
-  unmark <task number>                         Mark a task as not done.
-  delete <task number>                         Remove a task.
-  bye                                          Exit the program.
+  todo <description>                                       Add a to-do task.
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  list                                                     Show all tasks.
+  mark <task number>                                       Mark a task as done.
+  unmark <task number>                                     Mark a task as not done.
+  delete <task number>                                     Remove a task.
+  bye                                                      Exit the program.
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:
@@ -199,14 +199,14 @@ Hello! I'm Eve.
 What can I do for you?
 
 Here's what I can do:
-  todo <description>                           Add a to-do task.
-  deadline <description> /by <date/time>       Add a task with a deadline.
-  event <description> /from <start> /to <end>  Add an event.
-  list                                         Show all tasks.
-  mark <task number>                           Mark a task as done.
-  unmark <task number>                         Mark a task as not done.
-  delete <task number>                         Remove a task.
-  bye                                          Exit the program.
+  todo <description>                                       Add a to-do task.
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  list                                                     Show all tasks.
+  mark <task number>                                       Mark a task as done.
+  unmark <task number>                                     Mark a task as not done.
+  delete <task number>                                     Remove a task.
+  bye                                                      Exit the program.
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:
@@ -263,14 +263,14 @@ Hello! I'm Eve.
 What can I do for you?
 
 Here's what I can do:
-  todo <description>                           Add a to-do task.
-  deadline <description> /by <date/time>       Add a task with a deadline.
-  event <description> /from <start> /to <end>  Add an event.
-  list                                         Show all tasks.
-  mark <task number>                           Mark a task as done.
-  unmark <task number>                         Mark a task as not done.
-  delete <task number>                         Remove a task.
-  bye                                          Exit the program.
+  todo <description>                                       Add a to-do task.
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  list                                                     Show all tasks.
+  mark <task number>                                       Mark a task as done.
+  unmark <task number>                                     Mark a task as not done.
+  delete <task number>                                     Remove a task.
+  bye                                                      Exit the program.
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:
@@ -283,13 +283,13 @@ ____________________________________________________________
 
 ## Test 6: Add a Deadline
 
-**Aim:** `deadline <description> /by <by>` adds a `Deadline`, confirmed with
-the `[D]` type icon and a `(by: ...)` suffix; the date/time is stored as a
-plain string, unparsed.
+**Aim:** `deadline <description> /by <yyyy-mm-dd>` adds a `Deadline`,
+confirmed with the `[D]` type icon and a `(by: ...)` suffix; the date is
+parsed into a `java.time.LocalDate` and displayed in "MMM d yyyy" format.
 
 **Input:**
 ```text
-deadline return book /by Sunday
+deadline return book /by 2019-06-06
 bye
 ```
 
@@ -306,18 +306,18 @@ Hello! I'm Eve.
 What can I do for you?
 
 Here's what I can do:
-  todo <description>                           Add a to-do task.
-  deadline <description> /by <date/time>       Add a task with a deadline.
-  event <description> /from <start> /to <end>  Add an event.
-  list                                         Show all tasks.
-  mark <task number>                           Mark a task as done.
-  unmark <task number>                         Mark a task as not done.
-  delete <task number>                         Remove a task.
-  bye                                          Exit the program.
+  todo <description>                                       Add a to-do task.
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  list                                                     Show all tasks.
+  mark <task number>                                       Mark a task as done.
+  unmark <task number>                                     Mark a task as not done.
+  delete <task number>                                     Remove a task.
+  bye                                                      Exit the program.
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:
-  [D][ ] return book (by: Sunday)
+  [D][ ] return book (by: Jun 6 2019)
 Now you have 1 tasks in the list.
 ____________________________________________________________
 Bye. Hope to see you again soon!
@@ -326,12 +326,14 @@ ____________________________________________________________
 
 ## Test 7: Add an Event
 
-**Aim:** `event <description> /from <from> /to <to>` adds an `Event`,
-confirmed with the `[E]` type icon and a `(from: ... to: ...)` suffix.
+**Aim:** `event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>` adds an
+`Event`, confirmed with the `[E]` type icon and a `(from: ... to: ...)`
+suffix; both dates are parsed into `java.time.LocalDate` and displayed in
+"MMM d yyyy" format.
 
 **Input:**
 ```text
-event project meeting /from Mon 2pm /to 4pm
+event project meeting /from 2019-08-06 /to 2019-08-07
 bye
 ```
 
@@ -348,18 +350,18 @@ Hello! I'm Eve.
 What can I do for you?
 
 Here's what I can do:
-  todo <description>                           Add a to-do task.
-  deadline <description> /by <date/time>       Add a task with a deadline.
-  event <description> /from <start> /to <end>  Add an event.
-  list                                         Show all tasks.
-  mark <task number>                           Mark a task as done.
-  unmark <task number>                         Mark a task as not done.
-  delete <task number>                         Remove a task.
-  bye                                          Exit the program.
+  todo <description>                                       Add a to-do task.
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  list                                                     Show all tasks.
+  mark <task number>                                       Mark a task as done.
+  unmark <task number>                                     Mark a task as not done.
+  delete <task number>                                     Remove a task.
+  bye                                                      Exit the program.
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:
-  [E][ ] project meeting (from: Mon 2pm to: 4pm)
+  [E][ ] project meeting (from: Aug 6 2019 to: Aug 7 2019)
 Now you have 1 tasks in the list.
 ____________________________________________________________
 Bye. Hope to see you again soon!
@@ -375,8 +377,8 @@ the Level-4 requirement's example transcript).
 **Input:**
 ```text
 todo read book
-deadline return book /by June 6th
-event project meeting /from Aug 6th 2pm /to 4pm
+deadline return book /by 2019-06-06
+event project meeting /from 2019-08-06 /to 2019-08-07
 todo join sports club
 mark 1
 mark 4
@@ -398,14 +400,14 @@ Hello! I'm Eve.
 What can I do for you?
 
 Here's what I can do:
-  todo <description>                           Add a to-do task.
-  deadline <description> /by <date/time>       Add a task with a deadline.
-  event <description> /from <start> /to <end>  Add an event.
-  list                                         Show all tasks.
-  mark <task number>                           Mark a task as done.
-  unmark <task number>                         Mark a task as not done.
-  delete <task number>                         Remove a task.
-  bye                                          Exit the program.
+  todo <description>                                       Add a to-do task.
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  list                                                     Show all tasks.
+  mark <task number>                                       Mark a task as done.
+  unmark <task number>                                     Mark a task as not done.
+  delete <task number>                                     Remove a task.
+  bye                                                      Exit the program.
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:
@@ -414,12 +416,12 @@ Now you have 1 tasks in the list.
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:
-  [D][ ] return book (by: June 6th)
+  [D][ ] return book (by: Jun 6 2019)
 Now you have 2 tasks in the list.
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:
-  [E][ ] project meeting (from: Aug 6th 2pm to: 4pm)
+  [E][ ] project meeting (from: Aug 6 2019 to: Aug 7 2019)
 Now you have 3 tasks in the list.
 ____________________________________________________________
 ____________________________________________________________
@@ -443,8 +445,8 @@ ____________________________________________________________
 ____________________________________________________________
 Here are the tasks in your list:
 1.[T][X] read book
-2.[D][ ] return book (by: June 6th)
-3.[E][ ] project meeting (from: Aug 6th 2pm to: 4pm)
+2.[D][ ] return book (by: Jun 6 2019)
+3.[E][ ] project meeting (from: Aug 6 2019 to: Aug 7 2019)
 4.[T][X] join sports club
 5.[T][ ] borrow book
 ____________________________________________________________
@@ -479,14 +481,14 @@ Hello! I'm Eve.
 What can I do for you?
 
 Here's what I can do:
-  todo <description>                           Add a to-do task.
-  deadline <description> /by <date/time>       Add a task with a deadline.
-  event <description> /from <start> /to <end>  Add an event.
-  list                                         Show all tasks.
-  mark <task number>                           Mark a task as done.
-  unmark <task number>                         Mark a task as not done.
-  delete <task number>                         Remove a task.
-  bye                                          Exit the program.
+  todo <description>                                       Add a to-do task.
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  list                                                     Show all tasks.
+  mark <task number>                                       Mark a task as done.
+  unmark <task number>                                     Mark a task as not done.
+  delete <task number>                                     Remove a task.
+  bye                                                      Exit the program.
 ____________________________________________________________
 ____________________________________________________________
 OOPS!!! The description of a todo cannot be empty.
@@ -508,7 +510,7 @@ crashing.
 **Input:**
 ```text
 deadline return book
-event project meeting /from Mon 2pm
+event project meeting /from 2019-10-04
 mark 5
 unmark abc
 bye
@@ -527,20 +529,20 @@ Hello! I'm Eve.
 What can I do for you?
 
 Here's what I can do:
-  todo <description>                           Add a to-do task.
-  deadline <description> /by <date/time>       Add a task with a deadline.
-  event <description> /from <start> /to <end>  Add an event.
-  list                                         Show all tasks.
-  mark <task number>                           Mark a task as done.
-  unmark <task number>                         Mark a task as not done.
-  delete <task number>                         Remove a task.
-  bye                                          Exit the program.
+  todo <description>                                       Add a to-do task.
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  list                                                     Show all tasks.
+  mark <task number>                                       Mark a task as done.
+  unmark <task number>                                     Mark a task as not done.
+  delete <task number>                                     Remove a task.
+  bye                                                      Exit the program.
 ____________________________________________________________
 ____________________________________________________________
-OOPS!!! A deadline needs a description and a '/by' date, e.g. deadline return book /by Sunday.
+OOPS!!! A deadline needs a description and a '/by' date, e.g. deadline return book /by 2019-12-02.
 ____________________________________________________________
 ____________________________________________________________
-OOPS!!! An event needs a description, a '/from' time, and a '/to' time, e.g. event project meeting /from Mon 2pm /to 4pm.
+OOPS!!! An event needs a description, a '/from' date, and a '/to' date, e.g. event project meeting /from 2019-10-04 /to 2019-10-11.
 ____________________________________________________________
 ____________________________________________________________
 OOPS!!! There is no task number 5 in your list.
@@ -562,8 +564,8 @@ requirement's example transcript.
 **Input:**
 ```text
 todo read book
-deadline return book /by June 6th
-event project meeting /from Aug 6th 2pm /to 4pm
+deadline return book /by 2019-06-06
+event project meeting /from 2019-08-06 /to 2019-08-07
 mark 1
 mark 2
 delete 2
@@ -584,14 +586,14 @@ Hello! I'm Eve.
 What can I do for you?
 
 Here's what I can do:
-  todo <description>                           Add a to-do task.
-  deadline <description> /by <date/time>       Add a task with a deadline.
-  event <description> /from <start> /to <end>  Add an event.
-  list                                         Show all tasks.
-  mark <task number>                           Mark a task as done.
-  unmark <task number>                         Mark a task as not done.
-  delete <task number>                         Remove a task.
-  bye                                          Exit the program.
+  todo <description>                                       Add a to-do task.
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  list                                                     Show all tasks.
+  mark <task number>                                       Mark a task as done.
+  unmark <task number>                                     Mark a task as not done.
+  delete <task number>                                     Remove a task.
+  bye                                                      Exit the program.
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:
@@ -600,12 +602,12 @@ Now you have 1 tasks in the list.
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:
-  [D][ ] return book (by: June 6th)
+  [D][ ] return book (by: Jun 6 2019)
 Now you have 2 tasks in the list.
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:
-  [E][ ] project meeting (from: Aug 6th 2pm to: 4pm)
+  [E][ ] project meeting (from: Aug 6 2019 to: Aug 7 2019)
 Now you have 3 tasks in the list.
 ____________________________________________________________
 ____________________________________________________________
@@ -614,17 +616,17 @@ Nice! I've marked this task as done:
 ____________________________________________________________
 ____________________________________________________________
 Nice! I've marked this task as done:
-  [D][X] return book (by: June 6th)
+  [D][X] return book (by: Jun 6 2019)
 ____________________________________________________________
 ____________________________________________________________
 Noted. I've removed this task:
-  [D][X] return book (by: June 6th)
+  [D][X] return book (by: Jun 6 2019)
 Now you have 2 tasks in the list.
 ____________________________________________________________
 ____________________________________________________________
 Here are the tasks in your list:
 1.[T][X] read book
-2.[E][ ] project meeting (from: Aug 6th 2pm to: 4pm)
+2.[E][ ] project meeting (from: Aug 6 2019 to: Aug 7 2019)
 ____________________________________________________________
 Bye. Hope to see you again soon!
 ____________________________________________________________
@@ -660,14 +662,14 @@ Hello! I'm Eve.
 What can I do for you?
 
 Here's what I can do:
-  todo <description>                           Add a to-do task.
-  deadline <description> /by <date/time>       Add a task with a deadline.
-  event <description> /from <start> /to <end>  Add an event.
-  list                                         Show all tasks.
-  mark <task number>                           Mark a task as done.
-  unmark <task number>                         Mark a task as not done.
-  delete <task number>                         Remove a task.
-  bye                                          Exit the program.
+  todo <description>                                       Add a to-do task.
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  list                                                     Show all tasks.
+  mark <task number>                                       Mark a task as done.
+  unmark <task number>                                     Mark a task as not done.
+  delete <task number>                                     Remove a task.
+  bye                                                      Exit the program.
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:
@@ -703,7 +705,7 @@ in-memory state carried over) loads them back via `list`.
 **Input:**
 ```text
 todo read book
-deadline return book /by June 6th
+deadline return book /by 2019-06-06
 mark 1
 bye
 ```
@@ -721,14 +723,14 @@ Hello! I'm Eve.
 What can I do for you?
 
 Here's what I can do:
-  todo <description>                           Add a to-do task.
-  deadline <description> /by <date/time>       Add a task with a deadline.
-  event <description> /from <start> /to <end>  Add an event.
-  list                                         Show all tasks.
-  mark <task number>                           Mark a task as done.
-  unmark <task number>                         Mark a task as not done.
-  delete <task number>                         Remove a task.
-  bye                                          Exit the program.
+  todo <description>                                       Add a to-do task.
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  list                                                     Show all tasks.
+  mark <task number>                                       Mark a task as done.
+  unmark <task number>                                     Mark a task as not done.
+  delete <task number>                                     Remove a task.
+  bye                                                      Exit the program.
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:
@@ -737,7 +739,7 @@ Now you have 1 tasks in the list.
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:
-  [D][ ] return book (by: June 6th)
+  [D][ ] return book (by: Jun 6 2019)
 Now you have 2 tasks in the list.
 ____________________________________________________________
 ____________________________________________________________
@@ -767,19 +769,19 @@ Hello! I'm Eve.
 What can I do for you?
 
 Here's what I can do:
-  todo <description>                           Add a to-do task.
-  deadline <description> /by <date/time>       Add a task with a deadline.
-  event <description> /from <start> /to <end>  Add an event.
-  list                                         Show all tasks.
-  mark <task number>                           Mark a task as done.
-  unmark <task number>                         Mark a task as not done.
-  delete <task number>                         Remove a task.
-  bye                                          Exit the program.
+  todo <description>                                       Add a to-do task.
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  list                                                     Show all tasks.
+  mark <task number>                                       Mark a task as done.
+  unmark <task number>                                     Mark a task as not done.
+  delete <task number>                                     Remove a task.
+  bye                                                      Exit the program.
 ____________________________________________________________
 ____________________________________________________________
 Here are the tasks in your list:
 1.[T][X] read book
-2.[D][ ] return book (by: June 6th)
+2.[D][ ] return book (by: Jun 6 2019)
 ____________________________________________________________
 Bye. Hope to see you again soon!
 ____________________________________________________________
@@ -787,10 +789,13 @@ ____________________________________________________________
 
 ## Test 14: Corrupted data file lines are skipped, not crashed on
 
-**Aim:** A pre-existing data file containing a line that doesn't parse
-at all, and a line with an invalid status field, are each skipped with a
-warning printed to the console; well-formed lines in the same file still
-load correctly (stretch goal from the Level 7 requirement).
+**Aim:** A pre-existing data file containing a line that doesn't parse at
+all, a line with an invalid status field, and a line with a date that
+isn't valid `yyyy-mm-dd` (e.g. saved under the pre-Level-8 free-text
+format) are each skipped with a warning printed to the console;
+well-formed lines -- including ones with real dates -- in the same file
+still load correctly (stretch goal from the Level 7 requirement, and
+proof that Level 8's date parsing degrades the same way on bad data).
 
 **Data file before run:**
 ```text
@@ -798,6 +803,8 @@ T | 1 | read book
 NOT A VALID LINE
 T | X | bad status
 D | 0 | return book | June 6th
+D | 0 | good deadline | 2019-12-02
+E | 0 | trip | 2019-10-04 | 2019-10-11
 ```
 
 **Input:**
@@ -810,6 +817,7 @@ bye
 ```text
 Warning: skipping corrupted line in data file: NOT A VALID LINE
 Warning: skipping corrupted line in data file: T | X | bad status
+Warning: skipping corrupted line in data file: D | 0 | return book | June 6th
 ____________________________________________________________
  _____  __   __  _____ 
 |  ___| \ \ / / |  ___|
@@ -821,19 +829,70 @@ Hello! I'm Eve.
 What can I do for you?
 
 Here's what I can do:
-  todo <description>                           Add a to-do task.
-  deadline <description> /by <date/time>       Add a task with a deadline.
-  event <description> /from <start> /to <end>  Add an event.
-  list                                         Show all tasks.
-  mark <task number>                           Mark a task as done.
-  unmark <task number>                         Mark a task as not done.
-  delete <task number>                         Remove a task.
-  bye                                          Exit the program.
+  todo <description>                                       Add a to-do task.
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  list                                                     Show all tasks.
+  mark <task number>                                       Mark a task as done.
+  unmark <task number>                                     Mark a task as not done.
+  delete <task number>                                     Remove a task.
+  bye                                                      Exit the program.
 ____________________________________________________________
 ____________________________________________________________
 Here are the tasks in your list:
 1.[T][X] read book
-2.[D][ ] return book (by: June 6th)
+2.[D][ ] good deadline (by: Dec 2 2019)
+3.[E][ ] trip (from: Oct 4 2019 to: Oct 11 2019)
+____________________________________________________________
+Bye. Hope to see you again soon!
+____________________________________________________________
+```
+
+## Test 15: Invalid dates are rejected with a field-specific error
+
+**Aim:** A deadline's `/by` date, or an event's `/from`/`/to` date, that
+isn't valid `yyyy-mm-dd` produces a field-specific error message (not the
+generic "don't know what that means" error) and the task is not added to
+the list.
+
+**Input:**
+```text
+deadline return book /by Sunday
+event trip /from 2019-10-04 /to notadate
+list
+bye
+```
+
+**Expected output:**
+```text
+____________________________________________________________
+ _____  __   __  _____ 
+|  ___| \ \ / / |  ___|
+| |__    \ V /  | |__  
+|  __|    \ /   |  __| 
+|_____|    V    |_____|
+
+Hello! I'm Eve.
+What can I do for you?
+
+Here's what I can do:
+  todo <description>                                       Add a to-do task.
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  list                                                     Show all tasks.
+  mark <task number>                                       Mark a task as done.
+  unmark <task number>                                     Mark a task as not done.
+  delete <task number>                                     Remove a task.
+  bye                                                      Exit the program.
+____________________________________________________________
+____________________________________________________________
+OOPS!!! Please give the '/by' date as yyyy-mm-dd, e.g. 2019-12-02.
+____________________________________________________________
+____________________________________________________________
+OOPS!!! Please give the '/to' date as yyyy-mm-dd, e.g. 2019-10-11.
+____________________________________________________________
+____________________________________________________________
+Here are the tasks in your list:
 ____________________________________________________________
 Bye. Hope to see you again soon!
 ____________________________________________________________
