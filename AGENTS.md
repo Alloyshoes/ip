@@ -32,6 +32,8 @@ Ensure that Java 25 is used when running the application or build tasks. On macO
 
 All Java code written or edited in this project (new code and edits to existing code) must follow the `seedu-java-coding-standard` skill (`.claude/skills/seedu-java-coding-standard/`), based on the SE-EDU intermediate Java conventions. Invoke it before writing or reviewing Java source, and fix non-compliant code you touch even if the change wasn't otherwise about style.
 
+This standard is also enforced mechanically via Checkstyle (`config/checkstyle/`, wired into `build.gradle`). Run `./gradlew checkstyleMain checkstyleTest` after changing Java source and before committing it; fix any reported violations (see `build/reports/checkstyle/main.html` / `test.html` for details) rather than suppressing them, unless the user says otherwise.
+
 ## Git
 
 Use lightweight tags unless the user requests an annotated tag.
