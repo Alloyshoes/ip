@@ -21,6 +21,7 @@ Exits 0 if every test case (in file order) passes, 1 otherwise.
 from __future__ import annotations
 
 import argparse
+import os
 import re
 import shutil
 import subprocess
@@ -100,7 +101,13 @@ def parse_plan(text: str) -> list[TestCase]:
 
 
 def compile_program(repo: Path) -> None:
-    sources = sorted((repo / SRC_DIR).glob("**/*.java"))
+    # eve/gui/** needs JavaFX on the classpath (see build.gradle), which this
+    # script deliberately doesn't set up -- it only tests the CLI entry
+    # point (eve.Eve), which has no GUI dependency.
+    sources = sorted(
+        s for s in (repo / SRC_DIR).glob("**/*.java")
+        if "eve" + os.sep + "gui" not in str(s)
+    )
     if not sources:
         raise RuntimeError(f"no .java files found under {SRC_DIR}")
     classes_dir = repo / CLASSES_DIR

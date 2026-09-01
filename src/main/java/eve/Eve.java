@@ -1,38 +1,53 @@
 package eve;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import eve.command.Command;
 import eve.task.TaskList;
 
 /**
- * Eve is a command-line task-tracking chatbot. It reads commands from
- * standard input in a loop, tracking to-do/deadline/event tasks, until the
- * user types "bye". Tasks are loaded from disk at startup and saved back
- * automatically whenever the list changes (see {@link Storage}). Each line
- * of input is turned into a {@link Command} by {@link Parser}, which is
- * then executed against the current {@link TaskList}; all user
- * input/output goes through {@link Ui}.
+ * Eve is a task-tracking chatbot. It turns each line of user input into a
+ * {@link Command} via {@link Parser}, executes it against the current
+ * {@link TaskList}, and saves changes via {@link Storage}. Tasks are loaded
+ * from disk when an Eve instance is created.
+ *
+ * <p>This class is shared by both front ends: {@link #run} drives the
+ * command-line loop (all output goes through {@link Ui} to the console, as
+ * before), while {@link #getResponse} lets the JavaFX GUI (see
+ * {@link eve.gui.MainWindow}) process one line of input at a time and get
+ * back the chatbot's reply as a string instead of printed console output.
  */
 public class Eve {
+    private final Ui ui;
+    private final Storage storage;
+    private TaskList tasks;
+    private boolean isExit = false;
+
     /**
-     * Runs the chatbot: prints the greeting, then repeatedly reads,
-     * parses, and executes one command per line until "bye" is entered.
+     * Creates an Eve instance, loading any previously saved tasks.
      *
-     * @param args unused.
+     * @param filePath where tasks are loaded from and saved to, e.g. "data/eve.txt".
      */
-    public static void main(String[] args) {
-        Ui ui = new Ui();
-        Storage storage = new Storage("data/eve.txt");
-        TaskList tasks;
+    public Eve(String filePath) {
+        ui = new Ui();
+        storage = new Storage(filePath);
         try {
             tasks = new TaskList(storage.load());
         } catch (EveException e) {
             ui.showLoadingError(e.getMessage());
             tasks = new TaskList();
         }
+    }
 
+    /**
+     * Runs the command-line chatbot: prints the greeting, then repeatedly
+     * reads, parses, and executes one command per line until "bye" is
+     * entered.
+     */
+    public void run() {
         ui.showWelcome();
 
-        boolean isExit = false;
         while (!isExit) {
             try {
                 String fullCommand = ui.readCommand();
@@ -43,5 +58,43 @@ public class Eve {
                 ui.showError(e.getMessage());
             }
         }
+    }
+
+    /**
+     * Parses and executes one line of input, and returns the chatbot's
+     * reply as plain text (with the console-only "____" divider lines
+     * stripped out), for a GUI to display.
+     *
+     * @param input one line of user input, e.g. "todo read book".
+     * @return the chatbot's response.
+     */
+    public String getResponse(String input) {
+        PrintStream originalOut = System.out;
+        ByteArrayOutputStream captured = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(captured));
+        try {
+            Command command = Parser.parse(input);
+            command.execute(tasks, ui, storage);
+            isExit = command.isExit();
+        } catch (EveException e) {
+            ui.showError(e.getMessage());
+        } finally {
+            System.setOut(originalOut);
+        }
+        return captured.toString().replaceAll("(?m)^_{5,}\\R?", "").strip();
+    }
+
+    /** Returns whether the last command processed by {@link #getResponse} was "bye". */
+    public boolean isExit() {
+        return isExit;
+    }
+
+    /**
+     * Runs the command-line chatbot.
+     *
+     * @param args unused.
+     */
+    public static void main(String[] args) {
+        new Eve("data/eve.txt").run();
     }
 }
