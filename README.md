@@ -30,4 +30,5 @@ Prerequisites: JDK 25.
 
 - Build and run the chatbot: `./gradlew run` (Windows: `gradlew.bat run`)
 - Run tests: `./gradlew test`
+- Check coding-standard compliance: `./gradlew checkstyleMain checkstyleTest` (report: `build/reports/checkstyle/main.html` / `test.html`)
 - Build an executable JAR (`build/libs/eve.jar`): `./gradlew shadowJar`, then run it with `java -jar build/libs/eve.jar`
