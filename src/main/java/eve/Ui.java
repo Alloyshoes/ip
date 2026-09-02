@@ -1,6 +1,7 @@
 package eve;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -31,17 +32,18 @@ public class Ui {
             usageWidth = Math.max(usageWidth, commandWord.getUsage().length());
         }
 
-        System.out.println(LINE);
-        System.out.println(BANNER);
-        System.out.println();
-        System.out.println("Hello! I'm Eve.");
-        System.out.println("What can I do for you?");
-        System.out.println();
-        System.out.println("Here's what I can do:");
+        List<String> lines = new ArrayList<>();
+        lines.add(BANNER);
+        lines.add("");
+        lines.add("Hello! I'm Eve.");
+        lines.add("What can I do for you?");
+        lines.add("");
+        lines.add("Here's what I can do:");
         for (CommandWord commandWord : CommandWord.values()) {
-            System.out.printf("  %-" + usageWidth + "s  %s%n", commandWord.getUsage(), commandWord.getDescription());
+            lines.add(String.format("  %-" + usageWidth + "s  %s",
+                    commandWord.getUsage(), commandWord.getDescription()));
         }
-        System.out.println(LINE);
+        showLines(lines);
     }
 
     /**
@@ -65,12 +67,12 @@ public class Ui {
      * @param tasks the tasks to print, in order.
      */
     public void showTaskList(List<Task> tasks) {
-        System.out.println(LINE);
-        System.out.println("Here are the tasks in your list:");
+        List<String> lines = new ArrayList<>();
+        lines.add("Here are the tasks in your list:");
         for (int i = 0; i < tasks.size(); i++) {
-            System.out.println((i + 1) + "." + tasks.get(i));
+            lines.add((i + 1) + "." + tasks.get(i));
         }
-        System.out.println(LINE);
+        showLines(lines);
     }
 
     /**
@@ -80,16 +82,16 @@ public class Ui {
      * @param matches the matching tasks, in list order.
      */
     public void showMatchingTasks(List<Task> matches) {
-        System.out.println(LINE);
+        List<String> lines = new ArrayList<>();
         if (matches.isEmpty()) {
-            System.out.println("No matching tasks found in your list.");
+            lines.add("No matching tasks found in your list.");
         } else {
-            System.out.println("Here are the matching tasks in your list:");
+            lines.add("Here are the matching tasks in your list:");
             for (int i = 0; i < matches.size(); i++) {
-                System.out.println((i + 1) + "." + matches.get(i));
+                lines.add((i + 1) + "." + matches.get(i));
             }
         }
-        System.out.println(LINE);
+        showLines(lines);
     }
 
     /**
@@ -100,32 +102,26 @@ public class Ui {
      * @param matches the tasks that occur on {@code date}, in list order.
      */
     public void showTasksOnDate(LocalDate date, List<Task> matches) {
-        System.out.println(LINE);
+        List<String> lines = new ArrayList<>();
         if (matches.isEmpty()) {
-            System.out.println("You have no tasks on " + date.format(Task.DISPLAY_FORMAT) + ".");
+            lines.add("You have no tasks on " + date.format(Task.DISPLAY_FORMAT) + ".");
         } else {
-            System.out.println("Here are the tasks on " + date.format(Task.DISPLAY_FORMAT) + ":");
+            lines.add("Here are the tasks on " + date.format(Task.DISPLAY_FORMAT) + ":");
             for (int i = 0; i < matches.size(); i++) {
-                System.out.println((i + 1) + "." + matches.get(i));
+                lines.add((i + 1) + "." + matches.get(i));
             }
         }
-        System.out.println(LINE);
+        showLines(lines);
     }
 
     /** Prints confirmation that a task was marked as done. */
     public void showTaskMarked(Task task) {
-        System.out.println(LINE);
-        System.out.println("Nice! I've marked this task as done:");
-        System.out.println("  " + task);
-        System.out.println(LINE);
+        showLines("Nice! I've marked this task as done:", "  " + task);
     }
 
     /** Prints confirmation that a task was marked as not done. */
     public void showTaskUnmarked(Task task) {
-        System.out.println(LINE);
-        System.out.println("OK, I've marked this task as not done yet:");
-        System.out.println("  " + task);
-        System.out.println(LINE);
+        showLines("OK, I've marked this task as not done yet:", "  " + task);
     }
 
     /**
@@ -135,11 +131,7 @@ public class Ui {
      * @param taskCount how many tasks are in the list after adding it.
      */
     public void showTaskAdded(Task task, int taskCount) {
-        System.out.println(LINE);
-        System.out.println("Got it. I've added this task:");
-        System.out.println("  " + task);
-        System.out.println("Now you have " + taskCount + " tasks in the list.");
-        System.out.println(LINE);
+        showLines("Got it. I've added this task:", "  " + task, "Now you have " + taskCount + " tasks in the list.");
     }
 
     /**
@@ -149,18 +141,12 @@ public class Ui {
      * @param taskCount how many tasks remain in the list after removing it.
      */
     public void showTaskDeleted(Task task, int taskCount) {
-        System.out.println(LINE);
-        System.out.println("Noted. I've removed this task:");
-        System.out.println("  " + task);
-        System.out.println("Now you have " + taskCount + " tasks in the list.");
-        System.out.println(LINE);
+        showLines("Noted. I've removed this task:", "  " + task, "Now you have " + taskCount + " tasks in the list.");
     }
 
     /** Prints an error message, e.g. from a caught {@link EveException}. */
     public void showError(String message) {
-        System.out.println(LINE);
-        System.out.println(message);
-        System.out.println(LINE);
+        showLines(message);
     }
 
     /**
@@ -170,8 +156,33 @@ public class Ui {
      * @param message detail of what went wrong, e.g. an I/O error message.
      */
     public void showLoadingError(String message) {
+        showLines(message + " Starting with an empty list.");
+    }
+
+    /**
+     * Prints one or more message lines wrapped between two divider lines --
+     * the shape shared by every show method above that has a fixed, known
+     * number of lines to print (as opposed to one line per task, which
+     * varies at runtime; see the {@link #showLines(List)} overload for that
+     * case).
+     *
+     * @param lines the message lines to print, in order.
+     */
+    private void showLines(String... lines) {
         System.out.println(LINE);
-        System.out.println(message + " Starting with an empty list.");
+        for (String line : lines) {
+            System.out.println(line);
+        }
         System.out.println(LINE);
+    }
+
+    /**
+     * Prints message lines built up at runtime (e.g. one per task) wrapped
+     * between two divider lines, by delegating to {@link #showLines(String...)}.
+     *
+     * @param lines the message lines to print, in order.
+     */
+    private void showLines(List<String> lines) {
+        showLines(lines.toArray(new String[0]));
     }
 }
