@@ -5,12 +5,12 @@
 
 .user-dialog {
     -fx-background-color: #dcf2ff;
-    -fx-background-radius: 12;
-    -fx-padding: 4;
+    -fx-background-radius: 14;
+    -fx-padding: 8 12 8 12;
 }
 
 .eve-dialog {
     -fx-background-color: #eeeeee;
-    -fx-background-radius: 12;
-    -fx-padding: 4;
+    -fx-background-radius: 14;
+    -fx-padding: 8 12 8 12;
 }
