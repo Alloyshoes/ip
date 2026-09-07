@@ -129,13 +129,7 @@ public class Parser {
         if (byText.isEmpty()) {
             throw new EveException("OOPS!!! The '/by' date of a deadline cannot be empty.");
         }
-        LocalDate by;
-        try {
-            by = LocalDate.parse(byText);
-        } catch (DateTimeParseException e) {
-            throw new EveException("OOPS!!! Please give the '/by' date as "
-                    + "yyyy-mm-dd, e.g. 2019-12-02.");
-        }
+        LocalDate by = parseDate("'/by' date", byText, "2019-12-02");
         return new Deadline(description, by);
     }
 
@@ -161,20 +155,8 @@ public class Parser {
             throw new EveException("OOPS!!! An event's description, '/from' date, "
                     + "and '/to' date must all be filled in.");
         }
-        LocalDate from;
-        try {
-            from = LocalDate.parse(fromText);
-        } catch (DateTimeParseException e) {
-            throw new EveException("OOPS!!! Please give the '/from' date as "
-                    + "yyyy-mm-dd, e.g. 2019-10-04.");
-        }
-        LocalDate to;
-        try {
-            to = LocalDate.parse(toText);
-        } catch (DateTimeParseException e) {
-            throw new EveException("OOPS!!! Please give the '/to' date as "
-                    + "yyyy-mm-dd, e.g. 2019-10-11.");
-        }
+        LocalDate from = parseDate("'/from' date", fromText, "2019-10-04");
+        LocalDate to = parseDate("'/to' date", toText, "2019-10-11");
         return new Event(description, from, to);
     }
 
@@ -188,11 +170,26 @@ public class Parser {
         if (arguments.isEmpty()) {
             throw new EveException("OOPS!!! Please tell me which date, e.g. on 2019-12-02.");
         }
+        return parseDate("date", arguments, "on 2019-12-02");
+    }
+
+    /**
+     * Parses text as an ISO date, or throws a field-specific error naming
+     * what was expected. Shared by every command that takes a date, so the
+     * "please use yyyy-mm-dd" message stays worded consistently.
+     *
+     * @param fieldDescription names the field in the error message, e.g. {@code "'/by' date"}.
+     * @param dateText the text to parse.
+     * @param example a valid example shown in the error message, e.g. {@code "2019-12-02"}.
+     * @throws EveException if the text isn't a valid yyyy-mm-dd date.
+     */
+    private static LocalDate parseDate(String fieldDescription, String dateText, String example)
+            throws EveException {
         try {
-            return LocalDate.parse(arguments);
+            return LocalDate.parse(dateText);
         } catch (DateTimeParseException e) {
-            throw new EveException("OOPS!!! Please give the date as yyyy-mm-dd, "
-                    + "e.g. on 2019-12-02.");
+            throw new EveException("OOPS!!! Please give the " + fieldDescription
+                    + " as yyyy-mm-dd, e.g. " + example + ".");
         }
     }
 
