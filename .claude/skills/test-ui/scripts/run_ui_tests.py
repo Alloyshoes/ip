@@ -135,7 +135,9 @@ def seed_data(repo: Path, content: str) -> None:
 def run_program(repo: Path, stdin: str) -> tuple[str, str, int]:
     """Returns (stdout, stderr, returncode)."""
     result = subprocess.run(
-        ["java", "-cp", str(repo / CLASSES_DIR), MAIN_CLASS],
+        # -ea: run with assertions enabled (see A-Assertions), so a violated
+        # assumption fails the test loudly instead of silently passing.
+        ["java", "-ea", "-cp", str(repo / CLASSES_DIR), MAIN_CLASS],
         input=stdin, capture_output=True, text=True, timeout=10, cwd=str(repo),
     )
     return result.stdout, result.stderr, result.returncode

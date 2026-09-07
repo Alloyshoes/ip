@@ -61,6 +61,10 @@ public class Parser {
                 return new FindCommand(parseFindKeyword(arguments));
             default:
                 // Unreachable: CommandWord.fromWord only ever returns one of the cases above.
+                // If a new CommandWord constant is ever added without a case here, this
+                // assertion should fail loudly during development instead of silently
+                // falling through to a misleading "unknown command" error at runtime.
+                assert false : "Unhandled CommandWord: " + commandWord;
                 throw new EveException("OOPS!!! I'm sorry, but I don't know what that means :-(");
         }
     }

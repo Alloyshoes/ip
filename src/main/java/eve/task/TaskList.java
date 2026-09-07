@@ -72,7 +72,13 @@ public class TaskList {
         if (taskNumber < 1 || taskNumber > tasks.size()) {
             throw new EveException("OOPS!!! There is no task number " + taskNumber + " in your list.");
         }
-        return taskNumber - 1;
+        int index = taskNumber - 1;
+        // Postcondition this method promises every caller (MarkCommand, UnmarkCommand,
+        // DeleteCommand): they can pass the result straight to get()/delete() without
+        // re-checking bounds themselves. Guards against a future edit to the bounds
+        // check above accidentally breaking that guarantee.
+        assert index >= 0 && index < tasks.size() : "toIndex produced an out-of-bounds index: " + index;
+        return index;
     }
 
     /**
