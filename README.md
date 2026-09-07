@@ -1,5 +1,7 @@
 # Eve project template
 
+[![Java CI](https://github.com/Alloyshoes/ip/actions/workflows/gradle.yml/badge.svg)](https://github.com/Alloyshoes/ip/actions/workflows/gradle.yml)
+
 This is a project template for a greenfield Java project. It's named after the Java mascot _Duke_. Given below are instructions on how to use it.
 
 ## Setting up in Intellij
