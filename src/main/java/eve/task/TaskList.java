@@ -88,13 +88,9 @@ public class TaskList {
      * @param date the date to check against.
      */
     public List<Task> occurringOn(LocalDate date) {
-        List<Task> matches = new ArrayList<>();
-        for (Task task : tasks) {
-            if (task.occursOn(date)) {
-                matches.add(task);
-            }
-        }
-        return matches;
+        return tasks.stream()
+                .filter(task -> task.occursOn(date))
+                .toList();
     }
 
     /**
@@ -104,13 +100,9 @@ public class TaskList {
      * @param keyword the text to search for.
      */
     public List<Task> matching(String keyword) {
-        List<Task> matches = new ArrayList<>();
-        for (Task task : tasks) {
-            if (task.matches(keyword)) {
-                matches.add(task);
-            }
-        }
-        return matches;
+        return tasks.stream()
+                .filter(task -> task.matches(keyword))
+                .toList();
     }
 
     /** Returns a read-only view of every task in the list, in order. */
