@@ -5,8 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import eve.task.Deadline;
 import eve.task.Event;
@@ -41,21 +41,17 @@ public class Storage {
      * @throws EveException if the file exists but could not be read.
      */
     public List<Task> load() throws EveException {
-        List<Task> tasks = new ArrayList<>();
         if (!Files.exists(filePath)) {
-            return tasks;
+            return List.of();
         }
         try {
-            for (String line : Files.readAllLines(filePath)) {
-                Task task = parseLine(line);
-                if (task != null) {
-                    tasks.add(task);
-                }
-            }
+            return Files.readAllLines(filePath).stream()
+                    .map(Storage::parseLine)
+                    .filter(Objects::nonNull)
+                    .toList();
         } catch (IOException e) {
             throw new EveException("Warning: could not read saved tasks (" + e.getMessage() + ").");
         }
-        return tasks;
     }
 
     /**
@@ -108,10 +104,9 @@ public class Storage {
     public void save(List<Task> tasks) {
         try {
             Files.createDirectories(filePath.getParent());
-            List<String> lines = new ArrayList<>();
-            for (Task task : tasks) {
-                lines.add(task.toSaveFormat());
-            }
+            List<String> lines = tasks.stream()
+                    .map(Task::toSaveFormat)
+                    .toList();
             Files.write(filePath, lines);
         } catch (IOException e) {
             System.out.println("Warning: could not save tasks (" + e.getMessage() + ").");

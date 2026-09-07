@@ -2,8 +2,10 @@ package eve;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 import eve.command.CommandWord;
 import eve.task.Task;
@@ -27,10 +29,10 @@ public class Ui {
 
     /** Prints the banner, greeting, and a list of every available command. */
     public void showWelcome() {
-        int usageWidth = 0;
-        for (CommandWord commandWord : CommandWord.values()) {
-            usageWidth = Math.max(usageWidth, commandWord.getUsage().length());
-        }
+        int usageWidth = Arrays.stream(CommandWord.values())
+                .mapToInt(commandWord -> commandWord.getUsage().length())
+                .max()
+                .orElse(0);
 
         List<String> lines = new ArrayList<>();
         lines.add(BANNER);
@@ -39,10 +41,10 @@ public class Ui {
         lines.add("What can I do for you?");
         lines.add("");
         lines.add("Here's what I can do:");
-        for (CommandWord commandWord : CommandWord.values()) {
-            lines.add(String.format("  %-" + usageWidth + "s  %s",
-                    commandWord.getUsage(), commandWord.getDescription()));
-        }
+        lines.addAll(Arrays.stream(CommandWord.values())
+                .map(commandWord -> String.format("  %-" + usageWidth + "s  %s",
+                        commandWord.getUsage(), commandWord.getDescription()))
+                .toList());
         showLines(lines);
     }
 
@@ -69,9 +71,7 @@ public class Ui {
     public void showTaskList(List<Task> tasks) {
         List<String> lines = new ArrayList<>();
         lines.add("Here are the tasks in your list:");
-        for (int i = 0; i < tasks.size(); i++) {
-            lines.add((i + 1) + "." + tasks.get(i));
-        }
+        lines.addAll(numberedLines(tasks));
         showLines(lines);
     }
 
@@ -87,9 +87,7 @@ public class Ui {
             lines.add("No matching tasks found in your list.");
         } else {
             lines.add("Here are the matching tasks in your list:");
-            for (int i = 0; i < matches.size(); i++) {
-                lines.add((i + 1) + "." + matches.get(i));
-            }
+            lines.addAll(numberedLines(matches));
         }
         showLines(lines);
     }
@@ -107,9 +105,7 @@ public class Ui {
             lines.add("You have no tasks on " + date.format(Task.DISPLAY_FORMAT) + ".");
         } else {
             lines.add("Here are the tasks on " + date.format(Task.DISPLAY_FORMAT) + ":");
-            for (int i = 0; i < matches.size(); i++) {
-                lines.add((i + 1) + "." + matches.get(i));
-            }
+            lines.addAll(numberedLines(matches));
         }
         showLines(lines);
     }
@@ -184,5 +180,18 @@ public class Ui {
      */
     private void showLines(List<String> lines) {
         showLines(lines.toArray(new String[0]));
+    }
+
+    /**
+     * Numbers each task from 1 (e.g. "1.[T][ ] read book"), based on its
+     * position in {@code tasks}. Shared by every show method above that
+     * lists tasks, since they all number their tasks the same way.
+     *
+     * @param tasks the tasks to number, in order.
+     */
+    private static List<String> numberedLines(List<Task> tasks) {
+        return IntStream.range(0, tasks.size())
+                .mapToObj(i -> (i + 1) + "." + tasks.get(i))
+                .toList();
     }
 }
