@@ -45,6 +45,11 @@ public class MainWindow {
      * rest of this session.
      */
     public void initialize() {
+        // As in DialogBox: a typo'd or removed fx:id in MainWindow.fxml would leave
+        // the corresponding field null instead of failing the FXML load.
+        assert scrollPane != null && dialogContainer != null && userInput != null && sendButton != null
+                : "MainWindow.fxml did not inject one of the @FXML fields";
+
         dialogContainer.heightProperty().addListener((observable) -> scrollPane.setVvalue(1.0));
 
         Random random = new Random();
@@ -52,6 +57,10 @@ public class MainWindow {
         do {
             eveAvatarColor = AVATAR_COLORS[random.nextInt(AVATAR_COLORS.length)];
         } while (eveAvatarColor.equals(userAvatarColor));
+        // Postcondition of the loop above: it should be structurally impossible to
+        // exit it with equal colors, but assert it explicitly so a future edit to
+        // the loop condition that breaks this fails fast in testing.
+        assert !eveAvatarColor.equals(userAvatarColor) : "User and Eve ended up with the same avatar color";
     }
 
     /**

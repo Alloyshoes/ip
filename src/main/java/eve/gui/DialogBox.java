@@ -38,6 +38,10 @@ public class DialogBox extends HBox {
         } catch (IOException e) {
             throw new IllegalStateException("Could not load DialogBox.fxml", e);
         }
+        // FXMLLoader wires @FXML fields by matching fx:id in DialogBox.fxml; a typo'd
+        // or removed fx:id would leave a field null here instead of failing the load,
+        // surfacing later as a confusing NullPointerException. Assert it immediately.
+        assert dialog != null && avatarPane != null : "DialogBox.fxml did not inject dialog/avatarPane";
         dialog.setText(text);
         avatarPane.getChildren().add(createAvatar(avatarColor, avatarLetter));
     }
