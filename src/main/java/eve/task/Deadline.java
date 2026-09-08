@@ -1,6 +1,7 @@
 package eve.task;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 /** A task that needs to be done before a specific date. */
 public class Deadline extends Task {
@@ -31,5 +32,11 @@ public class Deadline extends Task {
     @Override
     public boolean occursOn(LocalDate date) {
         return by.equals(date);
+    }
+
+    /** Returns this deadline's due date, so it sorts by when it's due. */
+    @Override
+    public Optional<LocalDate> getScheduleDate() {
+        return Optional.of(by);
     }
 }

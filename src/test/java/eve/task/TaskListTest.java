@@ -84,4 +84,29 @@ public class TaskListTest {
 
         assertTrue(matches.isEmpty());
     }
+
+    @Test
+    public void schedule_mixOfTaskTypesAddedOutOfOrder_sortsChronologicallyAndExcludesTodos() {
+        TaskList tasks = new TaskList();
+        Task todo = new ToDo("just a todo");
+        Task laterDeadline = new Deadline("return book", LocalDate.of(2019, 12, 2));
+        Task event = new Event("trip", LocalDate.of(2019, 10, 4), LocalDate.of(2019, 10, 11));
+        Task earlierDeadline = new Deadline("earlier task", LocalDate.of(2019, 9, 1));
+        tasks.add(todo);
+        tasks.add(laterDeadline);
+        tasks.add(event);
+        tasks.add(earlierDeadline);
+
+        List<Task> schedule = tasks.schedule();
+
+        assertEquals(List.of(earlierDeadline, event, laterDeadline), schedule);
+    }
+
+    @Test
+    public void schedule_noDatedTasks_returnsEmptyList() {
+        TaskList tasks = new TaskList();
+        tasks.add(new ToDo("just a todo"));
+
+        assertTrue(tasks.schedule().isEmpty());
+    }
 }

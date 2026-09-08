@@ -1,6 +1,7 @@
 package eve.task;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 /** A task that starts on a specific date and ends on a specific date. */
 public class Event extends Task {
@@ -35,5 +36,11 @@ public class Event extends Task {
     @Override
     public boolean occursOn(LocalDate date) {
         return !date.isBefore(from) && !date.isAfter(to);
+    }
+
+    /** Returns this event's start date, so it sorts by when it begins. */
+    @Override
+    public Optional<LocalDate> getScheduleDate() {
+        return Optional.of(from);
     }
 }
