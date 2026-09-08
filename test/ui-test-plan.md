@@ -48,7 +48,7 @@ Here's what I can do:
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule                                                 Show all deadlines and events in chronological order.
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -91,7 +91,7 @@ Here's what I can do:
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule                                                 Show all deadlines and events in chronological order.
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -149,7 +149,7 @@ Here's what I can do:
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule                                                 Show all deadlines and events in chronological order.
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -213,7 +213,7 @@ Here's what I can do:
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule                                                 Show all deadlines and events in chronological order.
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -280,7 +280,7 @@ Here's what I can do:
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule                                                 Show all deadlines and events in chronological order.
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -326,7 +326,7 @@ Here's what I can do:
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule                                                 Show all deadlines and events in chronological order.
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -373,7 +373,7 @@ Here's what I can do:
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule                                                 Show all deadlines and events in chronological order.
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -426,7 +426,7 @@ Here's what I can do:
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule                                                 Show all deadlines and events in chronological order.
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -510,7 +510,7 @@ Here's what I can do:
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule                                                 Show all deadlines and events in chronological order.
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -561,7 +561,7 @@ Here's what I can do:
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule                                                 Show all deadlines and events in chronological order.
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -621,7 +621,7 @@ Here's what I can do:
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule                                                 Show all deadlines and events in chronological order.
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -700,7 +700,7 @@ Here's what I can do:
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule                                                 Show all deadlines and events in chronological order.
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -764,7 +764,7 @@ Here's what I can do:
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule                                                 Show all deadlines and events in chronological order.
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -813,7 +813,7 @@ Here's what I can do:
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule                                                 Show all deadlines and events in chronological order.
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -876,7 +876,7 @@ Here's what I can do:
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule                                                 Show all deadlines and events in chronological order.
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -926,7 +926,7 @@ Here's what I can do:
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule                                                 Show all deadlines and events in chronological order.
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -984,7 +984,7 @@ Here's what I can do:
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule                                                 Show all deadlines and events in chronological order.
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -1052,7 +1052,7 @@ Here's what I can do:
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule                                                 Show all deadlines and events in chronological order.
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -1108,7 +1108,7 @@ Here's what I can do:
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule                                                 Show all deadlines and events in chronological order.
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -1183,7 +1183,7 @@ Here's what I can do:
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule                                                 Show all deadlines and events in chronological order.
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -1232,7 +1232,7 @@ Here's what I can do:
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule                                                 Show all deadlines and events in chronological order.
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -1299,7 +1299,7 @@ Here's what I can do:
   event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
   on <yyyy-mm-dd>                                          Show tasks occurring on a date.
   find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule                                                 Show all deadlines and events in chronological order.
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
   list                                                     Show all tasks.
   mark <task number>                                       Mark a task as done.
   unmark <task number>                                     Mark a task as not done.
@@ -1313,6 +1313,106 @@ Now you have 1 tasks in the list.
 ____________________________________________________________
 ____________________________________________________________
 You have no deadlines or events scheduled.
+____________________________________________________________
+Bye. Hope to see you again soon!
+____________________________________________________________
+```
+
+## Test 22: `schedule <date>` reuses `on`'s display for a single date
+
+**Aim:** `schedule <yyyy-mm-dd>` filters to just that date, showing the
+exact same message as `on <yyyy-mm-dd>` -- both a match and a no-match
+case -- since viewing the schedule for one date and asking what's on
+that date are the same question. (B-ViewSchedules extension.)
+
+**Input:**
+```text
+event trip /from 2019-10-04 /to 2019-10-11
+schedule 2019-10-07
+schedule 2019-01-01
+bye
+```
+
+**Expected output:**
+```text
+____________________________________________________________
+ _____  __   __  _____ 
+|  ___| \ \ / / |  ___|
+| |__    \ V /  | |__  
+|  __|    \ /   |  __| 
+|_____|    V    |_____|
+
+Hello! I'm Eve.
+What can I do for you?
+
+Here's what I can do:
+  todo <description>                                       Add a to-do task.
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
+  find <keyword>                                           Find tasks whose description contains a keyword.
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
+  list                                                     Show all tasks.
+  mark <task number>                                       Mark a task as done.
+  unmark <task number>                                     Mark a task as not done.
+  delete <task number>                                     Remove a task.
+  bye                                                      Exit the program.
+____________________________________________________________
+____________________________________________________________
+Got it. I've added this task:
+  [E][ ] trip (from: Oct 4 2019 to: Oct 11 2019)
+Now you have 1 tasks in the list.
+____________________________________________________________
+____________________________________________________________
+Here are the tasks on Oct 7 2019:
+1.[E][ ] trip (from: Oct 4 2019 to: Oct 11 2019)
+____________________________________________________________
+____________________________________________________________
+You have no tasks on Jan 1 2019.
+____________________________________________________________
+Bye. Hope to see you again soon!
+____________________________________________________________
+```
+
+## Test 23: `schedule` errors on an invalid date
+
+**Aim:** `schedule <text>` with an unparseable date produces a
+schedule-specific error message (mentioning `schedule`, not `on`, in its
+example) instead of crashing or silently doing nothing.
+
+**Input:**
+```text
+schedule notadate
+bye
+```
+
+**Expected output:**
+```text
+____________________________________________________________
+ _____  __   __  _____ 
+|  ___| \ \ / / |  ___|
+| |__    \ V /  | |__  
+|  __|    \ /   |  __| 
+|_____|    V    |_____|
+
+Hello! I'm Eve.
+What can I do for you?
+
+Here's what I can do:
+  todo <description>                                       Add a to-do task.
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
+  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
+  find <keyword>                                           Find tasks whose description contains a keyword.
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
+  list                                                     Show all tasks.
+  mark <task number>                                       Mark a task as done.
+  unmark <task number>                                     Mark a task as not done.
+  delete <task number>                                     Remove a task.
+  bye                                                      Exit the program.
+____________________________________________________________
+____________________________________________________________
+OOPS!!! Please give the date as yyyy-mm-dd, e.g. schedule 2019-12-02.
 ____________________________________________________________
 Bye. Hope to see you again soon!
 ____________________________________________________________

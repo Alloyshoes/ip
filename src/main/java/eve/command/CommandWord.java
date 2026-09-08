@@ -14,7 +14,7 @@ public enum CommandWord {
     EVENT("event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>", "Add an event."),
     ON("on <yyyy-mm-dd>", "Show tasks occurring on a date."),
     FIND("find <keyword>", "Find tasks whose description contains a keyword."),
-    SCHEDULE("schedule", "Show all deadlines and events in chronological order."),
+    SCHEDULE("schedule [yyyy-mm-dd]", "Show your whole schedule, or just one date's."),
     LIST("list", "Show all tasks."),
     MARK("mark <task number>", "Mark a task as done."),
     UNMARK("unmark <task number>", "Mark a task as not done."),

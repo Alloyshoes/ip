@@ -2,6 +2,7 @@ package eve;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
+import java.util.Optional;
 
 import eve.command.AddCommand;
 import eve.command.Command;
@@ -61,7 +62,7 @@ public class Parser {
             case FIND:
                 return new FindCommand(parseFindKeyword(arguments));
             case SCHEDULE:
-                return new ScheduleCommand();
+                return new ScheduleCommand(parseOptionalScheduleDate(arguments));
             default:
                 // Unreachable: CommandWord.fromWord only ever returns one of the cases above.
                 // If a new CommandWord constant is ever added without a case here, this
@@ -194,6 +195,21 @@ public class Parser {
             throw new EveException("OOPS!!! Please give the " + fieldDescription
                     + " as yyyy-mm-dd, e.g. " + example + ".");
         }
+    }
+
+    /**
+     * Parses the arguments of a {@code schedule} command: an optional date
+     * to filter to, e.g. {@code "2019-12-02"}, or empty for the whole
+     * schedule.
+     *
+     * @param arguments the text after "schedule".
+     * @throws EveException if a date was given but is malformed.
+     */
+    private static Optional<LocalDate> parseOptionalScheduleDate(String arguments) throws EveException {
+        if (arguments.isEmpty()) {
+            return Optional.empty();
+        }
+        return Optional.of(parseDate("date", arguments, "schedule 2019-12-02"));
     }
 
     /**
