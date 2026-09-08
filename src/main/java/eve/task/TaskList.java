@@ -3,6 +3,7 @@ package eve.task;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import eve.EveException;
@@ -108,5 +109,19 @@ public class TaskList {
     /** Returns a read-only view of every task in the list, in order. */
     public List<Task> asList() {
         return Collections.unmodifiableList(tasks);
+    }
+
+    /**
+     * Returns every task that has a schedule date (see
+     * {@link Task#getScheduleDate}) -- deadlines and events, but not plain
+     * to-dos -- sorted chronologically by that date.
+     *
+     * @return the dated tasks, earliest first.
+     */
+    public List<Task> schedule() {
+        return tasks.stream()
+                .filter(task -> task.getScheduleDate().isPresent())
+                .sorted(Comparator.comparing(task -> task.getScheduleDate().get()))
+                .toList();
     }
 }

@@ -12,6 +12,7 @@ import eve.command.FindCommand;
 import eve.command.ListCommand;
 import eve.command.MarkCommand;
 import eve.command.OnCommand;
+import eve.command.ScheduleCommand;
 import eve.command.UnmarkCommand;
 import eve.task.Deadline;
 import eve.task.Event;
@@ -59,6 +60,8 @@ public class Parser {
                 return new OnCommand(parseOnDate(arguments));
             case FIND:
                 return new FindCommand(parseFindKeyword(arguments));
+            case SCHEDULE:
+                return new ScheduleCommand();
             default:
                 // Unreachable: CommandWord.fromWord only ever returns one of the cases above.
                 // If a new CommandWord constant is ever added without a case here, this

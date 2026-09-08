@@ -3,6 +3,7 @@ package eve.task;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
+import java.util.Optional;
 
 /**
  * A task with a description and a done/not-done status.
@@ -82,5 +83,16 @@ public class Task {
      */
     public boolean matches(String keyword) {
         return description.toLowerCase(Locale.ENGLISH).contains(keyword.toLowerCase(Locale.ENGLISH));
+    }
+
+    /**
+     * Returns the date this task should be sorted by in a chronological
+     * schedule view. Plain tasks (to-dos) have no date, so this is empty
+     * unless a subclass overrides it.
+     *
+     * @return the task's schedule date, or empty if it has none.
+     */
+    public Optional<LocalDate> getScheduleDate() {
+        return Optional.empty();
     }
 }

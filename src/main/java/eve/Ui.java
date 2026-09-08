@@ -110,6 +110,23 @@ public class Ui {
         showLines(lines);
     }
 
+    /**
+     * Prints every dated task (deadlines and events) in chronological
+     * order, or a "nothing scheduled" message if there are none.
+     *
+     * @param scheduledTasks the dated tasks, earliest first.
+     */
+    public void showSchedule(List<Task> scheduledTasks) {
+        List<String> lines = new ArrayList<>();
+        if (scheduledTasks.isEmpty()) {
+            lines.add("You have no deadlines or events scheduled.");
+        } else {
+            lines.add("Here is your schedule, in chronological order:");
+            lines.addAll(numberedLines(scheduledTasks));
+        }
+        showLines(lines);
+    }
+
     /** Prints confirmation that a task was marked as done. */
     public void showTaskMarked(Task task) {
         showLines("Nice! I've marked this task as done:", "  " + task);
