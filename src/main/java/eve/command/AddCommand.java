@@ -1,5 +1,6 @@
 package eve.command;
 
+import eve.EveException;
 import eve.Storage;
 import eve.Ui;
 import eve.task.Task;
@@ -19,7 +20,13 @@ public class AddCommand extends Command {
     }
 
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) {
+    public void execute(TaskList tasks, Ui ui, Storage storage) throws EveException {
+        // Task.equals() compares type/description (and dates, for Deadline/Event), so this
+        // catches an exact duplicate -- the same task typed in twice by mistake -- without
+        // stopping the user from adding two genuinely different tasks that just sound similar.
+        if (tasks.asList().contains(task)) {
+            throw new EveException("Oops, that's already on your list! No need to add it twice.");
+        }
         tasks.add(task);
         storage.save(tasks.asList());
         ui.showTaskAdded(task, tasks.size());

@@ -1,6 +1,7 @@
 package eve.task;
 
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.Optional;
 
 /** A task that starts on a specific date and ends on a specific date. */
@@ -42,5 +43,16 @@ public class Event extends Task {
     @Override
     public Optional<LocalDate> getScheduleDate() {
         return Optional.of(from);
+    }
+
+    /** Also compares the start/end dates, on top of the type/description check {@link Task#equals} does. */
+    @Override
+    public boolean equals(Object other) {
+        return super.equals(other) && from.equals(((Event) other).from) && to.equals(((Event) other).to);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), from, to);
     }
 }

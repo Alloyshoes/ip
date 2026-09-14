@@ -3,6 +3,7 @@ package eve.task;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -94,5 +95,30 @@ public class Task {
      */
     public Optional<LocalDate> getScheduleDate() {
         return Optional.empty();
+    }
+
+    /**
+     * Returns whether this task has the same type and description as another --
+     * used to catch adding an exact duplicate of a task already on the list.
+     * Deliberately ignores done/not-done status, since marking a task doesn't
+     * make it a different task. Subclasses that add their own fields (the
+     * dates on {@link Deadline}/{@link Event}) override this to also compare
+     * those.
+     */
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) {
+            return true;
+        }
+        if (!(other instanceof Task)) {
+            return false;
+        }
+        Task task = (Task) other;
+        return getClass() == task.getClass() && description.equals(task.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getClass(), description);
     }
 }

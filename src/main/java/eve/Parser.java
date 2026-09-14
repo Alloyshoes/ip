@@ -38,8 +38,12 @@ public class Parser {
      * @throws EveException if the command word is unknown or its arguments are invalid.
      */
     public static Command parse(String fullCommand) throws EveException {
-        String word = getCommandWord(fullCommand);
-        String arguments = getArguments(fullCommand);
+        // Without this, a leading space before the command word (e.g. " todo read book")
+        // makes getCommandWord see an empty word instead of "todo", since it splits on the
+        // very first space -- misreporting a perfectly valid command as unrecognized.
+        String trimmedCommand = fullCommand.trim();
+        String word = getCommandWord(trimmedCommand);
+        String arguments = getArguments(trimmedCommand);
         CommandWord commandWord = CommandWord.fromWord(word);
         switch (commandWord) {
             case HELP:
@@ -106,12 +110,13 @@ public class Parser {
      * Parses the arguments of a {@code todo} command.
      *
      * @param arguments the text after "todo".
-     * @throws EveException if the description is empty.
+     * @throws EveException if the description is empty or contains a reserved character.
      */
     private static ToDo parseTodo(String arguments) throws EveException {
         if (arguments.isEmpty()) {
             throw new EveException("Oops, your to-do needs a description! What are we adding?");
         }
+        checkNoReservedCharacters(arguments);
         return new ToDo(arguments);
     }
 
@@ -120,13 +125,17 @@ public class Parser {
      * {@code "return book /by 2019-12-02"}.
      *
      * @param arguments the text after "deadline".
-     * @throws EveException if the description or '/by' date is missing, empty, or malformed.
+     * @throws EveException if the description or '/by' date is missing, empty, duplicated,
+     *      malformed, or the description contains a reserved character.
      */
     private static Deadline parseDeadline(String arguments) throws EveException {
         int byIndex = arguments.indexOf(" /by ");
         if (byIndex == -1) {
             throw new EveException("Oops, a deadline needs a description and a '/by' date! "
                     + "Try: deadline return book /by 2019-12-02.");
+        }
+        if (arguments.indexOf(" /by ", byIndex + 1) != -1) {
+            throw new EveException("Oops, I only need one '/by' date -- you've given me two!");
         }
         String description = arguments.substring(0, byIndex).trim();
         String byText = arguments.substring(byIndex + " /by ".length()).trim();
@@ -136,6 +145,7 @@ public class Parser {
         if (byText.isEmpty()) {
             throw new EveException("Oops, don't forget the '/by' date!");
         }
+        checkNoReservedCharacters(description);
         LocalDate by = parseDate("'/by' date", byText, "2019-12-02");
         return new Deadline(description, by);
     }
@@ -145,7 +155,9 @@ public class Parser {
      * {@code "project meeting /from 2019-10-04 /to 2019-10-11"}.
      *
      * @param arguments the text after "event".
-     * @throws EveException if the description or either date is missing, empty, or malformed.
+     * @throws EveException if the description or either date is missing, empty, duplicated,
+     *      malformed, out of order (the event ends before it starts), or the description
+     *      contains a reserved character.
      */
     private static Event parseEvent(String arguments) throws EveException {
         int fromIndex = arguments.indexOf(" /from ");
@@ -154,6 +166,12 @@ public class Parser {
             throw new EveException("Oops, an event needs a description, a '/from' date, and a '/to' date! "
                     + "Try: event project meeting /from 2019-10-04 /to 2019-10-11.");
         }
+        if (arguments.indexOf(" /from ", fromIndex + 1) != -1) {
+            throw new EveException("Oops, I only need one '/from' date -- you've given me two!");
+        }
+        if (arguments.indexOf(" /to ", toIndex + 1) != -1) {
+            throw new EveException("Oops, I only need one '/to' date -- you've given me two!");
+        }
         String description = arguments.substring(0, fromIndex).trim();
         String fromText = arguments.substring(fromIndex + " /from ".length(), toIndex).trim();
         String toText = arguments.substring(toIndex + " /to ".length()).trim();
@@ -161,9 +179,28 @@ public class Parser {
             throw new EveException("Oops, fill in the event's description, '/from' date, "
                     + "and '/to' date -- all of them!");
         }
+        checkNoReservedCharacters(description);
         LocalDate from = parseDate("'/from' date", fromText, "2019-10-04");
         LocalDate to = parseDate("'/to' date", toText, "2019-10-11");
+        if (from.isAfter(to)) {
+            throw new EveException("Oops, that event ends before it starts! Double check your '/from' and '/to'.");
+        }
         return new Event(description, from, to);
+    }
+
+    /**
+     * Rejects a description containing "|" or a line break -- {@link Storage} uses " | " to
+     * separate a saved task's fields and one line per task, so either would silently corrupt
+     * that task (and any task saved after it) the next time it's written to disk.
+     *
+     * @param description the description to check.
+     * @throws EveException if it contains a reserved character.
+     */
+    private static void checkNoReservedCharacters(String description) throws EveException {
+        if (description.contains("|") || description.contains("\n") || description.contains("\r")) {
+            throw new EveException("Oops, descriptions can't contain '|' or line breaks -- "
+                    + "I use those behind the scenes to save your tasks!");
+        }
     }
 
     /**

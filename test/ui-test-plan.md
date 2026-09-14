@@ -1173,3 +1173,221 @@ ____________________________________________________________
 Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________
 ```
+
+## Test 25: Leading and trailing whitespace are tolerated
+
+**Aim:** Leading whitespace before the command word (which used to make
+`getCommandWord` see an empty word and report "unrecognized command"),
+and trailing whitespace after a command, are trimmed away instead of
+breaking a perfectly valid command.
+
+**Input:**
+```text
+   todo read book
+list   
+bye
+```
+
+**Expected output:**
+```text
+____________________________________________________________
+*********************
+***     E V E     ***
+*********************
+
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
+
+(Type help anytime to see everything I can do!)
+____________________________________________________________
+____________________________________________________________
+Added it, let's gooo:
+  [T][ ] read book
+That's 1 tasks -- you're basically unstoppable!
+____________________________________________________________
+____________________________________________________________
+Here's everything on your list:
+1.[T][ ] read book
+____________________________________________________________
+Byeee! Go crush it out there -- see you again soon!
+____________________________________________________________
+```
+
+## Test 26: Descriptions can't contain reserved characters
+
+**Aim:** A description containing '|' would silently corrupt that task
+(and mis-align every task saved after it) the next time the list is
+saved to disk, since `Storage` uses " | " to separate a saved task's
+fields. `todo`, `deadline`, and `event` each reject it with a clear
+error instead of adding a task that will break on reload; none of the
+three end up on the list.
+
+**Input:**
+```text
+todo buy milk | eggs
+deadline pay | rent /by 2020-01-01
+event trip | home /from 2020-01-01 /to 2020-01-02
+list
+bye
+```
+
+**Expected output:**
+```text
+____________________________________________________________
+*********************
+***     E V E     ***
+*********************
+
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
+
+(Type help anytime to see everything I can do!)
+____________________________________________________________
+____________________________________________________________
+Oops, descriptions can't contain '|' or line breaks -- I use those behind the scenes to save your tasks!
+____________________________________________________________
+____________________________________________________________
+Oops, descriptions can't contain '|' or line breaks -- I use those behind the scenes to save your tasks!
+____________________________________________________________
+____________________________________________________________
+Oops, descriptions can't contain '|' or line breaks -- I use those behind the scenes to save your tasks!
+____________________________________________________________
+____________________________________________________________
+Here's everything on your list:
+____________________________________________________________
+Byeee! Go crush it out there -- see you again soon!
+____________________________________________________________
+```
+
+## Test 27: An event can't end before it starts
+
+**Aim:** `event ... /from X /to Y` is rejected when Y is before X, but
+a single-day event (X equal to Y) is accepted -- Eve only tracks whole
+dates, not times, so a same-day event is completely normal, not a
+zero-duration error.
+
+**Input:**
+```text
+event trip /from 2020-05-10 /to 2020-05-01
+event day trip /from 2020-05-10 /to 2020-05-10
+list
+bye
+```
+
+**Expected output:**
+```text
+____________________________________________________________
+*********************
+***     E V E     ***
+*********************
+
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
+
+(Type help anytime to see everything I can do!)
+____________________________________________________________
+____________________________________________________________
+Oops, that event ends before it starts! Double check your '/from' and '/to'.
+____________________________________________________________
+____________________________________________________________
+Added it, let's gooo:
+  [E][ ] day trip (from: May 10 2020 to: May 10 2020)
+That's 1 tasks -- you're basically unstoppable!
+____________________________________________________________
+____________________________________________________________
+Here's everything on your list:
+1.[E][ ] day trip (from: May 10 2020 to: May 10 2020)
+____________________________________________________________
+Byeee! Go crush it out there -- see you again soon!
+____________________________________________________________
+```
+
+## Test 28: Adding an exact duplicate task is rejected
+
+**Aim:** Adding a task identical in type, description, and date(s) to
+one already on the list is rejected instead of silently creating a
+second copy. A task that merely shares a description with an existing
+one, but differs in date, is not treated as a duplicate.
+
+**Input:**
+```text
+deadline pay rent /by 2020-01-01
+deadline pay rent /by 2020-01-01
+deadline pay rent /by 2020-02-01
+list
+bye
+```
+
+**Expected output:**
+```text
+____________________________________________________________
+*********************
+***     E V E     ***
+*********************
+
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
+
+(Type help anytime to see everything I can do!)
+____________________________________________________________
+____________________________________________________________
+Added it, let's gooo:
+  [D][ ] pay rent (by: Jan 1 2020)
+That's 1 tasks -- you're basically unstoppable!
+____________________________________________________________
+____________________________________________________________
+Oops, that's already on your list! No need to add it twice.
+____________________________________________________________
+____________________________________________________________
+Added it, let's gooo:
+  [D][ ] pay rent (by: Feb 1 2020)
+That's 2 tasks -- you're basically unstoppable!
+____________________________________________________________
+____________________________________________________________
+Here's everything on your list:
+1.[D][ ] pay rent (by: Jan 1 2020)
+2.[D][ ] pay rent (by: Feb 1 2020)
+____________________________________________________________
+Byeee! Go crush it out there -- see you again soon!
+____________________________________________________________
+```
+
+## Test 29: A repeated date marker is rejected
+
+**Aim:** `deadline ... /by X /by Y` and `event ... /from X /from Y ...`
+(or a repeated `/to`) are each rejected with a message naming the
+repeated marker, instead of trying to parse the leftover text as part
+of the date and failing with a generic "invalid date" error.
+
+**Input:**
+```text
+deadline task /by 2020-01-01 /by 2020-02-02
+event trip /from 2020-01-01 /from 2020-01-02 /to 2020-01-03
+event trip /from 2020-01-01 /to 2020-01-02 /to 2020-01-03
+bye
+```
+
+**Expected output:**
+```text
+____________________________________________________________
+*********************
+***     E V E     ***
+*********************
+
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
+
+(Type help anytime to see everything I can do!)
+____________________________________________________________
+____________________________________________________________
+Oops, I only need one '/by' date -- you've given me two!
+____________________________________________________________
+____________________________________________________________
+Oops, I only need one '/from' date -- you've given me two!
+____________________________________________________________
+____________________________________________________________
+Oops, I only need one '/to' date -- you've given me two!
+____________________________________________________________
+Byeee! Go crush it out there -- see you again soon!
+____________________________________________________________
+```
