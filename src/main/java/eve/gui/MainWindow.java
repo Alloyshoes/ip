@@ -16,14 +16,14 @@ import javafx.util.Duration;
 /** Controller for the main GUI window: shows the conversation and forwards user input to {@link Eve}. */
 public class MainWindow {
     private static final Color[] AVATAR_COLORS = {
-        Color.web("#e57373"),
-        Color.web("#64b5f6"),
-        Color.web("#81c784"),
-        Color.web("#ffd54f"),
-        Color.web("#ba68c8"),
-        Color.web("#4db6ac"),
-        Color.web("#ff8a65"),
-        Color.web("#a1887f"),
+        Color.web("#ff5c8a"),
+        Color.web("#ff9f1c"),
+        Color.web("#ffca3a"),
+        Color.web("#8ac926"),
+        Color.web("#1982c4"),
+        Color.web("#6a4c93"),
+        Color.web("#ff6f59"),
+        Color.web("#2ec4b6"),
     };
 
     @FXML

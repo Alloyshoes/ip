@@ -71,7 +71,7 @@ public class TaskList {
      */
     public int toIndex(int taskNumber) throws EveException {
         if (taskNumber < 1 || taskNumber > tasks.size()) {
-            throw new EveException("OOPS!!! There is no task number " + taskNumber + " in your list.");
+            throw new EveException("Oops, there's no task number " + taskNumber + " in your list!");
         }
         int index = taskNumber - 1;
         // Postcondition this method promises every caller (MarkCommand, UnmarkCommand,
