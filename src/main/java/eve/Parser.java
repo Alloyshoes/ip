@@ -10,6 +10,7 @@ import eve.command.CommandWord;
 import eve.command.DeleteCommand;
 import eve.command.ExitCommand;
 import eve.command.FindCommand;
+import eve.command.HelpCommand;
 import eve.command.ListCommand;
 import eve.command.MarkCommand;
 import eve.command.OnCommand;
@@ -41,6 +42,8 @@ public class Parser {
         String arguments = getArguments(fullCommand);
         CommandWord commandWord = CommandWord.fromWord(word);
         switch (commandWord) {
+            case HELP:
+                return new HelpCommand();
             case BYE:
                 return new ExitCommand();
             case LIST:

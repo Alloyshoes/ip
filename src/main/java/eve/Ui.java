@@ -27,43 +27,33 @@ public class Ui {
 
     private final Scanner scanner = new Scanner(System.in);
 
-    /** Prints the banner, greeting, and a list of every available command. */
+    /** Prints the banner and greeting, and points the user at the {@code help} command. */
     public void showWelcome() {
-        int usageWidth = Arrays.stream(CommandWord.values())
-                .mapToInt(commandWord -> commandWord.getUsage().length())
-                .max()
-                .orElse(0);
-
         List<String> lines = new ArrayList<>();
         lines.add(BANNER);
         lines.add("");
         lines.add("HEYYY! I'm Eve!");
         lines.add("I'm SO ready to help you crush your to-do list today! What's first?");
         lines.add("");
-        lines.add("Here's everything I can do:");
-        lines.addAll(Arrays.stream(CommandWord.values())
-                .map(commandWord -> String.format("  %-" + usageWidth + "s  %s",
-                        commandWord.getUsage(), commandWord.getDescription()))
-                .toList());
+        lines.add("(Type help anytime to see everything I can do!)");
         showLines(lines);
     }
 
     /**
-     * Returns Eve's greeting and command summary as one plain-text block
-     * (no banner or console dividers), for the GUI to show as its first
-     * chat message. Unlike {@link #showWelcome}, each command gets its own
-     * bulleted usage line followed by an indented description line, with a
-     * blank line between commands -- a padded table (as the CLI uses)
-     * would run together into an unreadable wall of text once a GUI label
-     * wraps its longer lines onto several lines of a proportional-width
-     * font.
+     * Returns Eve's greeting as one plain-text block (no banner or console
+     * dividers), for the GUI to show as its first chat message.
      *
-     * @return the greeting and command summary.
+     * @return the greeting.
      */
     public String getWelcomeMessage() {
+        return "HEYYY! I'm Eve!\nI'm SO ready to help you crush your to-do list today! "
+                + "(Type help anytime to see everything I can do!)";
+    }
+
+    /** Prints the full list of available commands, e.g. in response to the {@code help} command. */
+    public void showHelp() {
         List<String> lines = new ArrayList<>();
-        lines.add("HEYYY! I'm Eve!");
-        lines.add("I'm SO ready to help you crush your to-do list today! Here's everything I can do:");
+        lines.add("Here's everything I can do:");
         lines.add("");
         lines.addAll(Arrays.stream(CommandWord.values())
                 .flatMap(commandWord -> Stream.of(
@@ -71,7 +61,7 @@ public class Ui {
                         "   " + commandWord.getDescription(),
                         ""))
                 .toList());
-        return String.join("\n", lines).stripTrailing();
+        showLines(lines.subList(0, lines.size() - 1));
     }
 
     /**
