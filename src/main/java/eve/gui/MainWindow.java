@@ -64,12 +64,19 @@ public class MainWindow {
     }
 
     /**
-     * Injects the Eve instance this window sends user input to.
+     * Injects the Eve instance this window sends user input to, and shows
+     * its greeting as the first chat message so the window doesn't open on
+     * a blank conversation.
      *
      * @param eve the chatbot instance to use.
      */
     public void setEve(Eve eve) {
         this.eve = eve;
+        dialogContainer.getChildren().add(DialogBox.getEveDialog(eve.getWelcomeMessage(), eveAvatarColor));
+        // The height listener above scrolls to the bottom on this first message too, which
+        // would hide its opening lines since it's taller than the window. Scroll back to the
+        // top afterwards -- there's nothing above it to miss, so starting there reads better.
+        Platform.runLater(() -> scrollPane.setVvalue(0.0));
     }
 
     /**
@@ -85,9 +92,10 @@ public class MainWindow {
             return;
         }
         String response = eve.getResponse(input);
-        dialogContainer.getChildren().addAll(
-                DialogBox.getUserDialog(input, userAvatarColor),
-                DialogBox.getEveDialog(response, eveAvatarColor));
+        DialogBox eveDialog = eve.isLastResponseError()
+                ? DialogBox.getErrorDialog(response)
+                : DialogBox.getEveDialog(response, eveAvatarColor);
+        dialogContainer.getChildren().addAll(DialogBox.getUserDialog(input, userAvatarColor), eveDialog);
         userInput.clear();
 
         if (eve.isExit()) {

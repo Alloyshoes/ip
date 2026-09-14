@@ -49,6 +49,26 @@ public class Ui {
     }
 
     /**
+     * Returns Eve's greeting and command summary as one plain-text block
+     * (no banner or console dividers), for the GUI to show as its first
+     * chat message. Unlike {@link #showWelcome}, this lists each command
+     * as a single line rather than a padded table, since a GUI label uses
+     * a proportional-width font that padding won't line up in.
+     *
+     * @return the greeting and command summary.
+     */
+    public String getWelcomeMessage() {
+        List<String> lines = new ArrayList<>();
+        lines.add("Hello! I'm Eve.");
+        lines.add("What can I do for you? Here's what I can do:");
+        lines.add("");
+        lines.addAll(Arrays.stream(CommandWord.values())
+                .map(commandWord -> commandWord.getUsage() + " - " + commandWord.getDescription())
+                .toList());
+        return String.join("\n", lines);
+    }
+
+    /**
      * Reads one line of user input.
      *
      * @return the full line the user typed, unmodified.
