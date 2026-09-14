@@ -39,18 +39,12 @@ public class MainWindow {
     private Color userAvatarColor;
     private Color eveAvatarColor;
 
-    /**
-     * Keeps the conversation scrolled to the newest message, and picks a
-     * random, distinct avatar color for the user and for Eve, kept for the
-     * rest of this session.
-     */
+    /** Picks a random, distinct avatar color for the user and for Eve, kept for the rest of this session. */
     public void initialize() {
         // As in DialogBox: a typo'd or removed fx:id in MainWindow.fxml would leave
         // the corresponding field null instead of failing the FXML load.
         assert scrollPane != null && dialogContainer != null && userInput != null && sendButton != null
                 : "MainWindow.fxml did not inject one of the @FXML fields";
-
-        dialogContainer.heightProperty().addListener((observable) -> scrollPane.setVvalue(1.0));
 
         Random random = new Random();
         userAvatarColor = AVATAR_COLORS[random.nextInt(AVATAR_COLORS.length)];
@@ -73,17 +67,15 @@ public class MainWindow {
     public void setEve(Eve eve) {
         this.eve = eve;
         dialogContainer.getChildren().add(DialogBox.getEveDialog(eve.getWelcomeMessage(), eveAvatarColor));
-        // The height listener above scrolls to the bottom on this first message too, which
-        // would hide its opening lines since it's taller than the window. Scroll back to the
-        // top afterwards -- there's nothing above it to miss, so starting there reads better.
-        Platform.runLater(() -> scrollPane.setVvalue(0.0));
+        // Deliberately don't scroll here: the view already starts at the top, which is
+        // exactly where a reader wants to start on a greeting long enough to need scrolling.
     }
 
     /**
      * Sends the text field's content to Eve, shows both it and Eve's
-     * response as new dialog boxes, and closes the window shortly after a
-     * "bye" response. Called when the user presses Enter in the text field
-     * or clicks "Send".
+     * response as new dialog boxes, scrolls to show them, and closes the
+     * window shortly after a "bye" response. Called when the user presses
+     * Enter in the text field or clicks "Send".
      */
     @FXML
     private void handleUserInput() {
@@ -97,6 +89,9 @@ public class MainWindow {
                 : DialogBox.getEveDialog(response, eveAvatarColor);
         dialogContainer.getChildren().addAll(DialogBox.getUserDialog(input, userAvatarColor), eveDialog);
         userInput.clear();
+        // Deferred one pulse so the newly added dialog boxes are already sized/wrapped --
+        // scrolling immediately would use their pre-layout height and land short of the bottom.
+        Platform.runLater(() -> scrollPane.setVvalue(1.0));
 
         if (eve.isExit()) {
             PauseTransition delay = new PauseTransition(Duration.seconds(1.2));
