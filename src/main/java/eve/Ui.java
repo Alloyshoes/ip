@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 import eve.command.CommandWord;
 import eve.task.Task;
@@ -46,6 +47,32 @@ public class Ui {
                         commandWord.getUsage(), commandWord.getDescription()))
                 .toList());
         showLines(lines);
+    }
+
+    /**
+     * Returns Eve's greeting and command summary as one plain-text block
+     * (no banner or console dividers), for the GUI to show as its first
+     * chat message. Unlike {@link #showWelcome}, each command gets its own
+     * bulleted usage line followed by an indented description line, with a
+     * blank line between commands -- a padded table (as the CLI uses)
+     * would run together into an unreadable wall of text once a GUI label
+     * wraps its longer lines onto several lines of a proportional-width
+     * font.
+     *
+     * @return the greeting and command summary.
+     */
+    public String getWelcomeMessage() {
+        List<String> lines = new ArrayList<>();
+        lines.add("Hello! I'm Eve.");
+        lines.add("What can I do for you? Here's what I can do:");
+        lines.add("");
+        lines.addAll(Arrays.stream(CommandWord.values())
+                .flatMap(commandWord -> Stream.of(
+                        "• " + commandWord.getUsage(),
+                        "   " + commandWord.getDescription(),
+                        ""))
+                .toList());
+        return String.join("\n", lines).stripTrailing();
     }
 
     /**

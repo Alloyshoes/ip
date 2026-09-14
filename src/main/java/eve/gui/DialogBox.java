@@ -2,6 +2,7 @@ package eve.gui;
 
 import java.io.IOException;
 
+import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
@@ -14,15 +15,22 @@ import javafx.scene.text.Text;
 
 /**
  * A single chat bubble: a message label next to a round, colored avatar
- * with an initial letter -- either something the user typed, or Eve's
- * response to it. Each speaker keeps the same randomly-chosen avatar color
- * for the whole session (see {@link MainWindow}), since real avatar images
- * aren't available. Built from DialogBox.fxml; use {@link #getUserDialog}
- * or {@link #getEveDialog} rather than the constructor directly, since they
- * also set the alignment/avatar position that distinguishes the two.
+ * with an initial letter -- either something the user typed, Eve's normal
+ * response to it, or an error message from Eve. Each speaker keeps the
+ * same randomly-chosen avatar color for the whole session (see
+ * {@link MainWindow}), since real avatar images aren't available; error
+ * messages instead use a fixed alert color so they stand out regardless of
+ * that session's colors. Built from DialogBox.fxml; use
+ * {@link #getUserDialog}, {@link #getEveDialog}, or {@link #getErrorDialog}
+ * rather than the constructor directly, since they also set the
+ * alignment/avatar position/style that distinguishes the three.
  */
 public class DialogBox extends HBox {
     private static final double AVATAR_DIAMETER = 36;
+    /** Bubble width as a fraction of the window's width, capped so it doesn't stretch full-width on wide windows. */
+    private static final double BUBBLE_WIDTH_FRACTION = 0.72;
+    private static final double MAX_BUBBLE_WIDTH = 480;
+    private static final Color ERROR_AVATAR_COLOR = Color.web("#d32f2f");
 
     @FXML
     private Label dialog;
@@ -44,6 +52,12 @@ public class DialogBox extends HBox {
         assert dialog != null && avatarPane != null : "DialogBox.fxml did not inject dialog/avatarPane";
         dialog.setText(text);
         avatarPane.getChildren().add(createAvatar(avatarColor, avatarLetter));
+
+        // Let this HBox fill the width the VBox conversation view gives it, and keep the
+        // bubble's wrap width in proportion to that so bubbles reflow as the window is resized.
+        setMaxWidth(Double.MAX_VALUE);
+        dialog.maxWidthProperty().bind(
+                Bindings.min(widthProperty().multiply(BUBBLE_WIDTH_FRACTION), MAX_BUBBLE_WIDTH));
     }
 
     /**
@@ -72,6 +86,22 @@ public class DialogBox extends HBox {
         DialogBox box = new DialogBox(text, avatarColor, "E");
         box.setAlignment(Pos.CENTER_LEFT);
         box.dialog.getStyleClass().add("eve-dialog");
+        return box;
+    }
+
+    /**
+     * Returns a dialog box for an error message from Eve (e.g. an invalid
+     * command), styled distinctly from a normal reply so it catches the
+     * user's attention. Always uses a fixed alert color rather than this
+     * session's Eve avatar color, so it reads as an error regardless of
+     * which color Eve was randomly assigned.
+     *
+     * @param text the error message.
+     */
+    public static DialogBox getErrorDialog(String text) {
+        DialogBox box = new DialogBox(text, ERROR_AVATAR_COLOR, "!");
+        box.setAlignment(Pos.CENTER_LEFT);
+        box.dialog.getStyleClass().add("error-dialog");
         return box;
     }
 

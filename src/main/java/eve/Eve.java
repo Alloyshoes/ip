@@ -23,6 +23,7 @@ public class Eve {
     private final Storage storage;
     private TaskList tasks;
     private boolean isExit = false;
+    private boolean lastResponseWasError = false;
 
     /**
      * Creates an Eve instance, loading any previously saved tasks.
@@ -72,12 +73,14 @@ public class Eve {
         PrintStream originalOut = System.out;
         ByteArrayOutputStream captured = new ByteArrayOutputStream();
         System.setOut(new PrintStream(captured));
+        lastResponseWasError = false;
         try {
             Command command = Parser.parse(input);
             command.execute(tasks, ui, storage);
             isExit = command.isExit();
         } catch (EveException e) {
             ui.showError(e.getMessage());
+            lastResponseWasError = true;
         } finally {
             System.setOut(originalOut);
         }
@@ -87,6 +90,21 @@ public class Eve {
     /** Returns whether the last command processed by {@link #getResponse} was "bye". */
     public boolean isExit() {
         return isExit;
+    }
+
+    /** Returns whether the last response from {@link #getResponse} was an error message. */
+    public boolean isLastResponseError() {
+        return lastResponseWasError;
+    }
+
+    /**
+     * Returns Eve's greeting and command summary, for the GUI to show as
+     * its first chat message.
+     *
+     * @return the greeting and command summary.
+     */
+    public String getWelcomeMessage() {
+        return ui.getWelcomeMessage();
     }
 
     /**
