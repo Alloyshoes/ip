@@ -33,29 +33,27 @@ bye
 **Expected output:**
 ```text
 ____________________________________________________________
- _____  __   __  _____ 
-|  ___| \ \ / / |  ___|
-| |__    \ V /  | |__  
-|  __|    \ /   |  __| 
-|_____|    V    |_____|
+*********************
+***     E V E     ***
+*********************
 
-Hello! I'm Eve.
-What can I do for you?
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's what I can do:
-  todo <description>                                       Add a to-do task.
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
-  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
-  find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
-  list                                                     Show all tasks.
-  mark <task number>                                       Mark a task as done.
-  unmark <task number>                                     Mark a task as not done.
-  delete <task number>                                     Remove a task.
-  bye                                                      Exit the program.
+Here's everything I can do:
+  todo <description>                                       Add a to-do task!
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
+  on <yyyy-mm-dd>                                          Show tasks happening on a date!
+  find <keyword>                                           Find tasks matching a keyword!
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
+  list                                                     Show off your whole task list!
+  mark <task number>                                       Mark a task as done!
+  unmark <task number>                                     Mark a task as not done yet!
+  delete <task number>                                     Clear a task off your list!
+  bye                                                      Wrap up for now!
 ____________________________________________________________
-Bye. Hope to see you again soon!
+Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________
 ```
 
@@ -76,44 +74,42 @@ bye
 **Expected output:**
 ```text
 ____________________________________________________________
- _____  __   __  _____ 
-|  ___| \ \ / / |  ___|
-| |__    \ V /  | |__  
-|  __|    \ /   |  __| 
-|_____|    V    |_____|
+*********************
+***     E V E     ***
+*********************
 
-Hello! I'm Eve.
-What can I do for you?
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's what I can do:
-  todo <description>                                       Add a to-do task.
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
-  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
-  find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
-  list                                                     Show all tasks.
-  mark <task number>                                       Mark a task as done.
-  unmark <task number>                                     Mark a task as not done.
-  delete <task number>                                     Remove a task.
-  bye                                                      Exit the program.
+Here's everything I can do:
+  todo <description>                                       Add a to-do task!
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
+  on <yyyy-mm-dd>                                          Show tasks happening on a date!
+  find <keyword>                                           Find tasks matching a keyword!
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
+  list                                                     Show off your whole task list!
+  mark <task number>                                       Mark a task as done!
+  unmark <task number>                                     Mark a task as not done yet!
+  delete <task number>                                     Clear a task off your list!
+  bye                                                      Wrap up for now!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [T][ ] read book
-Now you have 1 tasks in the list.
+That's 1 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [T][ ] return book
-Now you have 2 tasks in the list.
+That's 2 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-Here are the tasks in your list:
+Here's everything on your list:
 1.[T][ ] read book
 2.[T][ ] return book
 ____________________________________________________________
-Bye. Hope to see you again soon!
+Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________
 ```
 
@@ -134,48 +130,46 @@ bye
 **Expected output:**
 ```text
 ____________________________________________________________
- _____  __   __  _____ 
-|  ___| \ \ / / |  ___|
-| |__    \ V /  | |__  
-|  __|    \ /   |  __| 
-|_____|    V    |_____|
+*********************
+***     E V E     ***
+*********************
 
-Hello! I'm Eve.
-What can I do for you?
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's what I can do:
-  todo <description>                                       Add a to-do task.
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
-  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
-  find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
-  list                                                     Show all tasks.
-  mark <task number>                                       Mark a task as done.
-  unmark <task number>                                     Mark a task as not done.
-  delete <task number>                                     Remove a task.
-  bye                                                      Exit the program.
+Here's everything I can do:
+  todo <description>                                       Add a to-do task!
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
+  on <yyyy-mm-dd>                                          Show tasks happening on a date!
+  find <keyword>                                           Find tasks matching a keyword!
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
+  list                                                     Show off your whole task list!
+  mark <task number>                                       Mark a task as done!
+  unmark <task number>                                     Mark a task as not done yet!
+  delete <task number>                                     Clear a task off your list!
+  bye                                                      Wrap up for now!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [T][ ] read book
-Now you have 1 tasks in the list.
+That's 1 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [T][ ] return book
-Now you have 2 tasks in the list.
+That's 2 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-Nice! I've marked this task as done:
+YESSS! Marked as done:
   [T][X] return book
 ____________________________________________________________
 ____________________________________________________________
-Here are the tasks in your list:
+Here's everything on your list:
 1.[T][ ] read book
 2.[T][X] return book
 ____________________________________________________________
-Bye. Hope to see you again soon!
+Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________
 ```
 
@@ -198,56 +192,54 @@ bye
 **Expected output:**
 ```text
 ____________________________________________________________
- _____  __   __  _____ 
-|  ___| \ \ / / |  ___|
-| |__    \ V /  | |__  
-|  __|    \ /   |  __| 
-|_____|    V    |_____|
+*********************
+***     E V E     ***
+*********************
 
-Hello! I'm Eve.
-What can I do for you?
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's what I can do:
-  todo <description>                                       Add a to-do task.
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
-  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
-  find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
-  list                                                     Show all tasks.
-  mark <task number>                                       Mark a task as done.
-  unmark <task number>                                     Mark a task as not done.
-  delete <task number>                                     Remove a task.
-  bye                                                      Exit the program.
+Here's everything I can do:
+  todo <description>                                       Add a to-do task!
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
+  on <yyyy-mm-dd>                                          Show tasks happening on a date!
+  find <keyword>                                           Find tasks matching a keyword!
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
+  list                                                     Show off your whole task list!
+  mark <task number>                                       Mark a task as done!
+  unmark <task number>                                     Mark a task as not done yet!
+  delete <task number>                                     Clear a task off your list!
+  bye                                                      Wrap up for now!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [T][ ] read book
-Now you have 1 tasks in the list.
+That's 1 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [T][ ] return book
-Now you have 2 tasks in the list.
+That's 2 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-Nice! I've marked this task as done:
+YESSS! Marked as done:
   [T][X] read book
 ____________________________________________________________
 ____________________________________________________________
-Nice! I've marked this task as done:
+YESSS! Marked as done:
   [T][X] return book
 ____________________________________________________________
 ____________________________________________________________
-OK, I've marked this task as not done yet:
+Got it, back on the list:
   [T][ ] return book
 ____________________________________________________________
 ____________________________________________________________
-Here are the tasks in your list:
+Here's everything on your list:
 1.[T][X] read book
 2.[T][ ] return book
 ____________________________________________________________
-Bye. Hope to see you again soon!
+Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________
 ```
 
@@ -265,34 +257,32 @@ bye
 **Expected output:**
 ```text
 ____________________________________________________________
- _____  __   __  _____ 
-|  ___| \ \ / / |  ___|
-| |__    \ V /  | |__  
-|  __|    \ /   |  __| 
-|_____|    V    |_____|
+*********************
+***     E V E     ***
+*********************
 
-Hello! I'm Eve.
-What can I do for you?
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's what I can do:
-  todo <description>                                       Add a to-do task.
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
-  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
-  find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
-  list                                                     Show all tasks.
-  mark <task number>                                       Mark a task as done.
-  unmark <task number>                                     Mark a task as not done.
-  delete <task number>                                     Remove a task.
-  bye                                                      Exit the program.
+Here's everything I can do:
+  todo <description>                                       Add a to-do task!
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
+  on <yyyy-mm-dd>                                          Show tasks happening on a date!
+  find <keyword>                                           Find tasks matching a keyword!
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
+  list                                                     Show off your whole task list!
+  mark <task number>                                       Mark a task as done!
+  unmark <task number>                                     Mark a task as not done yet!
+  delete <task number>                                     Clear a task off your list!
+  bye                                                      Wrap up for now!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [T][ ] borrow book
-Now you have 1 tasks in the list.
+That's 1 tasks -- you're basically unstoppable!
 ____________________________________________________________
-Bye. Hope to see you again soon!
+Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________
 ```
 
@@ -311,34 +301,32 @@ bye
 **Expected output:**
 ```text
 ____________________________________________________________
- _____  __   __  _____ 
-|  ___| \ \ / / |  ___|
-| |__    \ V /  | |__  
-|  __|    \ /   |  __| 
-|_____|    V    |_____|
+*********************
+***     E V E     ***
+*********************
 
-Hello! I'm Eve.
-What can I do for you?
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's what I can do:
-  todo <description>                                       Add a to-do task.
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
-  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
-  find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
-  list                                                     Show all tasks.
-  mark <task number>                                       Mark a task as done.
-  unmark <task number>                                     Mark a task as not done.
-  delete <task number>                                     Remove a task.
-  bye                                                      Exit the program.
+Here's everything I can do:
+  todo <description>                                       Add a to-do task!
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
+  on <yyyy-mm-dd>                                          Show tasks happening on a date!
+  find <keyword>                                           Find tasks matching a keyword!
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
+  list                                                     Show off your whole task list!
+  mark <task number>                                       Mark a task as done!
+  unmark <task number>                                     Mark a task as not done yet!
+  delete <task number>                                     Clear a task off your list!
+  bye                                                      Wrap up for now!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [D][ ] return book (by: Jun 6 2019)
-Now you have 1 tasks in the list.
+That's 1 tasks -- you're basically unstoppable!
 ____________________________________________________________
-Bye. Hope to see you again soon!
+Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________
 ```
 
@@ -358,34 +346,32 @@ bye
 **Expected output:**
 ```text
 ____________________________________________________________
- _____  __   __  _____ 
-|  ___| \ \ / / |  ___|
-| |__    \ V /  | |__  
-|  __|    \ /   |  __| 
-|_____|    V    |_____|
+*********************
+***     E V E     ***
+*********************
 
-Hello! I'm Eve.
-What can I do for you?
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's what I can do:
-  todo <description>                                       Add a to-do task.
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
-  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
-  find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
-  list                                                     Show all tasks.
-  mark <task number>                                       Mark a task as done.
-  unmark <task number>                                     Mark a task as not done.
-  delete <task number>                                     Remove a task.
-  bye                                                      Exit the program.
+Here's everything I can do:
+  todo <description>                                       Add a to-do task!
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
+  on <yyyy-mm-dd>                                          Show tasks happening on a date!
+  find <keyword>                                           Find tasks matching a keyword!
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
+  list                                                     Show off your whole task list!
+  mark <task number>                                       Mark a task as done!
+  unmark <task number>                                     Mark a task as not done yet!
+  delete <task number>                                     Clear a task off your list!
+  bye                                                      Wrap up for now!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [E][ ] project meeting (from: Aug 6 2019 to: Aug 7 2019)
-Now you have 1 tasks in the list.
+That's 1 tasks -- you're basically unstoppable!
 ____________________________________________________________
-Bye. Hope to see you again soon!
+Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________
 ```
 
@@ -411,70 +397,68 @@ bye
 **Expected output:**
 ```text
 ____________________________________________________________
- _____  __   __  _____ 
-|  ___| \ \ / / |  ___|
-| |__    \ V /  | |__  
-|  __|    \ /   |  __| 
-|_____|    V    |_____|
+*********************
+***     E V E     ***
+*********************
 
-Hello! I'm Eve.
-What can I do for you?
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's what I can do:
-  todo <description>                                       Add a to-do task.
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
-  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
-  find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
-  list                                                     Show all tasks.
-  mark <task number>                                       Mark a task as done.
-  unmark <task number>                                     Mark a task as not done.
-  delete <task number>                                     Remove a task.
-  bye                                                      Exit the program.
+Here's everything I can do:
+  todo <description>                                       Add a to-do task!
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
+  on <yyyy-mm-dd>                                          Show tasks happening on a date!
+  find <keyword>                                           Find tasks matching a keyword!
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
+  list                                                     Show off your whole task list!
+  mark <task number>                                       Mark a task as done!
+  unmark <task number>                                     Mark a task as not done yet!
+  delete <task number>                                     Clear a task off your list!
+  bye                                                      Wrap up for now!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [T][ ] read book
-Now you have 1 tasks in the list.
+That's 1 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [D][ ] return book (by: Jun 6 2019)
-Now you have 2 tasks in the list.
+That's 2 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [E][ ] project meeting (from: Aug 6 2019 to: Aug 7 2019)
-Now you have 3 tasks in the list.
+That's 3 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [T][ ] join sports club
-Now you have 4 tasks in the list.
+That's 4 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-Nice! I've marked this task as done:
+YESSS! Marked as done:
   [T][X] read book
 ____________________________________________________________
 ____________________________________________________________
-Nice! I've marked this task as done:
+YESSS! Marked as done:
   [T][X] join sports club
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [T][ ] borrow book
-Now you have 5 tasks in the list.
+That's 5 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-Here are the tasks in your list:
+Here's everything on your list:
 1.[T][X] read book
 2.[D][ ] return book (by: Jun 6 2019)
 3.[E][ ] project meeting (from: Aug 6 2019 to: Aug 7 2019)
 4.[T][X] join sports club
 5.[T][ ] borrow book
 ____________________________________________________________
-Bye. Hope to see you again soon!
+Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________
 ```
 
@@ -495,35 +479,33 @@ bye
 **Expected output:**
 ```text
 ____________________________________________________________
- _____  __   __  _____ 
-|  ___| \ \ / / |  ___|
-| |__    \ V /  | |__  
-|  __|    \ /   |  __| 
-|_____|    V    |_____|
+*********************
+***     E V E     ***
+*********************
 
-Hello! I'm Eve.
-What can I do for you?
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's what I can do:
-  todo <description>                                       Add a to-do task.
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
-  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
-  find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
-  list                                                     Show all tasks.
-  mark <task number>                                       Mark a task as done.
-  unmark <task number>                                     Mark a task as not done.
-  delete <task number>                                     Remove a task.
-  bye                                                      Exit the program.
+Here's everything I can do:
+  todo <description>                                       Add a to-do task!
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
+  on <yyyy-mm-dd>                                          Show tasks happening on a date!
+  find <keyword>                                           Find tasks matching a keyword!
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
+  list                                                     Show off your whole task list!
+  mark <task number>                                       Mark a task as done!
+  unmark <task number>                                     Mark a task as not done yet!
+  delete <task number>                                     Clear a task off your list!
+  bye                                                      Wrap up for now!
 ____________________________________________________________
 ____________________________________________________________
-OOPS!!! The description of a todo cannot be empty.
+Oops, your to-do needs a description! What are we adding?
 ____________________________________________________________
 ____________________________________________________________
-OOPS!!! I'm sorry, but I don't know what that means :-(
+Oops, I don't recognize that command! No worries -- give it another shot?
 ____________________________________________________________
-Bye. Hope to see you again soon!
+Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________
 ```
 
@@ -546,41 +528,39 @@ bye
 **Expected output:**
 ```text
 ____________________________________________________________
- _____  __   __  _____ 
-|  ___| \ \ / / |  ___|
-| |__    \ V /  | |__  
-|  __|    \ /   |  __| 
-|_____|    V    |_____|
+*********************
+***     E V E     ***
+*********************
 
-Hello! I'm Eve.
-What can I do for you?
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's what I can do:
-  todo <description>                                       Add a to-do task.
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
-  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
-  find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
-  list                                                     Show all tasks.
-  mark <task number>                                       Mark a task as done.
-  unmark <task number>                                     Mark a task as not done.
-  delete <task number>                                     Remove a task.
-  bye                                                      Exit the program.
+Here's everything I can do:
+  todo <description>                                       Add a to-do task!
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
+  on <yyyy-mm-dd>                                          Show tasks happening on a date!
+  find <keyword>                                           Find tasks matching a keyword!
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
+  list                                                     Show off your whole task list!
+  mark <task number>                                       Mark a task as done!
+  unmark <task number>                                     Mark a task as not done yet!
+  delete <task number>                                     Clear a task off your list!
+  bye                                                      Wrap up for now!
 ____________________________________________________________
 ____________________________________________________________
-OOPS!!! A deadline needs a description and a '/by' date, e.g. deadline return book /by 2019-12-02.
+Oops, a deadline needs a description and a '/by' date! Try: deadline return book /by 2019-12-02.
 ____________________________________________________________
 ____________________________________________________________
-OOPS!!! An event needs a description, a '/from' date, and a '/to' date, e.g. event project meeting /from 2019-10-04 /to 2019-10-11.
+Oops, an event needs a description, a '/from' date, and a '/to' date! Try: event project meeting /from 2019-10-04 /to 2019-10-11.
 ____________________________________________________________
 ____________________________________________________________
-OOPS!!! There is no task number 5 in your list.
+Oops, there's no task number 5 in your list!
 ____________________________________________________________
 ____________________________________________________________
-OOPS!!! 'abc' is not a valid task number.
+Oops, 'abc' isn't a valid task number! Numbers only, please.
 ____________________________________________________________
-Bye. Hope to see you again soon!
+Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________
 ```
 
@@ -606,62 +586,60 @@ bye
 **Expected output:**
 ```text
 ____________________________________________________________
- _____  __   __  _____ 
-|  ___| \ \ / / |  ___|
-| |__    \ V /  | |__  
-|  __|    \ /   |  __| 
-|_____|    V    |_____|
+*********************
+***     E V E     ***
+*********************
 
-Hello! I'm Eve.
-What can I do for you?
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's what I can do:
-  todo <description>                                       Add a to-do task.
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
-  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
-  find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
-  list                                                     Show all tasks.
-  mark <task number>                                       Mark a task as done.
-  unmark <task number>                                     Mark a task as not done.
-  delete <task number>                                     Remove a task.
-  bye                                                      Exit the program.
+Here's everything I can do:
+  todo <description>                                       Add a to-do task!
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
+  on <yyyy-mm-dd>                                          Show tasks happening on a date!
+  find <keyword>                                           Find tasks matching a keyword!
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
+  list                                                     Show off your whole task list!
+  mark <task number>                                       Mark a task as done!
+  unmark <task number>                                     Mark a task as not done yet!
+  delete <task number>                                     Clear a task off your list!
+  bye                                                      Wrap up for now!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [T][ ] read book
-Now you have 1 tasks in the list.
+That's 1 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [D][ ] return book (by: Jun 6 2019)
-Now you have 2 tasks in the list.
+That's 2 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [E][ ] project meeting (from: Aug 6 2019 to: Aug 7 2019)
-Now you have 3 tasks in the list.
+That's 3 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-Nice! I've marked this task as done:
+YESSS! Marked as done:
   [T][X] read book
 ____________________________________________________________
 ____________________________________________________________
-Nice! I've marked this task as done:
+YESSS! Marked as done:
   [D][X] return book (by: Jun 6 2019)
 ____________________________________________________________
 ____________________________________________________________
-Noted. I've removed this task:
+Poof, gone! Removed:
   [D][X] return book (by: Jun 6 2019)
-Now you have 2 tasks in the list.
+Down to 2 tasks -- look at you go!
 ____________________________________________________________
 ____________________________________________________________
-Here are the tasks in your list:
+Here's everything on your list:
 1.[T][X] read book
 2.[E][ ] project meeting (from: Aug 6 2019 to: Aug 7 2019)
 ____________________________________________________________
-Bye. Hope to see you again soon!
+Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________
 ```
 
@@ -685,50 +663,48 @@ bye
 **Expected output:**
 ```text
 ____________________________________________________________
- _____  __   __  _____ 
-|  ___| \ \ / / |  ___|
-| |__    \ V /  | |__  
-|  __|    \ /   |  __| 
-|_____|    V    |_____|
+*********************
+***     E V E     ***
+*********************
 
-Hello! I'm Eve.
-What can I do for you?
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's what I can do:
-  todo <description>                                       Add a to-do task.
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
-  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
-  find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
-  list                                                     Show all tasks.
-  mark <task number>                                       Mark a task as done.
-  unmark <task number>                                     Mark a task as not done.
-  delete <task number>                                     Remove a task.
-  bye                                                      Exit the program.
+Here's everything I can do:
+  todo <description>                                       Add a to-do task!
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
+  on <yyyy-mm-dd>                                          Show tasks happening on a date!
+  find <keyword>                                           Find tasks matching a keyword!
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
+  list                                                     Show off your whole task list!
+  mark <task number>                                       Mark a task as done!
+  unmark <task number>                                     Mark a task as not done yet!
+  delete <task number>                                     Clear a task off your list!
+  bye                                                      Wrap up for now!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [T][ ] x
-Now you have 1 tasks in the list.
+That's 1 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-OOPS!!! Please tell me which task number, e.g. mark 2.
+Oops, I need a task number for that! Try something like mark 2.
 ____________________________________________________________
 ____________________________________________________________
-OOPS!!! 'abc' is not a valid task number.
+Oops, 'abc' isn't a valid task number! Numbers only, please.
 ____________________________________________________________
 ____________________________________________________________
-OOPS!!! There is no task number 0 in your list.
+Oops, there's no task number 0 in your list!
 ____________________________________________________________
 ____________________________________________________________
-OOPS!!! There is no task number 99 in your list.
+Oops, there's no task number 99 in your list!
 ____________________________________________________________
 ____________________________________________________________
-Here are the tasks in your list:
+Here's everything on your list:
 1.[T][ ] x
 ____________________________________________________________
-Bye. Hope to see you again soon!
+Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________
 ```
 
@@ -749,43 +725,41 @@ bye
 **Expected output:**
 ```text
 ____________________________________________________________
- _____  __   __  _____ 
-|  ___| \ \ / / |  ___|
-| |__    \ V /  | |__  
-|  __|    \ /   |  __| 
-|_____|    V    |_____|
+*********************
+***     E V E     ***
+*********************
 
-Hello! I'm Eve.
-What can I do for you?
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's what I can do:
-  todo <description>                                       Add a to-do task.
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
-  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
-  find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
-  list                                                     Show all tasks.
-  mark <task number>                                       Mark a task as done.
-  unmark <task number>                                     Mark a task as not done.
-  delete <task number>                                     Remove a task.
-  bye                                                      Exit the program.
+Here's everything I can do:
+  todo <description>                                       Add a to-do task!
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
+  on <yyyy-mm-dd>                                          Show tasks happening on a date!
+  find <keyword>                                           Find tasks matching a keyword!
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
+  list                                                     Show off your whole task list!
+  mark <task number>                                       Mark a task as done!
+  unmark <task number>                                     Mark a task as not done yet!
+  delete <task number>                                     Clear a task off your list!
+  bye                                                      Wrap up for now!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [T][ ] read book
-Now you have 1 tasks in the list.
+That's 1 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [D][ ] return book (by: Jun 6 2019)
-Now you have 2 tasks in the list.
+That's 2 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-Nice! I've marked this task as done:
+YESSS! Marked as done:
   [T][X] read book
 ____________________________________________________________
-Bye. Hope to see you again soon!
+Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________
 ```
 
@@ -798,34 +772,32 @@ bye
 **Second expected output:**
 ```text
 ____________________________________________________________
- _____  __   __  _____ 
-|  ___| \ \ / / |  ___|
-| |__    \ V /  | |__  
-|  __|    \ /   |  __| 
-|_____|    V    |_____|
+*********************
+***     E V E     ***
+*********************
 
-Hello! I'm Eve.
-What can I do for you?
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's what I can do:
-  todo <description>                                       Add a to-do task.
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
-  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
-  find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
-  list                                                     Show all tasks.
-  mark <task number>                                       Mark a task as done.
-  unmark <task number>                                     Mark a task as not done.
-  delete <task number>                                     Remove a task.
-  bye                                                      Exit the program.
+Here's everything I can do:
+  todo <description>                                       Add a to-do task!
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
+  on <yyyy-mm-dd>                                          Show tasks happening on a date!
+  find <keyword>                                           Find tasks matching a keyword!
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
+  list                                                     Show off your whole task list!
+  mark <task number>                                       Mark a task as done!
+  unmark <task number>                                     Mark a task as not done yet!
+  delete <task number>                                     Clear a task off your list!
+  bye                                                      Wrap up for now!
 ____________________________________________________________
 ____________________________________________________________
-Here are the tasks in your list:
+Here's everything on your list:
 1.[T][X] read book
 2.[D][ ] return book (by: Jun 6 2019)
 ____________________________________________________________
-Bye. Hope to see you again soon!
+Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________
 ```
 
@@ -861,35 +833,33 @@ Warning: skipping corrupted line in data file: NOT A VALID LINE
 Warning: skipping corrupted line in data file: T | X | bad status
 Warning: skipping corrupted line in data file: D | 0 | return book | June 6th
 ____________________________________________________________
- _____  __   __  _____ 
-|  ___| \ \ / / |  ___|
-| |__    \ V /  | |__  
-|  __|    \ /   |  __| 
-|_____|    V    |_____|
+*********************
+***     E V E     ***
+*********************
 
-Hello! I'm Eve.
-What can I do for you?
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's what I can do:
-  todo <description>                                       Add a to-do task.
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
-  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
-  find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
-  list                                                     Show all tasks.
-  mark <task number>                                       Mark a task as done.
-  unmark <task number>                                     Mark a task as not done.
-  delete <task number>                                     Remove a task.
-  bye                                                      Exit the program.
+Here's everything I can do:
+  todo <description>                                       Add a to-do task!
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
+  on <yyyy-mm-dd>                                          Show tasks happening on a date!
+  find <keyword>                                           Find tasks matching a keyword!
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
+  list                                                     Show off your whole task list!
+  mark <task number>                                       Mark a task as done!
+  unmark <task number>                                     Mark a task as not done yet!
+  delete <task number>                                     Clear a task off your list!
+  bye                                                      Wrap up for now!
 ____________________________________________________________
 ____________________________________________________________
-Here are the tasks in your list:
+Here's everything on your list:
 1.[T][X] read book
 2.[D][ ] good deadline (by: Dec 2 2019)
 3.[E][ ] trip (from: Oct 4 2019 to: Oct 11 2019)
 ____________________________________________________________
-Bye. Hope to see you again soon!
+Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________
 ```
 
@@ -911,38 +881,36 @@ bye
 **Expected output:**
 ```text
 ____________________________________________________________
- _____  __   __  _____ 
-|  ___| \ \ / / |  ___|
-| |__    \ V /  | |__  
-|  __|    \ /   |  __| 
-|_____|    V    |_____|
+*********************
+***     E V E     ***
+*********************
 
-Hello! I'm Eve.
-What can I do for you?
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's what I can do:
-  todo <description>                                       Add a to-do task.
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
-  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
-  find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
-  list                                                     Show all tasks.
-  mark <task number>                                       Mark a task as done.
-  unmark <task number>                                     Mark a task as not done.
-  delete <task number>                                     Remove a task.
-  bye                                                      Exit the program.
+Here's everything I can do:
+  todo <description>                                       Add a to-do task!
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
+  on <yyyy-mm-dd>                                          Show tasks happening on a date!
+  find <keyword>                                           Find tasks matching a keyword!
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
+  list                                                     Show off your whole task list!
+  mark <task number>                                       Mark a task as done!
+  unmark <task number>                                     Mark a task as not done yet!
+  delete <task number>                                     Clear a task off your list!
+  bye                                                      Wrap up for now!
 ____________________________________________________________
 ____________________________________________________________
-OOPS!!! Please give the '/by' date as yyyy-mm-dd, e.g. 2019-12-02.
+Oops, give the '/by' date as yyyy-mm-dd! Like 2019-12-02.
 ____________________________________________________________
 ____________________________________________________________
-OOPS!!! Please give the '/to' date as yyyy-mm-dd, e.g. 2019-10-11.
+Oops, give the '/to' date as yyyy-mm-dd! Like 2019-10-11.
 ____________________________________________________________
 ____________________________________________________________
-Here are the tasks in your list:
+Here's everything on your list:
 ____________________________________________________________
-Bye. Hope to see you again soon!
+Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________
 ```
 
@@ -969,55 +937,53 @@ bye
 **Expected output:**
 ```text
 ____________________________________________________________
- _____  __   __  _____ 
-|  ___| \ \ / / |  ___|
-| |__    \ V /  | |__  
-|  __|    \ /   |  __| 
-|_____|    V    |_____|
+*********************
+***     E V E     ***
+*********************
 
-Hello! I'm Eve.
-What can I do for you?
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's what I can do:
-  todo <description>                                       Add a to-do task.
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
-  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
-  find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
-  list                                                     Show all tasks.
-  mark <task number>                                       Mark a task as done.
-  unmark <task number>                                     Mark a task as not done.
-  delete <task number>                                     Remove a task.
-  bye                                                      Exit the program.
+Here's everything I can do:
+  todo <description>                                       Add a to-do task!
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
+  on <yyyy-mm-dd>                                          Show tasks happening on a date!
+  find <keyword>                                           Find tasks matching a keyword!
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
+  list                                                     Show off your whole task list!
+  mark <task number>                                       Mark a task as done!
+  unmark <task number>                                     Mark a task as not done yet!
+  delete <task number>                                     Clear a task off your list!
+  bye                                                      Wrap up for now!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [T][ ] just a todo
-Now you have 1 tasks in the list.
+That's 1 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [D][ ] return book (by: Dec 2 2019)
-Now you have 2 tasks in the list.
+That's 2 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [E][ ] trip (from: Oct 4 2019 to: Oct 11 2019)
-Now you have 3 tasks in the list.
+That's 3 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-Here are the tasks on Oct 7 2019:
+Here's what's happening on Oct 7 2019:
 1.[E][ ] trip (from: Oct 4 2019 to: Oct 11 2019)
 ____________________________________________________________
 ____________________________________________________________
-Here are the tasks on Oct 4 2019:
+Here's what's happening on Oct 4 2019:
 1.[E][ ] trip (from: Oct 4 2019 to: Oct 11 2019)
 ____________________________________________________________
 ____________________________________________________________
-You have no tasks on Jan 1 2019.
+Nothing going on Jan 1 2019 -- nice and clear!
 ____________________________________________________________
-Bye. Hope to see you again soon!
+Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________
 ```
 
@@ -1037,35 +1003,33 @@ bye
 **Expected output:**
 ```text
 ____________________________________________________________
- _____  __   __  _____ 
-|  ___| \ \ / / |  ___|
-| |__    \ V /  | |__  
-|  __|    \ /   |  __| 
-|_____|    V    |_____|
+*********************
+***     E V E     ***
+*********************
 
-Hello! I'm Eve.
-What can I do for you?
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's what I can do:
-  todo <description>                                       Add a to-do task.
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
-  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
-  find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
-  list                                                     Show all tasks.
-  mark <task number>                                       Mark a task as done.
-  unmark <task number>                                     Mark a task as not done.
-  delete <task number>                                     Remove a task.
-  bye                                                      Exit the program.
+Here's everything I can do:
+  todo <description>                                       Add a to-do task!
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
+  on <yyyy-mm-dd>                                          Show tasks happening on a date!
+  find <keyword>                                           Find tasks matching a keyword!
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
+  list                                                     Show off your whole task list!
+  mark <task number>                                       Mark a task as done!
+  unmark <task number>                                     Mark a task as not done yet!
+  delete <task number>                                     Clear a task off your list!
+  bye                                                      Wrap up for now!
 ____________________________________________________________
 ____________________________________________________________
-OOPS!!! Please tell me which date, e.g. on 2019-12-02.
+Oops, which date? Try: on 2019-12-02.
 ____________________________________________________________
 ____________________________________________________________
-OOPS!!! Please give the date as yyyy-mm-dd, e.g. on 2019-12-02.
+Oops, give the date as yyyy-mm-dd! Like on 2019-12-02.
 ____________________________________________________________
-Bye. Hope to see you again soon!
+Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________
 ```
 
@@ -1093,64 +1057,62 @@ bye
 **Expected output:**
 ```text
 ____________________________________________________________
- _____  __   __  _____ 
-|  ___| \ \ / / |  ___|
-| |__    \ V /  | |__  
-|  __|    \ /   |  __| 
-|_____|    V    |_____|
+*********************
+***     E V E     ***
+*********************
 
-Hello! I'm Eve.
-What can I do for you?
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's what I can do:
-  todo <description>                                       Add a to-do task.
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
-  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
-  find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
-  list                                                     Show all tasks.
-  mark <task number>                                       Mark a task as done.
-  unmark <task number>                                     Mark a task as not done.
-  delete <task number>                                     Remove a task.
-  bye                                                      Exit the program.
+Here's everything I can do:
+  todo <description>                                       Add a to-do task!
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
+  on <yyyy-mm-dd>                                          Show tasks happening on a date!
+  find <keyword>                                           Find tasks matching a keyword!
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
+  list                                                     Show off your whole task list!
+  mark <task number>                                       Mark a task as done!
+  unmark <task number>                                     Mark a task as not done yet!
+  delete <task number>                                     Clear a task off your list!
+  bye                                                      Wrap up for now!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [T][ ] read book
-Now you have 1 tasks in the list.
+That's 1 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [D][ ] return book (by: Jun 6 2019)
-Now you have 2 tasks in the list.
+That's 2 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [T][ ] join sports club
-Now you have 3 tasks in the list.
+That's 3 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-Nice! I've marked this task as done:
+YESSS! Marked as done:
   [T][X] read book
 ____________________________________________________________
 ____________________________________________________________
-Nice! I've marked this task as done:
+YESSS! Marked as done:
   [D][X] return book (by: Jun 6 2019)
 ____________________________________________________________
 ____________________________________________________________
-Here are the matching tasks in your list:
+Found these matches for you:
 1.[T][X] read book
 2.[D][X] return book (by: Jun 6 2019)
 ____________________________________________________________
 ____________________________________________________________
-Here are the matching tasks in your list:
+Found these matches for you:
 1.[T][ ] join sports club
 ____________________________________________________________
 ____________________________________________________________
-No matching tasks found in your list.
+Hmm, no matches in your list -- but don't stop now!
 ____________________________________________________________
-Bye. Hope to see you again soon!
+Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________
 ```
 
@@ -1168,32 +1130,30 @@ bye
 **Expected output:**
 ```text
 ____________________________________________________________
- _____  __   __  _____ 
-|  ___| \ \ / / |  ___|
-| |__    \ V /  | |__  
-|  __|    \ /   |  __| 
-|_____|    V    |_____|
+*********************
+***     E V E     ***
+*********************
 
-Hello! I'm Eve.
-What can I do for you?
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's what I can do:
-  todo <description>                                       Add a to-do task.
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
-  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
-  find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
-  list                                                     Show all tasks.
-  mark <task number>                                       Mark a task as done.
-  unmark <task number>                                     Mark a task as not done.
-  delete <task number>                                     Remove a task.
-  bye                                                      Exit the program.
+Here's everything I can do:
+  todo <description>                                       Add a to-do task!
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
+  on <yyyy-mm-dd>                                          Show tasks happening on a date!
+  find <keyword>                                           Find tasks matching a keyword!
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
+  list                                                     Show off your whole task list!
+  mark <task number>                                       Mark a task as done!
+  unmark <task number>                                     Mark a task as not done yet!
+  delete <task number>                                     Clear a task off your list!
+  bye                                                      Wrap up for now!
 ____________________________________________________________
 ____________________________________________________________
-OOPS!!! Please tell me what to search for, e.g. find book.
+Oops, what should I search for? Try: find book.
 ____________________________________________________________
-Bye. Hope to see you again soon!
+Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________
 ```
 
@@ -1217,55 +1177,53 @@ bye
 **Expected output:**
 ```text
 ____________________________________________________________
- _____  __   __  _____ 
-|  ___| \ \ / / |  ___|
-| |__    \ V /  | |__  
-|  __|    \ /   |  __| 
-|_____|    V    |_____|
+*********************
+***     E V E     ***
+*********************
 
-Hello! I'm Eve.
-What can I do for you?
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's what I can do:
-  todo <description>                                       Add a to-do task.
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
-  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
-  find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
-  list                                                     Show all tasks.
-  mark <task number>                                       Mark a task as done.
-  unmark <task number>                                     Mark a task as not done.
-  delete <task number>                                     Remove a task.
-  bye                                                      Exit the program.
+Here's everything I can do:
+  todo <description>                                       Add a to-do task!
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
+  on <yyyy-mm-dd>                                          Show tasks happening on a date!
+  find <keyword>                                           Find tasks matching a keyword!
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
+  list                                                     Show off your whole task list!
+  mark <task number>                                       Mark a task as done!
+  unmark <task number>                                     Mark a task as not done yet!
+  delete <task number>                                     Clear a task off your list!
+  bye                                                      Wrap up for now!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [T][ ] just a todo
-Now you have 1 tasks in the list.
+That's 1 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [D][ ] return book (by: Dec 2 2019)
-Now you have 2 tasks in the list.
+That's 2 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [E][ ] trip (from: Oct 4 2019 to: Oct 11 2019)
-Now you have 3 tasks in the list.
+That's 3 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [D][ ] earlier task (by: Sep 1 2019)
-Now you have 4 tasks in the list.
+That's 4 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-Here is your schedule, in chronological order:
+Here's your schedule, all lined up:
 1.[D][ ] earlier task (by: Sep 1 2019)
 2.[E][ ] trip (from: Oct 4 2019 to: Oct 11 2019)
 3.[D][ ] return book (by: Dec 2 2019)
 ____________________________________________________________
-Bye. Hope to see you again soon!
+Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________
 ```
 
@@ -1284,37 +1242,35 @@ bye
 **Expected output:**
 ```text
 ____________________________________________________________
- _____  __   __  _____ 
-|  ___| \ \ / / |  ___|
-| |__    \ V /  | |__  
-|  __|    \ /   |  __| 
-|_____|    V    |_____|
+*********************
+***     E V E     ***
+*********************
 
-Hello! I'm Eve.
-What can I do for you?
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's what I can do:
-  todo <description>                                       Add a to-do task.
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
-  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
-  find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
-  list                                                     Show all tasks.
-  mark <task number>                                       Mark a task as done.
-  unmark <task number>                                     Mark a task as not done.
-  delete <task number>                                     Remove a task.
-  bye                                                      Exit the program.
+Here's everything I can do:
+  todo <description>                                       Add a to-do task!
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
+  on <yyyy-mm-dd>                                          Show tasks happening on a date!
+  find <keyword>                                           Find tasks matching a keyword!
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
+  list                                                     Show off your whole task list!
+  mark <task number>                                       Mark a task as done!
+  unmark <task number>                                     Mark a task as not done yet!
+  delete <task number>                                     Clear a task off your list!
+  bye                                                      Wrap up for now!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [T][ ] just a todo
-Now you have 1 tasks in the list.
+That's 1 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-You have no deadlines or events scheduled.
+Your schedule's wide open -- blank canvas energy!
 ____________________________________________________________
-Bye. Hope to see you again soon!
+Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________
 ```
 
@@ -1336,41 +1292,39 @@ bye
 **Expected output:**
 ```text
 ____________________________________________________________
- _____  __   __  _____ 
-|  ___| \ \ / / |  ___|
-| |__    \ V /  | |__  
-|  __|    \ /   |  __| 
-|_____|    V    |_____|
+*********************
+***     E V E     ***
+*********************
 
-Hello! I'm Eve.
-What can I do for you?
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's what I can do:
-  todo <description>                                       Add a to-do task.
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
-  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
-  find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
-  list                                                     Show all tasks.
-  mark <task number>                                       Mark a task as done.
-  unmark <task number>                                     Mark a task as not done.
-  delete <task number>                                     Remove a task.
-  bye                                                      Exit the program.
+Here's everything I can do:
+  todo <description>                                       Add a to-do task!
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
+  on <yyyy-mm-dd>                                          Show tasks happening on a date!
+  find <keyword>                                           Find tasks matching a keyword!
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
+  list                                                     Show off your whole task list!
+  mark <task number>                                       Mark a task as done!
+  unmark <task number>                                     Mark a task as not done yet!
+  delete <task number>                                     Clear a task off your list!
+  bye                                                      Wrap up for now!
 ____________________________________________________________
 ____________________________________________________________
-Got it. I've added this task:
+Added it, let's gooo:
   [E][ ] trip (from: Oct 4 2019 to: Oct 11 2019)
-Now you have 1 tasks in the list.
+That's 1 tasks -- you're basically unstoppable!
 ____________________________________________________________
 ____________________________________________________________
-Here are the tasks on Oct 7 2019:
+Here's what's happening on Oct 7 2019:
 1.[E][ ] trip (from: Oct 4 2019 to: Oct 11 2019)
 ____________________________________________________________
 ____________________________________________________________
-You have no tasks on Jan 1 2019.
+Nothing going on Jan 1 2019 -- nice and clear!
 ____________________________________________________________
-Bye. Hope to see you again soon!
+Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________
 ```
 
@@ -1389,31 +1343,29 @@ bye
 **Expected output:**
 ```text
 ____________________________________________________________
- _____  __   __  _____ 
-|  ___| \ \ / / |  ___|
-| |__    \ V /  | |__  
-|  __|    \ /   |  __| 
-|_____|    V    |_____|
+*********************
+***     E V E     ***
+*********************
 
-Hello! I'm Eve.
-What can I do for you?
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's what I can do:
-  todo <description>                                       Add a to-do task.
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline.
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event.
-  on <yyyy-mm-dd>                                          Show tasks occurring on a date.
-  find <keyword>                                           Find tasks whose description contains a keyword.
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's.
-  list                                                     Show all tasks.
-  mark <task number>                                       Mark a task as done.
-  unmark <task number>                                     Mark a task as not done.
-  delete <task number>                                     Remove a task.
-  bye                                                      Exit the program.
+Here's everything I can do:
+  todo <description>                                       Add a to-do task!
+  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
+  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
+  on <yyyy-mm-dd>                                          Show tasks happening on a date!
+  find <keyword>                                           Find tasks matching a keyword!
+  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
+  list                                                     Show off your whole task list!
+  mark <task number>                                       Mark a task as done!
+  unmark <task number>                                     Mark a task as not done yet!
+  delete <task number>                                     Clear a task off your list!
+  bye                                                      Wrap up for now!
 ____________________________________________________________
 ____________________________________________________________
-OOPS!!! Please give the date as yyyy-mm-dd, e.g. schedule 2019-12-02.
+Oops, give the date as yyyy-mm-dd! Like schedule 2019-12-02.
 ____________________________________________________________
-Bye. Hope to see you again soon!
+Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________
 ```

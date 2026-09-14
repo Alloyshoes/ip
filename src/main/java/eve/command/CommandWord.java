@@ -9,17 +9,17 @@ import eve.EveException;
  * validate a typed word and decide which {@link Command} to build.
  */
 public enum CommandWord {
-    TODO("todo <description>", "Add a to-do task."),
-    DEADLINE("deadline <description> /by <yyyy-mm-dd>", "Add a task with a deadline."),
-    EVENT("event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>", "Add an event."),
-    ON("on <yyyy-mm-dd>", "Show tasks occurring on a date."),
-    FIND("find <keyword>", "Find tasks whose description contains a keyword."),
-    SCHEDULE("schedule [yyyy-mm-dd]", "Show your whole schedule, or just one date's."),
-    LIST("list", "Show all tasks."),
-    MARK("mark <task number>", "Mark a task as done."),
-    UNMARK("unmark <task number>", "Mark a task as not done."),
-    DELETE("delete <task number>", "Remove a task."),
-    BYE("bye", "Exit the program.");
+    TODO("todo <description>", "Add a to-do task!"),
+    DEADLINE("deadline <description> /by <yyyy-mm-dd>", "Add a task with a deadline!"),
+    EVENT("event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>", "Add an event!"),
+    ON("on <yyyy-mm-dd>", "Show tasks happening on a date!"),
+    FIND("find <keyword>", "Find tasks matching a keyword!"),
+    SCHEDULE("schedule [yyyy-mm-dd]", "Show your whole schedule, or just one date's!"),
+    LIST("list", "Show off your whole task list!"),
+    MARK("mark <task number>", "Mark a task as done!"),
+    UNMARK("unmark <task number>", "Mark a task as not done yet!"),
+    DELETE("delete <task number>", "Clear a task off your list!"),
+    BYE("bye", "Wrap up for now!");
 
     private final String usage;
     private final String description;
@@ -50,7 +50,7 @@ public enum CommandWord {
         try {
             return CommandWord.valueOf(word.toUpperCase());
         } catch (IllegalArgumentException e) {
-            throw new EveException("OOPS!!! I'm sorry, but I don't know what that means :-(");
+            throw new EveException("Oops, I don't recognize that command! No worries -- give it another shot?");
         }
     }
 }

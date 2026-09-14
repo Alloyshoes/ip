@@ -69,7 +69,7 @@ public class Parser {
                 // assertion should fail loudly during development instead of silently
                 // falling through to a misleading "unknown command" error at runtime.
                 assert false : "Unhandled CommandWord: " + commandWord;
-                throw new EveException("OOPS!!! I'm sorry, but I don't know what that means :-(");
+                throw new EveException("Oops, I don't recognize that command! No worries -- give it another shot?");
         }
     }
 
@@ -90,12 +90,12 @@ public class Parser {
      */
     private static int parseTaskNumber(String text) throws EveException {
         if (text.isEmpty()) {
-            throw new EveException("OOPS!!! Please tell me which task number, e.g. mark 2.");
+            throw new EveException("Oops, I need a task number for that! Try something like mark 2.");
         }
         try {
             return Integer.parseInt(text);
         } catch (NumberFormatException e) {
-            throw new EveException("OOPS!!! '" + text + "' is not a valid task number.");
+            throw new EveException("Oops, '" + text + "' isn't a valid task number! Numbers only, please.");
         }
     }
 
@@ -107,7 +107,7 @@ public class Parser {
      */
     private static ToDo parseTodo(String arguments) throws EveException {
         if (arguments.isEmpty()) {
-            throw new EveException("OOPS!!! The description of a todo cannot be empty.");
+            throw new EveException("Oops, your to-do needs a description! What are we adding?");
         }
         return new ToDo(arguments);
     }
@@ -122,16 +122,16 @@ public class Parser {
     private static Deadline parseDeadline(String arguments) throws EveException {
         int byIndex = arguments.indexOf(" /by ");
         if (byIndex == -1) {
-            throw new EveException("OOPS!!! A deadline needs a description and a "
-                    + "'/by' date, e.g. deadline return book /by 2019-12-02.");
+            throw new EveException("Oops, a deadline needs a description and a '/by' date! "
+                    + "Try: deadline return book /by 2019-12-02.");
         }
         String description = arguments.substring(0, byIndex).trim();
         String byText = arguments.substring(byIndex + " /by ".length()).trim();
         if (description.isEmpty()) {
-            throw new EveException("OOPS!!! The description of a deadline cannot be empty.");
+            throw new EveException("Oops, your deadline needs a description too!");
         }
         if (byText.isEmpty()) {
-            throw new EveException("OOPS!!! The '/by' date of a deadline cannot be empty.");
+            throw new EveException("Oops, don't forget the '/by' date!");
         }
         LocalDate by = parseDate("'/by' date", byText, "2019-12-02");
         return new Deadline(description, by);
@@ -148,16 +148,15 @@ public class Parser {
         int fromIndex = arguments.indexOf(" /from ");
         int toIndex = arguments.indexOf(" /to ");
         if (fromIndex == -1 || toIndex == -1 || toIndex < fromIndex) {
-            throw new EveException("OOPS!!! An event needs a description, a '/from' "
-                    + "date, and a '/to' date, e.g. event project meeting /from "
-                    + "2019-10-04 /to 2019-10-11.");
+            throw new EveException("Oops, an event needs a description, a '/from' date, and a '/to' date! "
+                    + "Try: event project meeting /from 2019-10-04 /to 2019-10-11.");
         }
         String description = arguments.substring(0, fromIndex).trim();
         String fromText = arguments.substring(fromIndex + " /from ".length(), toIndex).trim();
         String toText = arguments.substring(toIndex + " /to ".length()).trim();
         if (description.isEmpty() || fromText.isEmpty() || toText.isEmpty()) {
-            throw new EveException("OOPS!!! An event's description, '/from' date, "
-                    + "and '/to' date must all be filled in.");
+            throw new EveException("Oops, fill in the event's description, '/from' date, "
+                    + "and '/to' date -- all of them!");
         }
         LocalDate from = parseDate("'/from' date", fromText, "2019-10-04");
         LocalDate to = parseDate("'/to' date", toText, "2019-10-11");
@@ -172,7 +171,7 @@ public class Parser {
      */
     private static LocalDate parseOnDate(String arguments) throws EveException {
         if (arguments.isEmpty()) {
-            throw new EveException("OOPS!!! Please tell me which date, e.g. on 2019-12-02.");
+            throw new EveException("Oops, which date? Try: on 2019-12-02.");
         }
         return parseDate("date", arguments, "on 2019-12-02");
     }
@@ -192,8 +191,8 @@ public class Parser {
         try {
             return LocalDate.parse(dateText);
         } catch (DateTimeParseException e) {
-            throw new EveException("OOPS!!! Please give the " + fieldDescription
-                    + " as yyyy-mm-dd, e.g. " + example + ".");
+            throw new EveException("Oops, give the " + fieldDescription
+                    + " as yyyy-mm-dd! Like " + example + ".");
         }
     }
 
@@ -220,7 +219,7 @@ public class Parser {
      */
     private static String parseFindKeyword(String arguments) throws EveException {
         if (arguments.isEmpty()) {
-            throw new EveException("OOPS!!! Please tell me what to search for, e.g. find book.");
+            throw new EveException("Oops, what should I search for? Try: find book.");
         }
         return arguments;
     }

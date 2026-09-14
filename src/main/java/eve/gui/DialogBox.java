@@ -15,7 +15,7 @@ import javafx.scene.text.Text;
 
 /**
  * A single chat bubble: a message label next to a round, colored avatar
- * with an initial letter -- either something the user typed, Eve's normal
+ * with a small glyph -- either something the user typed, Eve's normal
  * response to it, or an error message from Eve. Each speaker keeps the
  * same randomly-chosen avatar color for the whole session (see
  * {@link MainWindow}), since real avatar images aren't available; error
@@ -37,7 +37,7 @@ public class DialogBox extends HBox {
     @FXML
     private StackPane avatarPane;
 
-    private DialogBox(String text, Color avatarColor, String avatarLetter) {
+    private DialogBox(String text, Color avatarColor, String avatarGlyph) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(DialogBox.class.getResource("/view/DialogBox.fxml"));
             fxmlLoader.setController(this);
@@ -51,7 +51,7 @@ public class DialogBox extends HBox {
         // surfacing later as a confusing NullPointerException. Assert it immediately.
         assert dialog != null && avatarPane != null : "DialogBox.fxml did not inject dialog/avatarPane";
         dialog.setText(text);
-        avatarPane.getChildren().add(createAvatar(avatarColor, avatarLetter));
+        avatarPane.getChildren().add(createAvatar(avatarColor, avatarGlyph));
 
         // Let this HBox fill the width the VBox conversation view gives it, and keep the
         // bubble's wrap width in proportion to that so bubbles reflow as the window is resized.
@@ -76,14 +76,14 @@ public class DialogBox extends HBox {
     }
 
     /**
-     * Returns a dialog box for Eve's response, with the avatar on the outer
-     * (left) edge of the conversation.
+     * Returns a dialog box for Eve's response, with the avatar on the
+     * outer (left) edge of the conversation.
      *
      * @param text Eve's response.
      * @param avatarColor this session's color for Eve's avatar.
      */
     public static DialogBox getEveDialog(String text, Color avatarColor) {
-        DialogBox box = new DialogBox(text, avatarColor, "E");
+        DialogBox box = new DialogBox(text, avatarColor, "⚡");
         box.setAlignment(Pos.CENTER_LEFT);
         box.dialog.getStyleClass().add("eve-dialog");
         return box;
@@ -110,16 +110,17 @@ public class DialogBox extends HBox {
         getChildren().setAll(dialog, avatarPane);
     }
 
-    /** Builds a round, colored avatar with a single letter centered in it. */
-    private static StackPane createAvatar(Color color, String letter) {
+    /** Builds a round, colored avatar with a single glyph centered in it. */
+    private static StackPane createAvatar(Color color, String glyph) {
         Circle circle = new Circle(AVATAR_DIAMETER / 2, color);
-        Text initial = new Text(letter);
+        Text initial = new Text(glyph);
         initial.setFill(Color.WHITE);
         initial.setStyle("-fx-font-weight: bold; -fx-font-size: 14;");
 
         StackPane pane = new StackPane(circle, initial);
         pane.setPrefSize(AVATAR_DIAMETER, AVATAR_DIAMETER);
         pane.setMinSize(AVATAR_DIAMETER, AVATAR_DIAMETER);
+        pane.setMaxSize(AVATAR_DIAMETER, AVATAR_DIAMETER);
         return pane;
     }
 }

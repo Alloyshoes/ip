@@ -20,11 +20,10 @@ import eve.task.Task;
  */
 public class Ui {
     private static final String LINE = "____________________________________________________________";
-    private static final String BANNER = " _____  __   __  _____ \n"
-            + "|  ___| \\ \\ / / |  ___|\n"
-            + "| |__    \\ V /  | |__  \n"
-            + "|  __|    \\ /   |  __| \n"
-            + "|_____|    V    |_____|";
+    private static final String STAR_LINE = "*".repeat(21);
+    private static final String BANNER = STAR_LINE + "\n"
+            + "***     E V E     ***\n"
+            + STAR_LINE;
 
     private final Scanner scanner = new Scanner(System.in);
 
@@ -38,10 +37,10 @@ public class Ui {
         List<String> lines = new ArrayList<>();
         lines.add(BANNER);
         lines.add("");
-        lines.add("Hello! I'm Eve.");
-        lines.add("What can I do for you?");
+        lines.add("HEYYY! I'm Eve!");
+        lines.add("I'm SO ready to help you crush your to-do list today! What's first?");
         lines.add("");
-        lines.add("Here's what I can do:");
+        lines.add("Here's everything I can do:");
         lines.addAll(Arrays.stream(CommandWord.values())
                 .map(commandWord -> String.format("  %-" + usageWidth + "s  %s",
                         commandWord.getUsage(), commandWord.getDescription()))
@@ -63,8 +62,8 @@ public class Ui {
      */
     public String getWelcomeMessage() {
         List<String> lines = new ArrayList<>();
-        lines.add("Hello! I'm Eve.");
-        lines.add("What can I do for you? Here's what I can do:");
+        lines.add("HEYYY! I'm Eve!");
+        lines.add("I'm SO ready to help you crush your to-do list today! Here's everything I can do:");
         lines.add("");
         lines.addAll(Arrays.stream(CommandWord.values())
                 .flatMap(commandWord -> Stream.of(
@@ -86,7 +85,7 @@ public class Ui {
 
     /** Prints the farewell message shown when the user exits with "bye". */
     public void showGoodbye() {
-        System.out.println("Bye. Hope to see you again soon!");
+        System.out.println("Byeee! Go crush it out there -- see you again soon!");
         System.out.println(LINE);
     }
 
@@ -97,7 +96,7 @@ public class Ui {
      */
     public void showTaskList(List<Task> tasks) {
         List<String> lines = new ArrayList<>();
-        lines.add("Here are the tasks in your list:");
+        lines.add("Here's everything on your list:");
         lines.addAll(numberedLines(tasks));
         showLines(lines);
     }
@@ -111,9 +110,9 @@ public class Ui {
     public void showMatchingTasks(List<Task> matches) {
         List<String> lines = new ArrayList<>();
         if (matches.isEmpty()) {
-            lines.add("No matching tasks found in your list.");
+            lines.add("Hmm, no matches in your list -- but don't stop now!");
         } else {
-            lines.add("Here are the matching tasks in your list:");
+            lines.add("Found these matches for you:");
             lines.addAll(numberedLines(matches));
         }
         showLines(lines);
@@ -129,9 +128,9 @@ public class Ui {
     public void showTasksOnDate(LocalDate date, List<Task> matches) {
         List<String> lines = new ArrayList<>();
         if (matches.isEmpty()) {
-            lines.add("You have no tasks on " + date.format(Task.DISPLAY_FORMAT) + ".");
+            lines.add("Nothing going on " + date.format(Task.DISPLAY_FORMAT) + " -- nice and clear!");
         } else {
-            lines.add("Here are the tasks on " + date.format(Task.DISPLAY_FORMAT) + ":");
+            lines.add("Here's what's happening on " + date.format(Task.DISPLAY_FORMAT) + ":");
             lines.addAll(numberedLines(matches));
         }
         showLines(lines);
@@ -146,9 +145,9 @@ public class Ui {
     public void showSchedule(List<Task> scheduledTasks) {
         List<String> lines = new ArrayList<>();
         if (scheduledTasks.isEmpty()) {
-            lines.add("You have no deadlines or events scheduled.");
+            lines.add("Your schedule's wide open -- blank canvas energy!");
         } else {
-            lines.add("Here is your schedule, in chronological order:");
+            lines.add("Here's your schedule, all lined up:");
             lines.addAll(numberedLines(scheduledTasks));
         }
         showLines(lines);
@@ -156,12 +155,12 @@ public class Ui {
 
     /** Prints confirmation that a task was marked as done. */
     public void showTaskMarked(Task task) {
-        showLines("Nice! I've marked this task as done:", "  " + task);
+        showLines("YESSS! Marked as done:", "  " + task);
     }
 
     /** Prints confirmation that a task was marked as not done. */
     public void showTaskUnmarked(Task task) {
-        showLines("OK, I've marked this task as not done yet:", "  " + task);
+        showLines("Got it, back on the list:", "  " + task);
     }
 
     /**
@@ -171,7 +170,8 @@ public class Ui {
      * @param taskCount how many tasks are in the list after adding it.
      */
     public void showTaskAdded(Task task, int taskCount) {
-        showLines("Got it. I've added this task:", "  " + task, "Now you have " + taskCount + " tasks in the list.");
+        showLines("Added it, let's gooo:", "  " + task,
+                "That's " + taskCount + " tasks -- you're basically unstoppable!");
     }
 
     /**
@@ -181,7 +181,7 @@ public class Ui {
      * @param taskCount how many tasks remain in the list after removing it.
      */
     public void showTaskDeleted(Task task, int taskCount) {
-        showLines("Noted. I've removed this task:", "  " + task, "Now you have " + taskCount + " tasks in the list.");
+        showLines("Poof, gone! Removed:", "  " + task, "Down to " + taskCount + " tasks -- look at you go!");
     }
 
     /** Prints an error message, e.g. from a caught {@link EveException}. */
@@ -196,7 +196,7 @@ public class Ui {
      * @param message detail of what went wrong, e.g. an I/O error message.
      */
     public void showLoadingError(String message) {
-        showLines(message + " Starting with an empty list.");
+        showLines(message + " No worries, starting fresh!");
     }
 
     /**
