@@ -40,18 +40,7 @@ ____________________________________________________________
 HEYYY! I'm Eve!
 I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's everything I can do:
-  todo <description>                                       Add a to-do task!
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
-  on <yyyy-mm-dd>                                          Show tasks happening on a date!
-  find <keyword>                                           Find tasks matching a keyword!
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
-  list                                                     Show off your whole task list!
-  mark <task number>                                       Mark a task as done!
-  unmark <task number>                                     Mark a task as not done yet!
-  delete <task number>                                     Clear a task off your list!
-  bye                                                      Wrap up for now!
+(Type help anytime to see everything I can do!)
 ____________________________________________________________
 Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________
@@ -60,7 +49,7 @@ ____________________________________________________________
 ## Test 2: Add tasks and list them
 
 **Aim:** `todo <description>` adds a new task and confirms it with
-`Got it. I've added this task: ...`; `list` shows every stored task,
+`Added it, let's gooo: ...`; `list` shows every stored task,
 numbered from 1, each with a not-done `[ ]` status icon.
 
 **Input:**
@@ -81,18 +70,7 @@ ____________________________________________________________
 HEYYY! I'm Eve!
 I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's everything I can do:
-  todo <description>                                       Add a to-do task!
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
-  on <yyyy-mm-dd>                                          Show tasks happening on a date!
-  find <keyword>                                           Find tasks matching a keyword!
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
-  list                                                     Show off your whole task list!
-  mark <task number>                                       Mark a task as done!
-  unmark <task number>                                     Mark a task as not done yet!
-  delete <task number>                                     Clear a task off your list!
-  bye                                                      Wrap up for now!
+(Type help anytime to see everything I can do!)
 ____________________________________________________________
 ____________________________________________________________
 Added it, let's gooo:
@@ -137,18 +115,7 @@ ____________________________________________________________
 HEYYY! I'm Eve!
 I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's everything I can do:
-  todo <description>                                       Add a to-do task!
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
-  on <yyyy-mm-dd>                                          Show tasks happening on a date!
-  find <keyword>                                           Find tasks matching a keyword!
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
-  list                                                     Show off your whole task list!
-  mark <task number>                                       Mark a task as done!
-  unmark <task number>                                     Mark a task as not done yet!
-  delete <task number>                                     Clear a task off your list!
-  bye                                                      Wrap up for now!
+(Type help anytime to see everything I can do!)
 ____________________________________________________________
 ____________________________________________________________
 Added it, let's gooo:
@@ -199,18 +166,7 @@ ____________________________________________________________
 HEYYY! I'm Eve!
 I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's everything I can do:
-  todo <description>                                       Add a to-do task!
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
-  on <yyyy-mm-dd>                                          Show tasks happening on a date!
-  find <keyword>                                           Find tasks matching a keyword!
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
-  list                                                     Show off your whole task list!
-  mark <task number>                                       Mark a task as done!
-  unmark <task number>                                     Mark a task as not done yet!
-  delete <task number>                                     Clear a task off your list!
-  bye                                                      Wrap up for now!
+(Type help anytime to see everything I can do!)
 ____________________________________________________________
 ____________________________________________________________
 Added it, let's gooo:
@@ -264,18 +220,7 @@ ____________________________________________________________
 HEYYY! I'm Eve!
 I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's everything I can do:
-  todo <description>                                       Add a to-do task!
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
-  on <yyyy-mm-dd>                                          Show tasks happening on a date!
-  find <keyword>                                           Find tasks matching a keyword!
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
-  list                                                     Show off your whole task list!
-  mark <task number>                                       Mark a task as done!
-  unmark <task number>                                     Mark a task as not done yet!
-  delete <task number>                                     Clear a task off your list!
-  bye                                                      Wrap up for now!
+(Type help anytime to see everything I can do!)
 ____________________________________________________________
 ____________________________________________________________
 Added it, let's gooo:
@@ -308,18 +253,7 @@ ____________________________________________________________
 HEYYY! I'm Eve!
 I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's everything I can do:
-  todo <description>                                       Add a to-do task!
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
-  on <yyyy-mm-dd>                                          Show tasks happening on a date!
-  find <keyword>                                           Find tasks matching a keyword!
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
-  list                                                     Show off your whole task list!
-  mark <task number>                                       Mark a task as done!
-  unmark <task number>                                     Mark a task as not done yet!
-  delete <task number>                                     Clear a task off your list!
-  bye                                                      Wrap up for now!
+(Type help anytime to see everything I can do!)
 ____________________________________________________________
 ____________________________________________________________
 Added it, let's gooo:
@@ -353,18 +287,7 @@ ____________________________________________________________
 HEYYY! I'm Eve!
 I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's everything I can do:
-  todo <description>                                       Add a to-do task!
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
-  on <yyyy-mm-dd>                                          Show tasks happening on a date!
-  find <keyword>                                           Find tasks matching a keyword!
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
-  list                                                     Show off your whole task list!
-  mark <task number>                                       Mark a task as done!
-  unmark <task number>                                     Mark a task as not done yet!
-  delete <task number>                                     Clear a task off your list!
-  bye                                                      Wrap up for now!
+(Type help anytime to see everything I can do!)
 ____________________________________________________________
 ____________________________________________________________
 Added it, let's gooo:
@@ -404,18 +327,7 @@ ____________________________________________________________
 HEYYY! I'm Eve!
 I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's everything I can do:
-  todo <description>                                       Add a to-do task!
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
-  on <yyyy-mm-dd>                                          Show tasks happening on a date!
-  find <keyword>                                           Find tasks matching a keyword!
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
-  list                                                     Show off your whole task list!
-  mark <task number>                                       Mark a task as done!
-  unmark <task number>                                     Mark a task as not done yet!
-  delete <task number>                                     Clear a task off your list!
-  bye                                                      Wrap up for now!
+(Type help anytime to see everything I can do!)
 ____________________________________________________________
 ____________________________________________________________
 Added it, let's gooo:
@@ -465,7 +377,7 @@ ____________________________________________________________
 ## Test 9: Empty description and unknown command
 
 **Aim:** `todo` with no description, and any input that doesn't match a
-known command (e.g. `blah`), each produce a specific `OOPS!!!` error
+known command (e.g. `blah`), each produce a specific `Oops, ...` error
 instead of crashing or silently doing something wrong. Matches the
 Level-5 requirement's own example transcript.
 
@@ -486,18 +398,7 @@ ____________________________________________________________
 HEYYY! I'm Eve!
 I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's everything I can do:
-  todo <description>                                       Add a to-do task!
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
-  on <yyyy-mm-dd>                                          Show tasks happening on a date!
-  find <keyword>                                           Find tasks matching a keyword!
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
-  list                                                     Show off your whole task list!
-  mark <task number>                                       Mark a task as done!
-  unmark <task number>                                     Mark a task as not done yet!
-  delete <task number>                                     Clear a task off your list!
-  bye                                                      Wrap up for now!
+(Type help anytime to see everything I can do!)
 ____________________________________________________________
 ____________________________________________________________
 Oops, your to-do needs a description! What are we adding?
@@ -535,18 +436,7 @@ ____________________________________________________________
 HEYYY! I'm Eve!
 I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's everything I can do:
-  todo <description>                                       Add a to-do task!
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
-  on <yyyy-mm-dd>                                          Show tasks happening on a date!
-  find <keyword>                                           Find tasks matching a keyword!
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
-  list                                                     Show off your whole task list!
-  mark <task number>                                       Mark a task as done!
-  unmark <task number>                                     Mark a task as not done yet!
-  delete <task number>                                     Clear a task off your list!
-  bye                                                      Wrap up for now!
+(Type help anytime to see everything I can do!)
 ____________________________________________________________
 ____________________________________________________________
 Oops, a deadline needs a description and a '/by' date! Try: deadline return book /by 2019-12-02.
@@ -593,18 +483,7 @@ ____________________________________________________________
 HEYYY! I'm Eve!
 I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's everything I can do:
-  todo <description>                                       Add a to-do task!
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
-  on <yyyy-mm-dd>                                          Show tasks happening on a date!
-  find <keyword>                                           Find tasks matching a keyword!
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
-  list                                                     Show off your whole task list!
-  mark <task number>                                       Mark a task as done!
-  unmark <task number>                                     Mark a task as not done yet!
-  delete <task number>                                     Clear a task off your list!
-  bye                                                      Wrap up for now!
+(Type help anytime to see everything I can do!)
 ____________________________________________________________
 ____________________________________________________________
 Added it, let's gooo:
@@ -670,18 +549,7 @@ ____________________________________________________________
 HEYYY! I'm Eve!
 I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's everything I can do:
-  todo <description>                                       Add a to-do task!
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
-  on <yyyy-mm-dd>                                          Show tasks happening on a date!
-  find <keyword>                                           Find tasks matching a keyword!
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
-  list                                                     Show off your whole task list!
-  mark <task number>                                       Mark a task as done!
-  unmark <task number>                                     Mark a task as not done yet!
-  delete <task number>                                     Clear a task off your list!
-  bye                                                      Wrap up for now!
+(Type help anytime to see everything I can do!)
 ____________________________________________________________
 ____________________________________________________________
 Added it, let's gooo:
@@ -732,18 +600,7 @@ ____________________________________________________________
 HEYYY! I'm Eve!
 I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's everything I can do:
-  todo <description>                                       Add a to-do task!
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
-  on <yyyy-mm-dd>                                          Show tasks happening on a date!
-  find <keyword>                                           Find tasks matching a keyword!
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
-  list                                                     Show off your whole task list!
-  mark <task number>                                       Mark a task as done!
-  unmark <task number>                                     Mark a task as not done yet!
-  delete <task number>                                     Clear a task off your list!
-  bye                                                      Wrap up for now!
+(Type help anytime to see everything I can do!)
 ____________________________________________________________
 ____________________________________________________________
 Added it, let's gooo:
@@ -779,18 +636,7 @@ ____________________________________________________________
 HEYYY! I'm Eve!
 I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's everything I can do:
-  todo <description>                                       Add a to-do task!
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
-  on <yyyy-mm-dd>                                          Show tasks happening on a date!
-  find <keyword>                                           Find tasks matching a keyword!
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
-  list                                                     Show off your whole task list!
-  mark <task number>                                       Mark a task as done!
-  unmark <task number>                                     Mark a task as not done yet!
-  delete <task number>                                     Clear a task off your list!
-  bye                                                      Wrap up for now!
+(Type help anytime to see everything I can do!)
 ____________________________________________________________
 ____________________________________________________________
 Here's everything on your list:
@@ -840,18 +686,7 @@ ____________________________________________________________
 HEYYY! I'm Eve!
 I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's everything I can do:
-  todo <description>                                       Add a to-do task!
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
-  on <yyyy-mm-dd>                                          Show tasks happening on a date!
-  find <keyword>                                           Find tasks matching a keyword!
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
-  list                                                     Show off your whole task list!
-  mark <task number>                                       Mark a task as done!
-  unmark <task number>                                     Mark a task as not done yet!
-  delete <task number>                                     Clear a task off your list!
-  bye                                                      Wrap up for now!
+(Type help anytime to see everything I can do!)
 ____________________________________________________________
 ____________________________________________________________
 Here's everything on your list:
@@ -888,18 +723,7 @@ ____________________________________________________________
 HEYYY! I'm Eve!
 I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's everything I can do:
-  todo <description>                                       Add a to-do task!
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
-  on <yyyy-mm-dd>                                          Show tasks happening on a date!
-  find <keyword>                                           Find tasks matching a keyword!
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
-  list                                                     Show off your whole task list!
-  mark <task number>                                       Mark a task as done!
-  unmark <task number>                                     Mark a task as not done yet!
-  delete <task number>                                     Clear a task off your list!
-  bye                                                      Wrap up for now!
+(Type help anytime to see everything I can do!)
 ____________________________________________________________
 ____________________________________________________________
 Oops, give the '/by' date as yyyy-mm-dd! Like 2019-12-02.
@@ -944,18 +768,7 @@ ____________________________________________________________
 HEYYY! I'm Eve!
 I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's everything I can do:
-  todo <description>                                       Add a to-do task!
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
-  on <yyyy-mm-dd>                                          Show tasks happening on a date!
-  find <keyword>                                           Find tasks matching a keyword!
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
-  list                                                     Show off your whole task list!
-  mark <task number>                                       Mark a task as done!
-  unmark <task number>                                     Mark a task as not done yet!
-  delete <task number>                                     Clear a task off your list!
-  bye                                                      Wrap up for now!
+(Type help anytime to see everything I can do!)
 ____________________________________________________________
 ____________________________________________________________
 Added it, let's gooo:
@@ -1010,18 +823,7 @@ ____________________________________________________________
 HEYYY! I'm Eve!
 I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's everything I can do:
-  todo <description>                                       Add a to-do task!
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
-  on <yyyy-mm-dd>                                          Show tasks happening on a date!
-  find <keyword>                                           Find tasks matching a keyword!
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
-  list                                                     Show off your whole task list!
-  mark <task number>                                       Mark a task as done!
-  unmark <task number>                                     Mark a task as not done yet!
-  delete <task number>                                     Clear a task off your list!
-  bye                                                      Wrap up for now!
+(Type help anytime to see everything I can do!)
 ____________________________________________________________
 ____________________________________________________________
 Oops, which date? Try: on 2019-12-02.
@@ -1064,18 +866,7 @@ ____________________________________________________________
 HEYYY! I'm Eve!
 I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's everything I can do:
-  todo <description>                                       Add a to-do task!
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
-  on <yyyy-mm-dd>                                          Show tasks happening on a date!
-  find <keyword>                                           Find tasks matching a keyword!
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
-  list                                                     Show off your whole task list!
-  mark <task number>                                       Mark a task as done!
-  unmark <task number>                                     Mark a task as not done yet!
-  delete <task number>                                     Clear a task off your list!
-  bye                                                      Wrap up for now!
+(Type help anytime to see everything I can do!)
 ____________________________________________________________
 ____________________________________________________________
 Added it, let's gooo:
@@ -1137,18 +928,7 @@ ____________________________________________________________
 HEYYY! I'm Eve!
 I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's everything I can do:
-  todo <description>                                       Add a to-do task!
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
-  on <yyyy-mm-dd>                                          Show tasks happening on a date!
-  find <keyword>                                           Find tasks matching a keyword!
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
-  list                                                     Show off your whole task list!
-  mark <task number>                                       Mark a task as done!
-  unmark <task number>                                     Mark a task as not done yet!
-  delete <task number>                                     Clear a task off your list!
-  bye                                                      Wrap up for now!
+(Type help anytime to see everything I can do!)
 ____________________________________________________________
 ____________________________________________________________
 Oops, what should I search for? Try: find book.
@@ -1184,18 +964,7 @@ ____________________________________________________________
 HEYYY! I'm Eve!
 I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's everything I can do:
-  todo <description>                                       Add a to-do task!
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
-  on <yyyy-mm-dd>                                          Show tasks happening on a date!
-  find <keyword>                                           Find tasks matching a keyword!
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
-  list                                                     Show off your whole task list!
-  mark <task number>                                       Mark a task as done!
-  unmark <task number>                                     Mark a task as not done yet!
-  delete <task number>                                     Clear a task off your list!
-  bye                                                      Wrap up for now!
+(Type help anytime to see everything I can do!)
 ____________________________________________________________
 ____________________________________________________________
 Added it, let's gooo:
@@ -1249,18 +1018,7 @@ ____________________________________________________________
 HEYYY! I'm Eve!
 I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's everything I can do:
-  todo <description>                                       Add a to-do task!
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
-  on <yyyy-mm-dd>                                          Show tasks happening on a date!
-  find <keyword>                                           Find tasks matching a keyword!
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
-  list                                                     Show off your whole task list!
-  mark <task number>                                       Mark a task as done!
-  unmark <task number>                                     Mark a task as not done yet!
-  delete <task number>                                     Clear a task off your list!
-  bye                                                      Wrap up for now!
+(Type help anytime to see everything I can do!)
 ____________________________________________________________
 ____________________________________________________________
 Added it, let's gooo:
@@ -1299,18 +1057,7 @@ ____________________________________________________________
 HEYYY! I'm Eve!
 I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's everything I can do:
-  todo <description>                                       Add a to-do task!
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
-  on <yyyy-mm-dd>                                          Show tasks happening on a date!
-  find <keyword>                                           Find tasks matching a keyword!
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
-  list                                                     Show off your whole task list!
-  mark <task number>                                       Mark a task as done!
-  unmark <task number>                                     Mark a task as not done yet!
-  delete <task number>                                     Clear a task off your list!
-  bye                                                      Wrap up for now!
+(Type help anytime to see everything I can do!)
 ____________________________________________________________
 ____________________________________________________________
 Added it, let's gooo:
@@ -1350,21 +1097,78 @@ ____________________________________________________________
 HEYYY! I'm Eve!
 I'm SO ready to help you crush your to-do list today! What's first?
 
-Here's everything I can do:
-  todo <description>                                       Add a to-do task!
-  deadline <description> /by <yyyy-mm-dd>                  Add a task with a deadline!
-  event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>  Add an event!
-  on <yyyy-mm-dd>                                          Show tasks happening on a date!
-  find <keyword>                                           Find tasks matching a keyword!
-  schedule [yyyy-mm-dd]                                    Show your whole schedule, or just one date's!
-  list                                                     Show off your whole task list!
-  mark <task number>                                       Mark a task as done!
-  unmark <task number>                                     Mark a task as not done yet!
-  delete <task number>                                     Clear a task off your list!
-  bye                                                      Wrap up for now!
+(Type help anytime to see everything I can do!)
 ____________________________________________________________
 ____________________________________________________________
 Oops, give the date as yyyy-mm-dd! Like schedule 2019-12-02.
+____________________________________________________________
+Byeee! Go crush it out there -- see you again soon!
+____________________________________________________________
+```
+
+## Test 24: `help` shows the full command list
+
+**Aim:** `help` prints the full list of available commands with their
+usage and description, matching what used to be dumped automatically
+at startup -- the greeting itself now only points the user at `help`
+instead of listing every command.
+
+**Input:**
+```text
+help
+bye
+```
+
+**Expected output:**
+```text
+____________________________________________________________
+*********************
+***     E V E     ***
+*********************
+
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
+
+(Type help anytime to see everything I can do!)
+____________________________________________________________
+____________________________________________________________
+Here's everything I can do:
+
+• help
+   Show this list of commands again!
+
+• todo <description>
+   Add a to-do task!
+
+• deadline <description> /by <yyyy-mm-dd>
+   Add a task with a deadline!
+
+• event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>
+   Add an event!
+
+• on <yyyy-mm-dd>
+   Show tasks happening on a date!
+
+• find <keyword>
+   Find tasks matching a keyword!
+
+• schedule [yyyy-mm-dd]
+   Show your whole schedule, or just one date's!
+
+• list
+   Show off your whole task list!
+
+• mark <task number>
+   Mark a task as done!
+
+• unmark <task number>
+   Mark a task as not done yet!
+
+• delete <task number>
+   Clear a task off your list!
+
+• bye
+   Wrap up for now!
 ____________________________________________________________
 Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________

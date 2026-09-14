@@ -4,11 +4,12 @@ import eve.EveException;
 
 /**
  * The chatbot's recognized command words, each with its usage syntax and a
- * short description shown in the startup greeting. This is purely a lookup
- * table of known words and their display text; {@link Parser} uses it to
- * validate a typed word and decide which {@link Command} to build.
+ * short description shown by the {@code help} command. This is purely a
+ * lookup table of known words and their display text; {@link Parser} uses
+ * it to validate a typed word and decide which {@link Command} to build.
  */
 public enum CommandWord {
+    HELP("help", "Show this list of commands again!"),
     TODO("todo <description>", "Add a to-do task!"),
     DEADLINE("deadline <description> /by <yyyy-mm-dd>", "Add a task with a deadline!"),
     EVENT("event <description> /from <yyyy-mm-dd> /to <yyyy-mm-dd>", "Add an event!"),
