@@ -172,8 +172,13 @@ public class Parser {
         if (arguments.indexOf(" /to ", toIndex + 1) != -1) {
             throw new EveException("Oops, I only need one '/to' date -- you've given me two!");
         }
+        int fromTextStart = fromIndex + " /from ".length();
         String description = arguments.substring(0, fromIndex).trim();
-        String fromText = arguments.substring(fromIndex + " /from ".length(), toIndex).trim();
+        // "/from" and "/to" can end up adjacent (e.g. "trip /from /to 2019-10-11") with no
+        // room for a from-date between them -- fromTextStart would then land past toIndex,
+        // which substring(start, end) rejects. Treat that the same as an empty from-date
+        // rather than letting it crash with a raw StringIndexOutOfBoundsException.
+        String fromText = fromTextStart < toIndex ? arguments.substring(fromTextStart, toIndex).trim() : "";
         String toText = arguments.substring(toIndex + " /to ".length()).trim();
         if (description.isEmpty() || fromText.isEmpty() || toText.isEmpty()) {
             throw new EveException("Oops, fill in the event's description, '/from' date, "

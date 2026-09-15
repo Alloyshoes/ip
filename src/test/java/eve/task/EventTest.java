@@ -1,5 +1,6 @@
 package eve.task;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -54,5 +55,25 @@ public class EventTest {
         assertTrue(event.occursOn(day));
         assertFalse(event.occursOn(day.minusDays(1)));
         assertFalse(event.occursOn(day.plusDays(1)));
+    }
+
+    @Test
+    public void toString_prefixedWithETypeIconAndBothDates() {
+        assertEquals("[E][ ] trip (from: Oct 4 2019 to: Oct 11 2019)", new Event("trip", FROM, TO).toString());
+    }
+
+    @Test
+    public void toSaveFormat_startsWithEAndEndsWithBothIsoDates() {
+        assertEquals("E | 0 | trip | 2019-10-04 | 2019-10-11", new Event("trip", FROM, TO).toSaveFormat());
+    }
+
+    @Test
+    public void getScheduleDate_isTheStartDate() {
+        assertEquals(FROM, new Event("trip", FROM, TO).getScheduleDate().orElseThrow());
+    }
+
+    @Test
+    public void hashCode_equalEvents_sameHashCode() {
+        assertEquals(new Event("trip", FROM, TO).hashCode(), new Event("trip", FROM, TO).hashCode());
     }
 }
