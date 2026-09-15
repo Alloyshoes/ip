@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -108,5 +109,69 @@ public class TaskListTest {
         tasks.add(new ToDo("just a todo"));
 
         assertTrue(tasks.schedule().isEmpty());
+    }
+
+    @Test
+    public void add_increasesSizeAndAppendsToTheEnd() {
+        TaskList tasks = new TaskList();
+        tasks.add(new ToDo("a"));
+
+        tasks.add(new ToDo("b"));
+
+        assertEquals(2, tasks.size());
+        assertEquals("[T][ ] b", tasks.get(1).toString());
+    }
+
+    @Test
+    public void delete_removesAndReturnsTheTaskAtThatIndex() {
+        TaskList tasks = new TaskList();
+        Task first = new ToDo("a");
+        Task second = new ToDo("b");
+        tasks.add(first);
+        tasks.add(second);
+
+        Task removed = tasks.delete(0);
+
+        assertEquals(first, removed);
+        assertEquals(1, tasks.size());
+        assertEquals(second, tasks.get(0));
+    }
+
+    @Test
+    public void constructor_fromExistingList_copiesItRatherThanSharingIt() {
+        List<Task> initial = new ArrayList<>(List.of(new ToDo("a")));
+        TaskList tasks = new TaskList(initial);
+
+        initial.add(new ToDo("b"));
+
+        assertEquals(1, tasks.size());
+    }
+
+    @Test
+    public void asList_isUnmodifiable() {
+        TaskList tasks = new TaskList();
+        tasks.add(new ToDo("a"));
+
+        assertThrows(UnsupportedOperationException.class, () -> tasks.asList().add(new ToDo("b")));
+    }
+
+    @Test
+    public void matching_keywordPresentInSomeDescriptions_returnsOnlyThose() {
+        TaskList tasks = new TaskList();
+        Task matching = new ToDo("read book");
+        tasks.add(matching);
+        tasks.add(new ToDo("join sports club"));
+
+        List<Task> matches = tasks.matching("book");
+
+        assertEquals(List.of(matching), matches);
+    }
+
+    @Test
+    public void matching_keywordAbsent_returnsEmptyList() {
+        TaskList tasks = new TaskList();
+        tasks.add(new ToDo("read book"));
+
+        assertTrue(tasks.matching("nonexistent").isEmpty());
     }
 }

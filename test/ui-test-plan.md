@@ -1391,3 +1391,36 @@ ____________________________________________________________
 Byeee! Go crush it out there -- see you again soon!
 ____________________________________________________________
 ```
+
+## Test 30: Adjacent `/from`/`/to` with no date between them doesn't crash
+
+**Aim:** `event ... /from /to X` (no from-date text between the two
+markers) is rejected with the normal "fill in ... all of them" error
+instead of crashing with a raw `StringIndexOutOfBoundsException` --
+the two markers end up adjacent, which earlier made the from-date
+extraction compute a start index past its end index.
+
+**Input:**
+```text
+event trip /from /to 2019-10-11
+bye
+```
+
+**Expected output:**
+```text
+____________________________________________________________
+*********************
+***     E V E     ***
+*********************
+
+HEYYY! I'm Eve!
+I'm SO ready to help you crush your to-do list today! What's first?
+
+(Type help anytime to see everything I can do!)
+____________________________________________________________
+____________________________________________________________
+Oops, fill in the event's description, '/from' date, and '/to' date -- all of them!
+____________________________________________________________
+Byeee! Go crush it out there -- see you again soon!
+____________________________________________________________
+```
