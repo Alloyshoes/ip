@@ -2,7 +2,7 @@
 
 [![Java CI](https://github.com/Alloyshoes/ip/actions/workflows/gradle.yml/badge.svg)](https://github.com/Alloyshoes/ip/actions/workflows/gradle.yml)
 
-This is a project template for a greenfield Java project. It's named after the Java mascot _Duke_. Given below are instructions on how to use it.
+This project started from a template for a greenfield Java project (itself named after the Java mascot _Duke_). Given below are instructions on how to use it.
 
 ## Setting up in Intellij
 
