@@ -1,7 +1,6 @@
 # IDEA files
 /.idea/
 /out/
-/*.iml
 
 # Gradle build files
 /.gradle/
